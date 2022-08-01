@@ -42,15 +42,14 @@ source $ZSH/oh-my-zsh.sh
 # fi
 
 alias homeserver="sudo sshfs -o allow_other,default_permissions,nonempty ubuntu@ubuntu.lan:/home/ubuntu/ /mnt/home-server"
+alias config="lazygit --git-dir=$HOME/.dotfiles --work-tree=$HOME"
 alias k="kubectl"
 alias kk="kubecolor"
-alias Switch='export KUBECONFIG=$(~/kubesess/kubesess -- context):$HOME/.kube/config'
 alias kn='export KUBECONFIG=$(~/kubesess/kubesess -- namespace):$HOME/.kube/config'
 alias kdpt="kubectl get pods --all-namespaces -o wide | grep Terminated | awk '{print $1,$2}' | xargs -L1 kubectl delete pod -n"
-# alias Unity="$HOME/Unity/Hub/Editor/2020.3.18f1/Editor/./Unity"
+alias Switch='export KUBECONFIG=$(~/kubesess/kubesess -- context):$HOME/.kube/config'
 
 export GIT_USER=ramilito
-export GIT_TOKEN=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
 export PATH=$PATH:~/.yarn/bin/
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 export PATH=$PATH:/usr/local/go
@@ -123,3 +122,5 @@ timekubectx(){
 dtf () {
   lazygit --git-dir="$HOME/.dotfiles" --work-tree="$HOME"
 }
+
+[ -f "/home/ramilito/.ghcup/env" ] && source "/home/ramilito/.ghcup/env" # ghcup-env
