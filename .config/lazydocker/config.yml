@@ -1,0 +1,11 @@
+reporting: "off"
+gui:
+  theme:
+    lightTheme: false
+    activeBorderColor:
+      - blue
+      - reverse
+    inactiveBorderColor:
+      - black
+    optionsTextColor:
+      - white
