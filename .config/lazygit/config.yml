@@ -1,0 +1,30 @@
+reporting: "off"
+gui:
+  theme:
+    lightTheme: false
+    activeBorderColor:
+      - reverse
+      - '#3d65a1'
+    inactiveBorderColor:
+      - '#3d59a1'
+    optionsTextColor:
+      - '#545c7e'
+    selectedLineBgColor:
+      - '#545c7e'
+    selectedRangeBgColor:
+      - blue
+    cherryPickedCommitBgColor:
+      - blue
+    cherryPickedCommitFgColor:
+      - cyan
+  showFileTree: true # for rendering changes files in a tree format
+git:
+  pull:
+    mode: 'rebase'
+  notARepository: 'skip'
+  paging:
+    colorArg: always
+    pager: delta --dark --paging=never
+os:
+  editCommand: 'lvim'
+  
