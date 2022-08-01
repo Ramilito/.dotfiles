@@ -91,8 +91,4 @@ timezsh() {
   for i in $(seq 1 10); do /usr/bin/time $shell -i -c exit; done
 }
 
-dtf () {
-  lazygit --git-dir="$HOME/.dotfiles" --work-tree="$HOME"
-}
-
-[ -f "/home/ramilito/.ghcup/env" ] && source "/home/ramilito/.ghcup/env" # ghcup-env
+# [ -f "/home/ramilito/.ghcup/env" ] && source "/home/ramilito/.ghcup/env" # ghcup-env
