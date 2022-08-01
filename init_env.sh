@@ -6,6 +6,7 @@ if [ $start != "y" ]; then
 	echo "exiting"
 	exit 1
 fi
+
 sudo apt-get update
 sudo apt-get install -y zsh curl git build-essential jq
 
@@ -70,6 +71,10 @@ sudo chmod a+x /usr/local/bin/telepresence
 wget https://github.com/jesseduffield/lazygit/releases/download/v0.35/lazygit_0.35_Linux_arm64.tar.gz
 tar xzf lazygit_0.35_Linux_arm64.tar.gz
 sudo mv lazygit /usr/local/bin
+
+#delta
+wget https://github.com/dandavison/delta/releases/download/0.13.0/git-delta_0.13.0_amd64.deb
+sudo dpkg -i git-delta_0.13.0_amd64.deb
 
 #gh
 curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg
