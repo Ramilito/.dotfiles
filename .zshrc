@@ -30,7 +30,7 @@ export NVM_COMPLETION=true
 plugins=(git zsh-nvm you-should-use vi-mode fzf-tab)
 plugins+=(zsh-autosuggestions zsh-completions)
 # plugins+=(zsh-syntax-highlighting) 
-plugins+=(docker kubectl terraform gcloud kubectx aws)
+plugins+=(docker kubectl terraform gcloud aws)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -89,34 +89,6 @@ export VI_MODE_SET_CURSOR=true
 timezsh() {
   shell=${1-$SHELL}
   for i in $(seq 1 10); do /usr/bin/time $shell -i -c exit; done
-}
-
-timekubesess(){
-  start=`date +%s.%N`
-  for i in $(seq 1 20); do
-    # export KUBECONFIG=$(~/kubesess/kubesess -- context "gke_toca-days-ops_us-central1-a_toca-days-delivery"):$HOME/.kube/config;
-    # k get nodes;
-    export KUBECONFIG=$(~/kubesess/kubesess -- context docker-desktop):$HOME/.kube/config;
-    # k get nodes;
-  done
-  end=`date +%s.%N`
-  echo time
-  runtime=$( echo "$end - $start" | bc -l )
-  echo $runtime
-}
-
-timekubectx(){
-  start=`date +%s.%N`
-  for i in $(seq 1 20); do 
-    # kubectx "gke_toca-days-ops_us-central1-a_toca-days-delivery" > /dev/null 2>&1;
-    # k get nodes;
-    kubectx docker-desktop > /dev/null 2>&1; 
-    # k get nodes;
-  done
-  end=`date +%s.%N`
-  echo time
-  runtime=$( echo "$end - $start" | bc -l )
-  echo $runtime
 }
 
 dtf () {
