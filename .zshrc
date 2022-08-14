@@ -29,8 +29,9 @@ export NVM_LAZY_LOAD=true
 export NVM_COMPLETION=true
 plugins=(git zsh-nvm you-should-use vi-mode fzf-tab)
 plugins+=(zsh-autosuggestions zsh-completions)
-# plugins+=(zsh-syntax-highlighting) 
+# plugins+=(zsh-syntax-highlighting)
 plugins+=(docker kubectl terraform gcloud aws)
+# plugins+=(kubectx)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -45,9 +46,7 @@ alias homeserver="sudo sshfs -o allow_other,default_permissions,nonempty ubuntu@
 alias config="lazygit --git-dir=$HOME/.dotfiles --work-tree=$HOME"
 alias k="kubectl"
 alias kk="kubecolor"
-alias kn='export KUBECONFIG=$(~/kubesess/kubesess -- namespace):$HOME/.kube/config'
 alias kdpt="kubectl get pods --all-namespaces -o wide | grep Terminated | awk '{print $1,$2}' | xargs -L1 kubectl delete pod -n"
-alias Switch='export KUBECONFIG=$(~/kubesess/kubesess -- context):$HOME/.kube/config'
 
 export GIT_USER=ramilito
 export PATH=$PATH:~/.yarn/bin/
@@ -86,9 +85,10 @@ source "$HOME/.cargo/env"
 export VI_MODE_RESET_PROMPT_ON_MODE_CHANGE=true
 export VI_MODE_SET_CURSOR=true
 
+test -f ~/.kube/kubesess/kubesess.sh && source ~/.kube/kubesess/kubesess.sh
+
 timezsh() {
   shell=${1-$SHELL}
   for i in $(seq 1 10); do /usr/bin/time $shell -i -c exit; done
 }
 
-# [ -f "/home/ramilito/.ghcup/env" ] && source "/home/ramilito/.ghcup/env" # ghcup-env
