@@ -20,7 +20,7 @@ gui:
   showFileTree: true # for rendering changes files in a tree format
 git:
   pull:
-    mode: 'rebase'
+    mode: rebase
   notARepository: 'skip'
   paging:
     colorArg: always

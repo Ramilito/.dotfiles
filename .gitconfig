@@ -23,3 +23,5 @@
   colorMoved = default
 
 # --- End delta config
+[pull]
+	rebase = true
