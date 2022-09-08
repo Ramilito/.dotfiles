@@ -1,13 +1,14 @@
-# zmodload zsh/zprof
+zmodload zsh/zprof
 setopt aliases
 
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
+# if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+#   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+# fi
 
 export ZSH="/home/$USER/.oh-my-zsh"
 
-ZSH_THEME="powerlevel10k/powerlevel10k"
+# ZSH_THEME="powerlevel10k/powerlevel10k"
+ZSH_THEME="robbyrussell"
 HISTSIZE=10000000
 SAVEHIST=10000000
 
@@ -26,10 +27,12 @@ setopt HIST_VERIFY               # Don't execute immediately upon history expans
 setopt HIST_BEEP                 # Beep when accessing nonexistent history.
 
 export NVM_LAZY_LOAD=true
+export NVM_NO_USE=true
 export NVM_COMPLETION=true
-plugins=(git zsh-nvm you-should-use vi-mode fzf-tab)
-plugins+=(zsh-autosuggestions zsh-completions)
-# plugins+=(zsh-syntax-highlighting)
+export NVM_LAZY_LOAD_EXTRA_COMMANDS=('lvim')
+plugins=(git vi-mode fzf-tab)
+plugins+=(zsh-nvm)
+plugins+=(you-should-use zsh-autosuggestions zsh-completions)
 plugins+=(docker kubectl terraform gcloud aws)
 # plugins+=(kubectx)
 
@@ -66,7 +69,7 @@ bindkey -M vicmd 'V' edit-command-line # this remaps `vv` to `V` (but overrides 
 KEYTIMEOUT=1
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+# [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 export PATH="$PATH:/home/$USER/.dotnet"
 export PATH="$PATH:/home/$USER/.cargo/bin"
@@ -85,10 +88,28 @@ source "$HOME/.cargo/env"
 export VI_MODE_RESET_PROMPT_ON_MODE_CHANGE=true
 export VI_MODE_SET_CURSOR=true
 
-test -f ~/.kube/kubesess/kubesess.sh && source ~/.kube/kubesess/kubesess.sh
+test -f ~/.kube/kubesess/scripts/sh/kubesess.sh && source ~/.kube/kubesess/scripts/sh/kubesess.sh
+test -f ~/.kube/kubesess/scripts/sh/completion.sh && source ~/.kube/kubesess/scripts/sh/completion.sh
 
+prompt_context() {
+    KUBE_CTX=$(kubesess -c context)
+    KUBE_NS=$(kubesess -c namespace)
+
+    if [[ $KUBE_CTX == *"dev"* ]]; then
+      echo "(%{$fg[yellow]%}|$KUBE_CTX%{$reset_color%}:%F{6}$KUBE_NS%f)"
+    elif [[ $KUBE_CTX == *"prod"* ]]; then
+      echo "(%{$fg[red]%}|$KUBE_CTX%{$reset_color%}:%F{6}$KUBE_NS%f)"
+    elif [[ $KUBE_CTX == *"staging"* ]]; then
+      echo "(%{$fg[red]%}|$KUBE_CTX%{$reset_color%}:%F{6}$KUBE_NS%f)"
+    else
+      echo "(%{$fg[green]%}|$KUBE_CTX%{$reset_color%}:%F{6}$KUBE_NS%f)"
+    fi
+}
+
+RPROMPT='$(prompt_context)'
 timezsh() {
   shell=${1-$SHELL}
   for i in $(seq 1 10); do /usr/bin/time $shell -i -c exit; done
 }
 
+# zprof
