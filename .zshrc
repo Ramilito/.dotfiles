@@ -2,7 +2,6 @@ zmodload zsh/zprof
 setopt aliases
 export ZSH="/home/$USER/.oh-my-zsh"
 
-ZSH_THEME="robbyrussell"
 HISTSIZE=10000000
 SAVEHIST=10000000
 
@@ -26,9 +25,9 @@ export NVM_COMPLETION=true
 export NVM_LAZY_LOAD_EXTRA_COMMANDS=('lvim')
 plugins=(git vi-mode fzf-tab)
 plugins+=(zsh-nvm)
-plugins+=(you-should-use zsh-autosuggestions zsh-completions)
-plugins+=(docker kubectl terraform gcloud aws)
-# plugins+=(kubectx)
+plugins+=(zsh-autosuggestions zsh-completions)
+plugins+=(docker kubectl terraform)
+# plugins+=(gcloud aws)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -69,6 +68,7 @@ source /usr/share/doc/fzf/examples/key-bindings.zsh
 source /usr/share/doc/fzf/examples/completion.zsh
 
 export NVM_DIR="$HOME/.nvm"
+export PATH="$PATH:/home/$USER/.kube/kubediff"
 
 if hash stern 2>/dev/null; then
     source <(stern --completion=zsh)
@@ -97,7 +97,16 @@ prompt_context() {
     fi
 }
 
-RPROMPT='$(prompt_context)'
+RPROMPT+='$(prompt_context)'
+
+ZSH_THEME_GIT_PROMPT_PREFIX="%{$FG[226]%}"
+ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%} "
+ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[blue]%} %{$fg[yellow]%}✗"
+ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg[blue]%}"
+
+PROMPT="%(?:%{$fg_bold[green]%}➜ :%{$fg_bold[red]%}➜ )"
+PROMPT+=' %{$fg[magenta]%}%c%{$reset_color%} $(git_prompt_info)'
+
 timezsh() {
   shell=${1-$SHELL}
   for i in $(seq 1 10); do /usr/bin/time $shell -i -c exit; done
