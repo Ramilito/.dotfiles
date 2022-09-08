@@ -39,9 +39,8 @@ tar xzf kubecolor_0.0.20_Linux_arm64.tar.gz
 sudo mv kubecolor /usr/local/bin
 
 #stern
-wget https://github.com/wercker/stern/releases/download/1.11.0/stern_linux_amd64
-mv stern_linux_amd64 stern
-chmod +x stern
+wget https://github.com/stern/stern/releases/download/v1.21.0/stern_1.21.0_linux_amd64.tar.gz
+tar xzf stern_1.21.0_linux_amd64.tar.gz
 sudo mv stern /usr/local/bin
 
 #kustomize
