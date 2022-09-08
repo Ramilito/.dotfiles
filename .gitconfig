@@ -8,7 +8,8 @@
 
 # Delta config ---------
 [core]
-    pager = "delta --theme='OneHalfDark'"
+  pager = "delta --syntax-theme='OneHalfDark'"
+
 [interactive]
     diffFilter = delta --color-only
 
