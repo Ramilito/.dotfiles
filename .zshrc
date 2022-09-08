@@ -1,13 +1,7 @@
 zmodload zsh/zprof
 setopt aliases
-
-# if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-#   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-# fi
-
 export ZSH="/home/$USER/.oh-my-zsh"
 
-# ZSH_THEME="powerlevel10k/powerlevel10k"
 ZSH_THEME="robbyrussell"
 HISTSIZE=10000000
 SAVEHIST=10000000
@@ -67,9 +61,6 @@ export AWS_PROFILE="ramilito"
 bindkey -v
 bindkey -M vicmd 'V' edit-command-line # this remaps `vv` to `V` (but overrides `visual-mode`)
 KEYTIMEOUT=1
-
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-# [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 export PATH="$PATH:/home/$USER/.dotnet"
 export PATH="$PATH:/home/$USER/.cargo/bin"
