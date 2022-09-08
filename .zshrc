@@ -1,5 +1,6 @@
 zmodload zsh/zprof
 setopt aliases
+setopt TRANSIENT_RPROMPT
 export ZSH="/home/$USER/.oh-my-zsh"
 
 HISTSIZE=10000000
@@ -28,6 +29,7 @@ plugins+=(zsh-nvm)
 plugins+=(zsh-autosuggestions zsh-completions)
 plugins+=(docker kubectl terraform)
 # plugins+=(gcloud aws)
+
 
 source $ZSH/oh-my-zsh.sh
 
