@@ -2,7 +2,7 @@
 
 ## Showcase
 
-![demo](https://raw.github.com/Ramilito/.dotfiles/main/docs/images/demo.png)
+![prompt](https://raw.github.com/Ramilito/.dotfiles/main/docs/images/prompt.png)
 ![perf](https://raw.github.com/Ramilito/.dotfiles/main/docs/images/dotfiles-perf.png)
 
 ## What
