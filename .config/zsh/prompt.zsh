@@ -13,7 +13,7 @@ prompt_context() {
     fi
 }
 
-RPROMPT+='$(prompt_context)'
+RPROMPT='$(prompt_context)'
 
 ZSH_THEME_GIT_PROMPT_PREFIX="%{$FG[226]%}"
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%} "
