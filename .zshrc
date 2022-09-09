@@ -9,7 +9,7 @@ zsh-defer -c 'nvm install --lts'
 
 source "$HOME/.config/zsh/aliases.zsh"
 source "$HOME/.config/zsh/functions.zsh"
-source "$HOME/.config/zsh/history.zsh"
+source "$HOME/.config/zsh/setopt.zsh"
 source "$HOME/.config/zsh/paths.zsh"
 source "$HOME/.config/zsh/prompt.zsh"
 source "$HOME/.config/zsh/source.zsh"
