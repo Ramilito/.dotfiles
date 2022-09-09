@@ -1,8 +1,12 @@
 # Dotfiles
 
 ## Showcase
-
+|  _Custom theme and PROMPT_
+:-------------------------:
 ![prompt](https://raw.github.com/Ramilito/.dotfiles/main/docs/images/prompt.png)
+
+|  _Performance_
+:-------------------------:
 ![perf](https://raw.github.com/Ramilito/.dotfiles/main/docs/images/dotfiles-perf.png)
 
 ## What
@@ -15,11 +19,4 @@ Uses zsh-defer for faster startup time, custom kubectl prompt using kubesess for
 
 ## Installation
 
-```zsh
-Use as a bare repo: https://www.atlassian.com/git/tutorials/dotfiles
-
-Add this to .bashrc/.zshrc
-
-```
-alias config="git --git-dir=$HOME/.dotfiles --work-tree=$HOME"
-```
+[Use as a bare repo](https://www.atlassian.com/git/tutorials/dotfiles)
