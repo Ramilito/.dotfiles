@@ -1,5 +1,4 @@
 export GIT_USER=ramilito
-export GH_TOKEN=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
 export PATH=$PATH:~/.yarn/bin/
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 export PATH=$PATH:/usr/local/go
