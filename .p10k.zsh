@@ -1196,6 +1196,10 @@
   #
   # You can define different colors, icons and content expansions for different classes:
   #
+#
+    typeset -g POWERLEVEL9K_KUBECONTEXT_DEFAULT_FOREGROUND=011
+    typeset -g POWERLEVEL9K_KUBECONTEXT_DEFAULT_VISUAL_IDENTIFIER_EXPANSION='✅️'
+
     typeset -g POWERLEVEL9K_KUBECONTEXT_DEV_FOREGROUND=011
     typeset -g POWERLEVEL9K_KUBECONTEXT_DEV_VISUAL_IDENTIFIER_EXPANSION='❗'
 
@@ -1223,6 +1227,7 @@
       '*docker-desktop*'  DOCKER    # to match your needs. Customize them as needed.
       '*delivery*'  DELIVERY    # to match your needs. Customize them as needed.
       '*'       DEFAULT)
+
   typeset -g POWERLEVEL9K_KUBECONTEXT_DEFAULT_FOREGROUND=134
   # typeset -g POWERLEVEL9K_KUBECONTEXT_DEFAULT_VISUAL_IDENTIFIER_EXPANSION='⭐'
   POWERLEVEL9K_KUBECONTEXT_CONTENT_EXPANSION='${P9K_KUBECONTEXT_CLOUD_CLUSTER:-${P9K_KUBECONTEXT_NAME}}'
