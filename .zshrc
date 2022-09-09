@@ -59,6 +59,7 @@ export PATH=$PATH:$HOME/.linkerd2/bin
 export RIPGREP_CONFIG_PATH=$HOME/.ripgreprpc
 export GO111MODULE=on
 export AWS_PROFILE="ramilito"
+export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 bindkey -v
 bindkey -M vicmd 'V' edit-command-line # this remaps `vv` to `V` (but overrides `visual-mode`)
 KEYTIMEOUT=1
