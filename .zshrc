@@ -1,4 +1,6 @@
-zmodload zsh/zprof
+# zmodload zsh/zprof
+source ~/zsh-defer/zsh-defer.plugin.zsh
+
 setopt aliases
 setopt TRANSIENT_RPROMPT
 export ZSH="/home/$USER/.oh-my-zsh"
@@ -29,7 +31,6 @@ plugins+=(zsh-nvm)
 plugins+=(zsh-autosuggestions zsh-completions)
 plugins+=(docker kubectl terraform)
 # plugins+=(gcloud aws)
-
 
 source $ZSH/oh-my-zsh.sh
 
@@ -67,8 +68,8 @@ KEYTIMEOUT=1
 export PATH="$PATH:/home/$USER/.dotnet"
 export PATH="$PATH:/home/$USER/.cargo/bin"
 
-source /usr/share/doc/fzf/examples/key-bindings.zsh
-source /usr/share/doc/fzf/examples/completion.zsh
+zsh-defer source /usr/share/doc/fzf/examples/key-bindings.zsh
+zsh-defer source /usr/share/doc/fzf/examples/completion.zsh
 
 export NVM_DIR="$HOME/.nvm"
 export PATH="$PATH:/home/$USER/.kube/kubediff"
@@ -77,13 +78,13 @@ if hash stern 2>/dev/null; then
     source <(stern --completion=zsh)
 fi
 
-source "$HOME/.cargo/env"
+zsh-defer source "$HOME/.cargo/env"
 
 export VI_MODE_RESET_PROMPT_ON_MODE_CHANGE=true
 export VI_MODE_SET_CURSOR=true
 
-test -f ~/.kube/kubesess/scripts/sh/kubesess.sh && source ~/.kube/kubesess/scripts/sh/kubesess.sh
-test -f ~/.kube/kubesess/scripts/sh/completion.sh && source ~/.kube/kubesess/scripts/sh/completion.sh
+zsh-defer test -f ~/.kube/kubesess/scripts/sh/kubesess.sh && source ~/.kube/kubesess/scripts/sh/kubesess.sh
+zsh-defer test -f ~/.kube/kubesess/scripts/sh/completion.sh && source ~/.kube/kubesess/scripts/sh/completion.sh
 
 prompt_context() {
     KUBE_CTX=$(kubesess -c context)
@@ -110,9 +111,15 @@ ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg[blue]%}"
 PROMPT="%(?:%{$fg_bold[green]%}➜ :%{$fg_bold[red]%}➜ )"
 PROMPT+=' %{$fg[magenta]%}%c%{$reset_color%} $(git_prompt_info)'
 
-timezsh() {
-  shell=${1-$SHELL}
-  for i in $(seq 1 10); do /usr/bin/time $shell -i -c exit; done
-}
+# vd() {
+# 	viddy -d -n 1 --shell zsh  "$(which $1 | cut -d' ' -f 4-)"
+# }
+
+zsh-defer -c 'nvm install --lts'
+
+# timezsh() {
+#   shell=${1-$SHELL}
+#   for i in $(seq 1 10); do /usr/bin/time $shell -i -c exit; done
+# }
 
 # zprof
