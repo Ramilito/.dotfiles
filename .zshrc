@@ -2,6 +2,7 @@
 source ~/zsh-defer/zsh-defer.plugin.zsh
 
 export ZSH="/home/$USER/.oh-my-zsh"
+
 source "$HOME/.config/zsh/plugins.zsh"
 source $ZSH/oh-my-zsh.sh
 
