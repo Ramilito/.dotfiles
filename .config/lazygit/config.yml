@@ -12,7 +12,7 @@ gui:
     selectedLineBgColor:
       - '#545c7e'
     selectedRangeBgColor:
-      - default
+      - reverse
     cherryPickedCommitBgColor:
       - blue
     cherryPickedCommitFgColor:
