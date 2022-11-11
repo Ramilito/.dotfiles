@@ -20,3 +20,10 @@ Uses zsh-defer for faster startup time, custom kubectl prompt using kubesess for
 ## Installation
 
 [Use as a bare repo](https://www.atlassian.com/git/tutorials/dotfiles)
+
+```zsh
+git clone --bare https://github.com/Ramilito/.dotfiles.git $HOME/.dotfiles
+alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+config checkout
+
+```
