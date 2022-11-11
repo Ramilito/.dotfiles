@@ -2,7 +2,7 @@
 # if [[ -n $SSH_CONNECTION ]]; then
   # export EDITOR='vim'
 # else
-  export EDITOR='lvim'
+  export EDITOR='nvim'
 # fi
 bindkey -v
 bindkey -M vicmd 'V' edit-command-line # this remaps `vv` to `V` (but overrides `visual-mode`)
