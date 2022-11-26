@@ -1,7 +1,7 @@
 # zmodload zsh/zprof
 source ~/zsh-defer/zsh-defer.plugin.zsh
 
-export ZSH="/home/$USER/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 
 source "$HOME/.config/zsh/plugins.zsh"
 source $ZSH/oh-my-zsh.sh
@@ -19,3 +19,4 @@ source "$HOME/.config/zsh/vi.zsh"
 source "$HOME/.config/zsh/secrets.zsh"
 
 # zprof
+
