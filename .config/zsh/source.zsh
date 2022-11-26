@@ -1,5 +1,11 @@
-zsh-defer source /usr/share/doc/fzf/examples/key-bindings.zsh
-zsh-defer source /usr/share/doc/fzf/examples/completion.zsh
+
+if [[ $OSTYPE == 'darwin'* ]]; then
+  zsh-defer source "/opt/homebrew/opt/fzf/shell/key-bindings.zsh"
+  zsh-defer source "/opt/homebrew/opt/fzf/shell/completion.zsh"
+else
+  zsh-defer source /usr/share/doc/fzf/examples/key-bindings.zsh
+  zsh-defer source /usr/share/doc/fzf/examples/completion.zsh
+fi
 
 if hash stern 2>/dev/null; then
   source <(stern --completion=zsh)
