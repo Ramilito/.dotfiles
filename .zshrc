@@ -6,8 +6,7 @@ export ZSH="$HOME/.oh-my-zsh"
 source "$HOME/.config/zsh/plugins.zsh"
 source $ZSH/oh-my-zsh.sh
 
-# zsh-defer -c 'nvm install --lts'
-zsh-defer -c 'nvm install 17.9.1'
+zsh-defer -c 'nvm install --lts'
 
 source "$HOME/.config/zsh/aliases.zsh"
 source "$HOME/.config/zsh/functions.zsh"
