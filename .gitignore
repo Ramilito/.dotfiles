@@ -7,6 +7,7 @@
 !README.md
 !init_configs.sh
 !init_env.sh
-!/.config/
+!/.config/nvim
+!/.config/lvim
+!/.config/zsh
 
-/./config/lazygit/state.yml
