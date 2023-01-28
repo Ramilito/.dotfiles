@@ -1,1 +1,12 @@
-./config/lazygit/state.yml
+/*/
+/*
+!.zshrc
+!.gitignore
+!.gitconfig
+!.p10k.zsh
+!README.md
+!init_configs.sh
+!init_env.sh
+!/.config/
+
+/./config/lazygit/state.yml
