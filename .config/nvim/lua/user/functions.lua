@@ -28,8 +28,13 @@ end
 
 M.lazygit_toggle = function()
   local Terminal = require("toggleterm.terminal").Terminal
-  local lazygit = Terminal:new {
-    cmd = "lazygit",
+  local cmd = "lazygit"
+  if vim.loop.cwd() == vim.call('expand', '~/.config') then
+    print("Using lazygit in ~/.config")
+    cmd = 'lazygit --git-dir=$HOME/.dotfiles --work-tree=$HOME'
+  end
+  local lazygit = Terminal:new({
+    cmd = cmd,
     hidden = true,
     direction = "float",
     float_opts = {
@@ -40,10 +45,16 @@ M.lazygit_toggle = function()
     on_open = function(_)
       vim.cmd "startinsert!"
     end,
-    on_close = function(_) end,
+    on_close = close_terminal_on_zero_exit,
     count = 99,
-  }
+  })
   lazygit:toggle()
+end
+
+local function close_terminal_on_zero_exit(terminal, _, exit_code)
+    if exit_code == 0 then
+        terminal:close()
+    end
 end
 
 return M

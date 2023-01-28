@@ -12,7 +12,7 @@ end
 
 vim.opt.runtimepath:prepend(lazypath)
 
-require("user.settings")
+require("user.options")
 require("user.keymappings")
 require("user.highlights")
 
