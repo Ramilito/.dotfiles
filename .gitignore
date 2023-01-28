@@ -1,5 +1,6 @@
 /*/
 /*
+
 !.zshrc
 !.gitignore
 !.gitconfig
@@ -7,7 +8,12 @@
 !README.md
 !init_configs.sh
 !init_env.sh
-!/.config/nvim
-!/.config/lvim
-!/.config/zsh
 
+!/.config/
+/.config/*
+
+!/.config/nvim/
+!/.config/lvim/
+!/.config/kitty/
+!/.config/lazygit/
+!/.config/zsh/
