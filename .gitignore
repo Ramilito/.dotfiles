@@ -15,5 +15,6 @@
 !/.config/nvim/
 !/.config/lvim/
 !/.config/kitty/
+!/.config/wezterm/
 !/.config/lazygit/
 !/.config/zsh/
