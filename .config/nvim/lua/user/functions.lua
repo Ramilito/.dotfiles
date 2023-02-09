@@ -30,7 +30,6 @@ M.lazygit_toggle = function()
   local Terminal = require("toggleterm.terminal").Terminal
   local cmd = "lazygit"
   if vim.loop.cwd() == vim.call('expand', '~/.config') then
-    print("Using lazygit in ~/.config")
     cmd = 'lazygit --git-dir=$HOME/.dotfiles --work-tree=$HOME'
   end
   local lazygit = Terminal:new({
