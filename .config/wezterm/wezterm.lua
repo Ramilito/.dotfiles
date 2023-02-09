@@ -206,10 +206,10 @@ wezterm.on("format-tab-title", function(tab)
 end)
 
 wezterm.on("update-right-status", function(window)
-  window:set_right_status(wezterm.format({
-    { Attribute = { Intensity = "Bold" } },
-    { Text = wezterm.strftime(" %A, %d %B %Y %I:%M %p ") },
-  }))
+  -- window:set_right_status(wezterm.format({
+  --   { Attribute = { Intensity = "Bold" } },
+  --   { Text = wezterm.strftime(" %A, %d %B %Y %I:%M %p ") },
+  -- }))
 end)
 
 return {
