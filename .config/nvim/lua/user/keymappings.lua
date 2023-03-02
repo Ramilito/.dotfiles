@@ -87,5 +87,8 @@ vim.api.nvim_set_keymap('n', '<leader>gg', '<cmd>lua require("user.functions").l
   { desc = "Lazygit", noremap = true, silent = true })
 
 --norg
-vim.api.nvim_set_keymap('n', '<leader>nn', '<cmd>Neorg keybind norg core.norg.dirman.new.note<cr>',
+vim.api.nvim_set_keymap('n', '<leader>nn', '<cmd>Neorg workspace notes <cr> <bar> <cmd> Neorg keybind norg core.norg.dirman.new.note<cr>',
+  { desc = "Norg", noremap = true, silent = true })
+
+vim.api.nvim_set_keymap('n', '<leader>nj', '<cmd>Neorg workspace notes <cr> <bar> <cmd> Neorg journal today<cr>',
   { desc = "Norg", noremap = true, silent = true })

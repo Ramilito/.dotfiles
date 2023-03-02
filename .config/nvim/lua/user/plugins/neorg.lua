@@ -1,16 +1,17 @@
 local M = {
   {
     "nvim-neorg/neorg",
-    lazy = true,
-    ft = "norg",
+    -- lazy = true,
+    event = "VeryLazy",
+    -- ft = "norg",
     -- cmd = "Neorg mode norg",
-    keys = {
-      {
-        "<leader>nn",
-        "<cmd>Neorg keybind norg core.norg.dirman.new.note<cr>",
-        desc = "Neorg mode",
-      },
-    },
+    -- keys = {
+    --   {
+    --     "<leader>nn",
+    --     "<cmd>Neorg keybind norg core.norg.dirman.new.note<cr>",
+    --     desc = "Neorg mode",
+    --   },
+    -- },
     build = ":Neorg sync-parsers",
     opts = {
       load = {
