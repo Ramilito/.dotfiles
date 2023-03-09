@@ -59,18 +59,22 @@ return {
           -- "markdown",
           -- "wgsl",
         },
-
+        context_commentstring = {
+          enable = true
+        },
+        indent = {
+          enable = true
+        },
         incremental_selection = {
           enable = true,
           keymaps = {
-            init_selection = "<C-space>",
-            node_incremental = "<C-space>",
-            scope_incremental = "<C-s>",
-            node_decremental = "<C-bs>",
+            init_selection = "<C-Enter>", -- set to `false` to disable one of the mappings
+            node_incremental = "<C-Enter>",
+            scope_incremental = "grc",
+            node_decremental = "<C-S-Enter>",
           },
         },
       })
     end
   }
 }
-
