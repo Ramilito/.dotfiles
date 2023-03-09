@@ -3,26 +3,39 @@ local M = {
   -- { "williamboman/mason-lspconfig.nvim", lazy = false },
   "nvim-lua/plenary.nvim",
   -- "arkav/lualine-lsp-progress",
-  { "jose-elias-alvarez/typescript.nvim", lazy = true },
-  { "windwp/nvim-spectre", lazy = true },
-  { "mbbill/undotree", event = "BufReadPre" },
+  { "jose-elias-alvarez/typescript.nvim",          lazy = true },
+  { "windwp/nvim-spectre",                         lazy = true },
+  { "mbbill/undotree",                             event = "BufReadPre" },
   -- "folke/twilight.nvim",
-  { "akinsho/toggleterm.nvim", lazy = true },
-  { "famiu/bufdelete.nvim", cmd = "Bdelete" },
-  { "numToStr/Comment.nvim", event = "VeryLazy",
+  { "akinsho/toggleterm.nvim",                     lazy = true },
+  { "famiu/bufdelete.nvim",                        cmd = "Bdelete" },
+  { "JoosepAlviste/nvim-ts-context-commentstring", event = "VeryLazy" },
+  {
+    "numToStr/Comment.nvim",
+    event = "VeryLazy",
     config = function()
       require('Comment').setup()
     end
   },
-  { "MunifTanjim/nui.nvim", event = "VeryLazy", },
+  { "MunifTanjim/nui.nvim",     event = "VeryLazy", },
   { "dstein64/vim-startuptime", cmd = "StartupTime" },
-  {
-    "nvim-treesitter/nvim-treesitter-context",
-    event = "BufReadPre",
-    config = true,
-  },
+  -- {
+  --   "nvim-treesitter/nvim-treesitter-context",
+  --   event = "BufReadPre",
+  --   config = function()
+  --     require("treesitter-context.config").setup({
+  --       context_commentstring = {
+  --         enable = true
+  --       },
+  --       enable = true,
+  --       throttle = true,
+  --     })
+  --   end,
+  -- },
   { 'kevinhwang91/nvim-bqf' },
-  { "SmiteshP/nvim-navic", event = "VeryLazy",
+  {
+    "SmiteshP/nvim-navic",
+    event = "VeryLazy",
     config = function()
       vim.g.navic_silence = true
       require("nvim-navic").setup({ separator = " ", highlight = true, depth_limit = 5 })
