@@ -15,5 +15,5 @@ vim.opt.runtimepath:prepend(lazypath)
 require("user.options")
 require("user.keymappings")
 require("user.highlights")
-
+require("user.autocmd")
 require("user.lazy")
