@@ -20,7 +20,6 @@ local M = {
     { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
   },
   keys = {
-    { "<leader><space>", project_files, desc = "Find File" },
     { "<leader>sf", "<cmd> Telescope find_files <CR>", desc = "Search Files" },
     { "<leader>sa", "<cmd> Telescope find_files follow=true no_ignore=true hidden=true <CR>", desc = "Search All" },
     { "<leader>st", "<cmd> Telescope live_grep <CR>", desc = "Live Grep" },
