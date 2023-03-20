@@ -12,10 +12,13 @@ export RIPGREP_CONFIG_PATH=$HOME/.ripgreprpc
 export GO111MODULE=on
 export AWS_PROFILE="ramilito"
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
-
+export PATH="/opt/homebrew/opt/make/libexec/gnubin:$PATH"
 export PATH="$PATH:/home/$USER/.dotnet"
 export PATH="$PATH:/home/$USER/.cargo/bin"
-
+export USE_GKE_GCLOUD_AUTH_PLUGIN=True
 export NVM_DIR="$HOME/.nvm"
-export PATH="$PATH:/home/$USER/.kube/kubediff"
+export PATH="$PATH:$HOME/.kube/kubediff"
+export PATH="$PATH:/Users/ramidaghlawi/.dotnet/tools"
 
+export AWS_DEFAULT_OUTPUT="yaml"
+export AWS_PAGER="yq"

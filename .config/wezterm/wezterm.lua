@@ -317,34 +317,38 @@ return {
   },
   keys = {
     {
-      mods = "ALT",
-      key = [[+]],
-      action = wezterm.action({
-        SplitHorizontal = { domain = "CurrentPaneDomain" },
-      }),
-    },
-    {
       mods = "ALT|SHIFT",
-      key = [[_]],
+      key = [[RightArrow]],
       action = wezterm.action.SplitPane({
-        top_level = true,
+        top_level = false,
         direction = "Right",
         size = { Percent = 50 },
       }),
     },
     {
-      mods = "ALT",
-      key = [[-]],
-      action = wezterm.action({
-        SplitVertical = { domain = "CurrentPaneDomain" },
+      mods = "ALT|SHIFT",
+      key = [[LeftArrow]],
+      action = wezterm.action.SplitPane({
+        top_level = false,
+        direction = "Left",
+        size = { Percent = 50 },
       }),
     },
     {
       mods = "ALT|SHIFT",
-      key = [[+]],
+      key = [[DownArrow]],
       action = wezterm.action.SplitPane({
-        top_level = true,
+        top_level = false,
         direction = "Down",
+        size = { Percent = 50 },
+      }),
+    },
+    {
+      mods = "ALT|SHIFT",
+      key = [[UpArrow]],
+      action = wezterm.action.SplitPane({
+        top_level = false,
+        direction = "Up",
         size = { Percent = 50 },
       }),
     },
