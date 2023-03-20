@@ -10,31 +10,6 @@ local function font(opts)
   })
 end
 
-local function is_vi_process(pane)
-  return pane:get_foreground_process_name():find("n?vim") ~= nil
-end
-
-local function conditional_activate_pane(window, pane, pane_direction, vim_direction)
-  if is_vi_process(pane) then
-    window:perform_action(wezterm.action.SendKey({ key = vim_direction, mods = "ALT" }), pane)
-  else
-    window:perform_action(wezterm.action.ActivatePaneDirection(pane_direction), pane)
-  end
-end
-
-wezterm.on("ActivatePaneDirection-right", function(window, pane)
-  conditional_activate_pane(window, pane, "Right", "l")
-end)
-wezterm.on("ActivatePaneDirection-left", function(window, pane)
-  conditional_activate_pane(window, pane, "Left", "h")
-end)
-wezterm.on("ActivatePaneDirection-up", function(window, pane)
-  conditional_activate_pane(window, pane, "Up", "k")
-end)
-wezterm.on("ActivatePaneDirection-down", function(window, pane)
-  conditional_activate_pane(window, pane, "Down", "j")
-end)
-
 local catppuccin = {
   dark = {
     rosewater = "#F5E0DC",
@@ -177,6 +152,9 @@ local function get_process(tab)
   }
 
   local process_name = string.gsub(tab.active_pane.foreground_process_name, "(.*[/\\])(.*)", "%2")
+  if wezterm.target_triple == 'x86_64-pc-windows-msvc' then
+    process_name = string.gsub(tab.active_pane.foreground_process_name, "(.*[/\\])(.*)", "%3")
+  end
 
   return wezterm.format(
     process_icons[process_name]
@@ -212,7 +190,30 @@ wezterm.on("update-right-status", function(window)
   -- }))
 end)
 
+if wezterm.target_triple == 'x86_64-pc-windows-msvc' then
+  default_prog = { "wsl", "--cd", "~" }
+end
+
+-- if wezterm.target_triple == 'x86_64-apple-darwin' then
+--   -- Configs for OSX only
+--   -- font_dirs    = { '$HOME/.dotfiles/.fonts' }
+-- end
+--
+-- if wezterm.target_triple == 'x86_65-unknown-linux-gnu' then
+--   -- Configs for Linux only
+--   -- font_dirs    = { '$HOME/.dotfiles/.fonts' }
+-- end
+
+
 return {
+  wsl_domains = {
+    {
+      name = "WSL:Ubuntu-22.04",
+      distribution = "Ubuntu-22.04",
+      default_cwd = '~'
+    }
+  },
+  default_prog = default_prog,
   font = wezterm.font_with_fallback({
     "JetBrains Mono Medium",
     "Apple Color Emoji",
