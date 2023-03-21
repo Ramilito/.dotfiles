@@ -1,5 +1,6 @@
 local M = {
   'VonHeikemen/lsp-zero.nvim',
+  branch = 'v2.x',
   event = "VeryLazy",
   dependencies = {
     -- LSP Support
@@ -41,7 +42,6 @@ local M = {
     lsp.on_attach(function(client, bufnr)
       require('nvim-navic').attach(client, bufnr)
     end)
-
 
     lsp.setup()
 
