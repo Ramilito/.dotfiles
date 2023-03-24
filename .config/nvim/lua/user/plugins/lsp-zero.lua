@@ -4,22 +4,21 @@ local M = {
   event = "VeryLazy",
   dependencies = {
     -- LSP Support
-    'neovim/nvim-lspconfig',
-    'williamboman/mason.nvim',
-    'williamboman/mason-lspconfig.nvim',
+    { 'neovim/nvim-lspconfig' }, -- Required
+    { 'williamboman/mason.nvim' }, -- Optional
+    { 'williamboman/mason-lspconfig.nvim' }, -- Optional
 
     -- Autocompletion
-    'hrsh7th/nvim-cmp',
-    'hrsh7th/cmp-buffer',
-    'hrsh7th/cmp-path',
-    'saadparwaiz1/cmp_luasnip',
-    'hrsh7th/cmp-nvim-lsp',
-    'hrsh7th/cmp-nvim-lua',
+    { 'hrsh7th/nvim-cmp' }, -- Required
+    { 'hrsh7th/cmp-nvim-lsp' }, -- Required
+    { 'hrsh7th/cmp-buffer' }, -- Optional
+    { 'hrsh7th/cmp-path' }, -- Optional
+    { 'saadparwaiz1/cmp_luasnip' }, -- Optional
+    { 'hrsh7th/cmp-nvim-lua' }, -- Optional
 
     -- Snippets
-    'L3MON4D3/LuaSnip',
-    -- Snippet Collection (Optional)
-    'rafamadriz/friendly-snippets',
+    { 'L3MON4D3/LuaSnip' }, -- Required
+    { 'rafamadriz/friendly-snippets' }, -- Optional
   },
   config = function()
     local lsp = require('lsp-zero')
@@ -30,6 +29,7 @@ local M = {
     local cmp_mappings = lsp.defaults.cmp_mappings({
       ['<C-Space>'] = cmp.mapping.complete(),
       ['<C-e>'] = cmp.mapping.abort(),
+      ['<CR>'] = cmp.mapping.confirm({ select = true }),
     })
 
     local cmp_sources = lsp.defaults.cmp_sources({ name = "copilot" })
