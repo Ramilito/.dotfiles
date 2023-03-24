@@ -1,11 +1,11 @@
 lvim.builtin.which_key.mappings = {
-  ["q"] = { "<cmd>lua require('lvim.utils.functions').smart_quit()<CR>", "Quit" },
+  -- ["q"] = { "<cmd>lua require('lvim.utils.functions').smart_quit()<CR>", "Quit" },
   [";"] = { "<cmd>Alpha<CR>", "Dashboard" },
   ["/"] = { "<Plug>(comment_toggle_linewise_current)", "Comment toggle current line" },
   ["c"] = { "<cmd>BufferKill<CR>", "Close Buffer" },
   ["C"] = { "<cmd>lua require('user.utils').close_all_but_current()<CR>", "Close all but current" },
   ["h"] = { "<cmd>nohlsearch<CR>", "No Highlight" },
-  e = { "<CMD>NeoTreeRevealToggle<CR>", "Explorer" },
+  -- e = { "<CMD>NeoTreeRevealToggle<CR>", "Explorer" },
   l = {
     name = "LSP",
     a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code Action" },

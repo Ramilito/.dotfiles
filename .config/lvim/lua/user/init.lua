@@ -30,7 +30,7 @@
 require("user.plugins")
 require("user.plugins.leap")
 require("user.plugins.telescope")
-require("user.plugins.whichkey")
+-- require("user.plugins.whichkey")
 
 require("user.settings")
-require("user.keymappings")
+-- require("user.keymappings")

@@ -7,8 +7,8 @@ vim.api.nvim_set_keymap('n', 'k', '<nop>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', 'l', '<nop>', { noremap = true, silent = true })
 
 -- Quit
-vim.api.nvim_set_keymap('n', '<leader>q', '<cmd>lua require("user.functions").smart_quit()<CR>',
-  { desc = "Quit", noremap = true, silent = true })
+-- vim.api.nvim_set_keymap('n', '<leader>q', '<cmd>lua require("user.functions").smart_quit()<CR>',
+--   { desc = "Quit", noremap = true, silent = true })
 
 -- Save buffer
 vim.api.nvim_set_keymap("n", "<C-s>", ":w<cr>", { desc = "Buffer save", noremap = true, silent = true })
