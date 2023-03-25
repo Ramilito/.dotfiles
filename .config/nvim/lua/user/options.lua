@@ -6,7 +6,7 @@ vim.o.wrap = false
 
 vim.o.ignorecase = true
 vim.o.smartcase = true
-vim.o.shortmess = "filnxtToOFWIcCS"
+vim.o.shortmess = "filnxtToOFWIcC"
 
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
