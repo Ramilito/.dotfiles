@@ -4,6 +4,7 @@ local M = {
   "nvim-lua/plenary.nvim",
   -- "arkav/lualine-lsp-progress",
   { "jose-elias-alvarez/typescript.nvim",          lazy = true },
+  { "jose-elias-alvarez/null-ls.nvim",             lazy = true },
   { "windwp/nvim-spectre",                         lazy = true },
   { "mbbill/undotree",                             event = "BufReadPre" },
   -- "folke/twilight.nvim",
