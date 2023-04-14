@@ -1,43 +1,43 @@
 local vim = vim;
 local function augroup(name)
-  return vim.api.nvim_create_augroup("lazyvim_" .. name, { clear = true })
+	return vim.api.nvim_create_augroup("lazyvim_" .. name, { clear = true })
 end
 
 vim.api.nvim_create_autocmd("TextYankPost", {
-  group = augroup("highlight_yank"),
-  callback = function()
-    vim.highlight.on_yank()
-  end,
+	group = augroup("highlight_yank"),
+	callback = function()
+		vim.highlight.on_yank()
+	end,
 })
 
 vim.api.nvim_create_autocmd({ "CursorMoved", "VimEnter" }, {
-  group = augroup("status_line"),
-  callback = function()
-    local winbar_filetype_exclude = {
-      "help",
-      "startify",
-      "dashboard",
-      "packer",
-      "neo-tree",
-      "neogitstatus",
-      "NvimTree",
-      "Trouble",
-      "alpha",
-      "lir",
-      "Outline",
-      "spectre_panel",
-      "toggleterm",
-      "TelescopePrompt",
-      "prompt",
-    }
+	group = augroup("status_line"),
+	callback = function()
+		local winbar_filetype_exclude = {
+			"help",
+			"startify",
+			"dashboard",
+			"packer",
+			"neo-tree",
+			"neogitstatus",
+			"NvimTree",
+			"Trouble",
+			"alpha",
+			"lir",
+			"Outline",
+			"spectre_panel",
+			"toggleterm",
+			"TelescopePrompt",
+			"prompt",
+		}
 
-    if vim.tbl_contains(winbar_filetype_exclude, vim.bo.filetype) then
-      vim.opt_local.winbar = nil
-      return
-    end
+		if vim.tbl_contains(winbar_filetype_exclude, vim.bo.filetype) then
+			vim.opt_local.winbar = nil
+			return
+		end
 
-    local win_number = vim.api.nvim_get_current_win()
-    local config = vim.api.nvim_win_get_config(win_number)
+		local win_number = vim.api.nvim_get_current_win()
+		local config = vim.api.nvim_win_get_config(win_number)
 
     if config.relative == "" then
       -- opt_local.winbar = "%{%v:lua.require'user.winbar'.get_winbar()%}"
@@ -52,10 +52,24 @@ vim.api.nvim_create_autocmd({ "CursorMoved", "VimEnter" }, {
 
 -- wrap and check for spell in text filetypes
 vim.api.nvim_create_autocmd("FileType", {
-  group = augroup("wrap_spell"),
-  pattern = { "gitcommit", "markdown", "norg" },
-  callback = function()
-    vim.opt_local.wrap = true
-    vim.opt_local.spell = true
-  end,
+	group = augroup("wrap_spell"),
+	pattern = { "gitcommit", "markdown", "norg" },
+	callback = function()
+		vim.opt_local.wrap = true
+		vim.opt_local.spell = true
+	end,
+})
+
+vim.api.nvim_create_autocmd({ "TextChanged", "TextChangedI", "InsertLeave" }, {
+	group = augroup("auto-save"),
+	callback = function()
+		local filetype_include = {
+			"markdown",
+			"norg",
+		}
+		if vim.tbl_contains(filetype_include, vim.bo.filetype) then
+			vim.cmd("silent! write")
+			return
+		end
+	end,
 })
