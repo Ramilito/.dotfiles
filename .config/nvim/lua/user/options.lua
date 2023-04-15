@@ -2,8 +2,6 @@ local opt = vim.opt
 local o = vim.o
 local g = vim.g
 
-vim.o.number = true
-vim.o.relativenumber = true
 o.wrap = false
 
 o.ignorecase = true
@@ -12,6 +10,12 @@ o.shortmess = "filnxtToOFWIcC"
 
 g.mapleader = " "
 g.maplocalleader = " "
+
+-- Statuscolumn
+o.number = true
+o.relativenumber = true
+-- opt.foldcolumn     = "1"
+-- opt.signcolumn = "number"
 
 -- Set colorscheme
 -- vim.o.termguicolors = true
@@ -26,7 +30,6 @@ opt.backup = false
 opt.undodir = os.getenv("HOME") .. "/.config/nvim/undodir"
 opt.undofile = true
 
--- opt.foldcolumn     = "1"
 opt.foldenable     = true
 -- opt.foldexpr       = "nvim_treesitter#foldexpr()"
 opt.foldlevel      = 99 -- was 1
@@ -54,7 +57,6 @@ opt.shiftwidth = 2
 opt.showmode = false -- dont show mode since we have a statusline
 opt.showtabline = 0
 opt.sidescrolloff = 8 -- Columns of context
-opt.signcolumn = "yes"
 opt.smartindent = true -- Insert indents automatically
 opt.spelllang = { "en" }
 opt.splitkeep = "screen"
