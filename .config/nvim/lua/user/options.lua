@@ -1,15 +1,17 @@
 local opt = vim.opt
+local o = vim.o
+local g = vim.g
 
 vim.o.number = true
 vim.o.relativenumber = true
-vim.o.wrap = false
+o.wrap = false
 
-vim.o.ignorecase = true
-vim.o.smartcase = true
-vim.o.shortmess = "filnxtToOFWIcC"
+o.ignorecase = true
+o.smartcase = true
+o.shortmess = "filnxtToOFWIcC"
 
-vim.g.mapleader = " "
-vim.g.maplocalleader = " "
+g.mapleader = " "
+g.maplocalleader = " "
 
 -- Set colorscheme
 -- vim.o.termguicolors = true
@@ -60,7 +62,7 @@ opt.timeoutlen = 1000
 opt.updatetime = 50
 
 if vim.fn.has "wsl" == 1 then
-  vim.g.clipboard = {
+  g.clipboard = {
     name = "win32yank-wsl",
     copy = {
       ["+"] = "win32yank.exe -i --crlf",
