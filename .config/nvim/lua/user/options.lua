@@ -37,8 +37,9 @@ opt.foldnestmax    = 10
 
 opt.cmdheight = 1
 opt.completeopt = "menu,menuone,noselect"
-opt.conceallevel = 0 -- Hide * markup for bold and italic
-opt.cursorline = true -- Enable highlighting of the current line
+-- opt.conceallevel = 2 -- Hide * markup for bold and italic
+-- opt.concealcursor = "nc"
+-- opt.cursorline = true -- Enable highlighting of the current line
 opt.expandtab = true
 opt.grepformat = "%f:%l:%c:%m"
 opt.grepprg = "rg --vimgrep"
