@@ -113,10 +113,10 @@ _G.StatusColumn = {
 }
 
 return StatusColumn.build({
-  StatusColumn.sections.sign_column,
+  -- StatusColumn.sections.sign_column,
   StatusColumn.sections.line_number,
-  StatusColumn.sections.spacing,
+  -- StatusColumn.sections.spacing,
   StatusColumn.sections.folds,
-  StatusColumn.sections.border,
-  StatusColumn.sections.padding
+  -- StatusColumn.sections.border,
+  -- StatusColumn.sections.padding
 })
