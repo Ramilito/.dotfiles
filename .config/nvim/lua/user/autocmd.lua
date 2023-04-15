@@ -47,7 +47,7 @@ vim.api.nvim_create_autocmd({ "CursorMoved", "VimEnter" }, {
     else
       vim.opt_local.winbar = nil
     end
-  end,
+ end,
 })
 
 -- wrap and check for spell in text filetypes
