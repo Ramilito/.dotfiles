@@ -22,7 +22,6 @@ return {
           "graphql",
           "hcl",
           "hcl",
-          "help",
           "html",
           "http",
           "java",
