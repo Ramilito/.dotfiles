@@ -35,7 +35,7 @@ opt.foldnestmax    = 10
 
 opt.cmdheight = 1
 opt.completeopt = "menu,menuone,noselect"
-opt.conceallevel = 3 -- Hide * markup for bold and italic
+opt.conceallevel = 0 -- Hide * markup for bold and italic
 opt.cursorline = true -- Enable highlighting of the current line
 opt.expandtab = true
 opt.grepformat = "%f:%l:%c:%m"

@@ -18,14 +18,11 @@ local M = {
     end,
   },
 
-  -- { "williamboman/mason-lspconfig.nvim", lazy = false },
   "nvim-lua/plenary.nvim",
-  -- "arkav/lualine-lsp-progress",
   { "jose-elias-alvarez/typescript.nvim",          lazy = true },
   { "jose-elias-alvarez/null-ls.nvim",             lazy = true },
   { "windwp/nvim-spectre",                         lazy = true },
   { "mbbill/undotree",                             event = "BufReadPre" },
-  -- "folke/twilight.nvim",
   { "akinsho/toggleterm.nvim",                     lazy = true },
   { "famiu/bufdelete.nvim",                        cmd = "Bdelete" },
   { "JoosepAlviste/nvim-ts-context-commentstring", event = "VeryLazy" },
@@ -38,6 +35,17 @@ local M = {
   },
   { "MunifTanjim/nui.nvim",     event = "VeryLazy", },
   { "dstein64/vim-startuptime", cmd = "StartupTime" },
+  { 'kevinhwang91/nvim-bqf' },
+  {
+    "SmiteshP/nvim-navic",
+    event = "VeryLazy",
+    config = function()
+      vim.g.navic_silence = true
+      require("nvim-navic").setup({ separator = " ", highlight = true, depth_limit = 5 })
+    end,
+  },
+  { "norcalli/nvim-terminal.lua", ft = "terminal", config = true, },
+
   -- {
   --   "nvim-treesitter/nvim-treesitter-context",
   --   event = "BufReadPre",
@@ -51,16 +59,12 @@ local M = {
   --     })
   --   end,
   -- },
-  { 'kevinhwang91/nvim-bqf' },
-  {
-    "SmiteshP/nvim-navic",
-    event = "VeryLazy",
-    config = function()
-      vim.g.navic_silence = true
-      require("nvim-navic").setup({ separator = " ", highlight = true, depth_limit = 5 })
-    end,
-  },
-  { "norcalli/nvim-terminal.lua", ft = "terminal", config = true, },
+
+  -- "arkav/lualine-lsp-progress",
+  --
+  -- { "williamboman/mason-lspconfig.nvim", lazy = false },
+
+  -- "folke/twilight.nvim",
 }
 
 return M
