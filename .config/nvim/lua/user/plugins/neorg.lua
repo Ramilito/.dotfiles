@@ -29,6 +29,13 @@ local M = {
     dependencies = { { "nvim-lua/plenary.nvim" } },
   }
 }
-
+require("nvim-web-devicons").set_icon({
+	norg = {
+		icon = "",
+		color = "#56949f",
+		cterm_color = "65",
+		name = "Norg",
+	},
+})
 
 return M
