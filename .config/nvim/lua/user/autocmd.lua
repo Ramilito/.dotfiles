@@ -42,7 +42,8 @@ vim.api.nvim_create_autocmd({ "CursorMoved", "VimEnter" }, {
     if config.relative == "" then
       -- opt_local.winbar = "%{%v:lua.require'user.winbar'.get_winbar()%}"
       -- opt_local.statuscolumn = "%=%s%=%@SignCb@%=%{v:relnum?v:relnum:v:lnum}%C|"
-      vim.opt_local.winbar = "%v " .. require("user.winbar").get_winbar()
+      -- vim.opt_local.winbar = "%v " .. require("user.winbar").get_winbar()
+      vim.opt_local.winbar = require("user.winbar").get_winbar()
       vim.opt_local.statuscolumn = require("user.statuscolumn")
     else
       vim.opt_local.winbar = nil
