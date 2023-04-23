@@ -15,7 +15,7 @@ g.maplocalleader = " "
 o.number = true
 o.relativenumber = true
 -- opt.foldcolumn     = "1"
--- opt.signcolumn = "number"
+opt.signcolumn = "number"
 
 -- Set colorscheme
 -- vim.o.termguicolors = true
