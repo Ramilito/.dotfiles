@@ -3,45 +3,71 @@ local wezterm = require("wezterm")
 local is_dark = true
 local act = wezterm.action
 
-local function font(opts)
-	return wezterm.font_with_fallback({
-		opts,
-		"Symbols Nerd Font Mono",
-	})
-end
+-- local catppuccin = {
+-- 	dark = {
+-- 		rosewater = "#F5E0DC",
+-- 		flamingo = "#F2CDCD",
+-- 		pink = "#F5C2E7",
+-- 		mauve = "#CBA6F7",
+-- 		red = "#F38BA8",
+-- 		maroon = "#EBA0AC",
+-- 		peach = "#FAB387",
+-- 		yellow = "#F9E2AF",
+-- 		green = "#A6E3A1",
+-- 		teal = "#94E2D5",
+-- 		sky = "#89DCEB",
+-- 		sapphire = "#74C7EC",
+-- 		blue = "#89B4FA",
+-- 		lavender = "#B4BEFE",
+-- 		text = "#CDD6F4",
+-- 		subtext1 = "#BAC2DE",
+-- 		subtext0 = "#A6ADC8",
+-- 		overlay2 = "#9399B2",
+-- 		overlay1 = "#7F849C",
+-- 		overlay0 = "#6C7086",
+-- 		surface2 = "#585B70",
+-- 		surface1 = "#45475A",
+-- 		surface0 = "#313244",
+-- 		base = "#1E1E2E",
+-- 		mantle = "#181825",
+-- 		crust = "#11111B",
+-- 	},
+-- }
+-- local colors = is_dark and catppuccin.dark or catppuccin.light
 
-local catppuccin = {
-	dark = {
-		rosewater = "#F5E0DC",
-		flamingo = "#F2CDCD",
-		pink = "#F5C2E7",
-		mauve = "#CBA6F7",
-		red = "#F38BA8",
-		maroon = "#EBA0AC",
-		peach = "#FAB387",
-		yellow = "#F9E2AF",
-		green = "#A6E3A1",
-		teal = "#94E2D5",
-		sky = "#89DCEB",
-		sapphire = "#74C7EC",
-		blue = "#89B4FA",
-		lavender = "#B4BEFE",
-		text = "#CDD6F4",
-		subtext1 = "#BAC2DE",
-		subtext0 = "#A6ADC8",
-		overlay2 = "#9399B2",
-		overlay1 = "#7F849C",
-		overlay0 = "#6C7086",
-		surface2 = "#585B70",
-		surface1 = "#45475A",
-		surface0 = "#313244",
-		base = "#1E1E2E",
-		mantle = "#181825",
-		crust = "#11111B",
-	},
+
+local colors = {
+	base = "#1e1e1e",
+	blue = "#569CD6",
+	green = "#608B4E",
+	red = "#F44747",
+	orange = "#CE9178",
+	gray = "#808080",
+	violet = "#646695",
+	yellow = "#DCDCAA",
+	pink = "#C586C0",
+	teal = "#4EC9B0",
+
+	rosewater = "#F5E0DC",
+	flamingo = "#F2CDCD",
+	mauve = "#CBA6F7",
+	maroon = "#EBA0AC",
+	peach = "#FAB387",
+	sky = "#89DCEB",
+	sapphire = "#74C7EC",
+	lavender = "#B4BEFE",
+	text = "#CDD6F4",
+	subtext1 = "#BAC2DE",
+	subtext0 = "#A6ADC8",
+	overlay2 = "#9399B2",
+	overlay1 = "#7F849C",
+	overlay0 = "#6C7086",
+	surface2 = "#585B70",
+	surface1 = "#45475A",
+	surface0 = "#313244",
+	mantle = "#181825",
+	crust = "#11111B",
 }
-
-local colors = is_dark and catppuccin.dark or catppuccin.light
 
 local function get_process(tab)
 	local process_icons = {
@@ -192,7 +218,7 @@ return {
 	warn_about_missing_glyphs = false,
 	show_update_window = false,
 	check_for_updates = false,
-	line_height = 0.9,
+	line_height = 1.0,
 	send_composed_key_when_left_alt_is_pressed = true,
 	window_decorations = "RESIZE",
 	window_close_confirmation = "NeverPrompt",
@@ -206,8 +232,8 @@ return {
 	initial_cols = 150,
 	initial_rows = 50,
 	inactive_pane_hsb = {
-		saturation = 1.0,
-		brightness = is_dark and 0.85 or 0.95,
+		saturation = 0.8,
+		brightness = 0.7,
 	},
 	enable_scroll_bar = false,
 	-- tab_bar_at_bottom = true,
