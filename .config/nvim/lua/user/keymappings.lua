@@ -1,4 +1,4 @@
-local map = vim.map
+local map = vim.api.nvim_set_keymap
 
 -- unmaps
 map('n', 'q', '<nop>', { noremap = true, silent = true })
