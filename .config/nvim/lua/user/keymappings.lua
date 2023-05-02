@@ -94,3 +94,12 @@ map('n', '<leader>nn', '<cmd>Neorg workspace notes <cr> <bar> <cmd> Neorg keybin
 
 map('n', '<leader>nj', '<cmd>Neorg workspace notes <cr> <bar> <cmd> Neorg journal today<cr>',
   { desc = "Norg", noremap = true, silent = true })
+
+
+-- trouble
+map("n", "<leader>xx", "<cmd>TroubleToggle<cr>", {silent = true, noremap = true})
+map("n", "<leader>xw", "<cmd>TroubleToggle workspace_diagnostics<cr>", {silent = true, noremap = true})
+map("n", "<leader>xd", "<cmd>TroubleToggle document_diagnostics<cr>", {silent = true, noremap = true})
+map("n", "<leader>xl", "<cmd>TroubleToggle loclist<cr>", {silent = true, noremap = true})
+map("n", "<leader>xq", "<cmd>TroubleToggle quickfix<cr>", {silent = true, noremap = true})
+map("n", "gR", "<cmd>TroubleToggle lsp_references<cr>", {silent = true, noremap = true})
