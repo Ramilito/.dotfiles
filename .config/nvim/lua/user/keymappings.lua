@@ -115,9 +115,9 @@ map(
 )
 
 -- trouble
-map("n", "<leader>xx", "<cmd>TroubleToggle<cr>", { silent = true, noremap = true })
-map("n", "<leader>xw", "<cmd>TroubleToggle workspace_diagnostics<cr>", { silent = true, noremap = true })
-map("n", "<leader>xd", "<cmd>TroubleToggle document_diagnostics<cr>", { silent = true, noremap = true })
-map("n", "<leader>xl", "<cmd>TroubleToggle loclist<cr>", { silent = true, noremap = true })
-map("n", "<leader>xq", "<cmd>TroubleToggle quickfix<cr>", { silent = true, noremap = true })
-map("n", "gR", "<cmd>TroubleToggle lsp_references<cr>", { silent = true, noremap = true })
+map("n", "<leader>xx", "<cmd>TroubleToggle<cr>", { desc = "Toggle", silent = true, noremap = true })
+map("n", "<leader>xw", "<cmd>TroubleToggle workspace_diagnostics<cr>", { desc = "Workspace", silent = true, noremap = true })
+map("n", "<leader>xd", "<cmd>TroubleToggle document_diagnostics<cr>", { desc = "Document", silent = true, noremap = true })
+map("n", "<leader>xl", "<cmd>TroubleToggle loclist<cr>", { desc = "Loclist", silent = true, noremap = true })
+map("n", "<leader>xq", "<cmd>TroubleToggle quickfix<cr>", { desc = "Quickfix", silent = true, noremap = true })
+map("n", "gR", "<cmd>TroubleToggle lsp_references<cr>", { desc = "References", silent = true, noremap = true })
