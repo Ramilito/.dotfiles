@@ -16,7 +16,8 @@ gui:
       - cyan
     inactiveBorderColor:
       - '#3d59a1'
-    lightTheme: false    optionsTextColor:
+    lightTheme: false    
+    optionsTextColor:
       - '#545c7e'
     selectedLineBgColor:
       - '#545c7e'
