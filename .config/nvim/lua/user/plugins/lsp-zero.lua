@@ -29,7 +29,7 @@ local M = {
     local cmp_mappings = lsp.defaults.cmp_mappings({
       ['<C-Space>'] = cmp.mapping.complete(),
       ['<C-e>'] = cmp.mapping.abort(),
-      ['<CR>'] = cmp.mapping.confirm({ select = true }),
+      ['<CR>'] = cmp.mapping.confirm({behavior = cmp.ConfirmBehavior.Replace, select = true }),
     })
 
     local cmp_sources = lsp.defaults.cmp_sources({ name = "copilot" })
