@@ -64,9 +64,6 @@ opt.tabstop = 2
 opt.timeoutlen = 1000
 opt.updatetime = 50
 
-vim.lsp.set_log_level("off")
-
-
 if vim.fn.has "wsl" == 1 then
   g.clipboard = {
     name = "win32yank-wsl",
