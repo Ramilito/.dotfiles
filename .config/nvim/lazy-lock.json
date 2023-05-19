@@ -52,4 +52,3 @@
   "vscode.nvim": { "branch": "main", "commit": "3ae7e188f0b58b29bc1b5d3698e47ce54f51caf9" },
   "which-key.nvim": { "branch": "main", "commit": "e271c28118998c93a14d189af3395812a1aa646c" },
   "zen-mode.nvim": { "branch": "main", "commit": "68f554702de63f4b7b6b6d4bcb10178f41a0acc7" }
-}
