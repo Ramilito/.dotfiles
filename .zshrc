@@ -20,4 +20,3 @@ source "$HOME/.config/zsh/vi.zsh"
 source "$HOME/.config/zsh/secrets.zsh"
 
 # zprof
-
