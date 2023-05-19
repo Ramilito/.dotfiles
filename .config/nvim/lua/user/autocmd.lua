@@ -1,4 +1,4 @@
-local vim = vim;
+local vim = vim
 local function augroup(name)
 	return vim.api.nvim_create_augroup("lazyvim_" .. name, { clear = true })
 end
@@ -39,15 +39,15 @@ vim.api.nvim_create_autocmd({ "CursorMoved", "VimEnter" }, {
 		local win_number = vim.api.nvim_get_current_win()
 		local config = vim.api.nvim_win_get_config(win_number)
 
-    if config.relative == "" then
-      -- opt_local.winbar = "%{%v:lua.require'user.winbar'.get_winbar()%}"
-      -- opt_local.statuscolumn = "%=%s%=%@SignCb@%=%{v:relnum?v:relnum:v:lnum}%C|"
-      vim.opt_local.winbar = " " .. require("user.winbar").get_winbar()
-      vim.opt_local.statuscolumn = require("user.statuscolumn")
-    else
-      vim.opt_local.winbar = nil
-    end
- end,
+		if config.relative == "" then
+			-- opt_local.winbar = "%{%v:lua.require'user.winbar'.get_winbar()%}"
+			-- opt_local.statuscolumn = "%=%s%=%@SignCb@%=%{v:relnum?v:relnum:v:lnum}%C|"
+			vim.opt_local.winbar = " " .. require("user.winbar").get_winbar()
+			vim.opt_local.statuscolumn = require("user.statuscolumn")
+		else
+			vim.opt_local.winbar = nil
+		end
+	end,
 })
 
 -- wrap and check for spell in text filetypes
@@ -61,15 +61,9 @@ vim.api.nvim_create_autocmd("FileType", {
 })
 
 vim.api.nvim_create_autocmd({ "TextChanged", "TextChangedI", "InsertLeave" }, {
+  pattern = "*.norg",
 	group = augroup("auto-save"),
 	callback = function()
-		local filetype_include = {
-			"markdown",
-			"norg",
-		}
-		if vim.tbl_contains(filetype_include, vim.bo.filetype) then
-			vim.cmd("silent! write")
-			return
-		end
+		vim.cmd("silent! update")
 	end,
 })
