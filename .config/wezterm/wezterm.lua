@@ -219,7 +219,7 @@ return {
 	show_update_window = false,
 	check_for_updates = false,
 	line_height = 1.0,
-	send_composed_key_when_left_alt_is_pressed = true,
+	send_composed_key_when_left_alt_is_pressed = false,
 	window_decorations = "RESIZE",
 	window_close_confirmation = "NeverPrompt",
 	audible_bell = "Disabled",
