@@ -29,6 +29,14 @@ local M = {
 		end,
 	},
 	{ "nvim-lua/plenary.nvim" },
+	{
+		"echasnovski/mini.pairs",
+		version = false,
+		event = "VeryLazy",
+		config = function()
+			require("mini.pairs").setup()
+		end,
+	},
 	{ "jose-elias-alvarez/typescript.nvim", lazy = true },
 	{ "jose-elias-alvarez/null-ls.nvim", lazy = true },
 	{ "windwp/nvim-spectre", lazy = true },
@@ -45,7 +53,6 @@ local M = {
 	},
 	{ "MunifTanjim/nui.nvim", event = "VeryLazy" },
 	{ "dstein64/vim-startuptime", cmd = "StartupTime" },
-	{ "kevinhwang91/nvim-bqf" },
 	{
 		"SmiteshP/nvim-navic",
 		event = "VeryLazy",
