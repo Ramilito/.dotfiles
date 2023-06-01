@@ -355,11 +355,11 @@ return {
 			key = "n",
 			action = wezterm.action({ SpawnTab = "CurrentPaneDomain" }),
 		},
-		{
-			key = "Q",
-			mods = "ALT",
-			action = wezterm.action({ CloseCurrentTab = { confirm = false } }),
-		},
+		-- {
+		-- 	key = "Q",
+		-- 	mods = "CTRL|ALT",
+		-- 	action = wezterm.action({ CloseCurrentTab = { confirm = false } }),
+		-- },
 		{ key = "q", mods = "CTRL|ALT", action = wezterm.action.CloseCurrentPane({ confirm = false }) },
 		{ key = "z", mods = "ALT", action = wezterm.action.TogglePaneZoomState },
 		{ key = "F11", mods = "", action = wezterm.action.ToggleFullScreen },
