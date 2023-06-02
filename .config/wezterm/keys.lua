@@ -1,36 +1,9 @@
-local wezterm = require 'wezterm'
+local wezterm = require("wezterm")
+local act = wezterm.action
 
-local module = {
-	-- 	{
-	-- 		key = "UpArrow",
-	-- 		mods = "CTRL|SHIFT|ALT",
-	-- 		action = wezterm.action.DisableDefaultAssignment,
-	-- 	},
-	-- 	{
-	-- 		key = "DownArrow",
-	-- 		mods = "CTRL|SHIFT|ALT",
-	-- 		action = wezterm.action.DisableDefaultAssignment,
-	-- 	},
-	-- 	{
-	-- 		key = "DownArrow",
-	-- 		mods = "CTRL|SHIFT",
-	-- 		action = wezterm.action.DisableDefaultAssignment,
-	-- 	},
-	-- 	{
-	-- 		key = "UpArrow",
-	-- 		mods = "CTRL|SHIFT",
-	-- 		action = wezterm.action.DisableDefaultAssignment,
-	-- 	},
-	-- 	{
-	-- 		key = "LeftArrow",
-	-- 		mods = "CTRL|SHIFT",
-	-- 		action = wezterm.action.DisableDefaultAssignment,
-	-- 	},
-	-- 	{
-	-- 		key = "RightArrow",
-	-- 		mods = "CTRL|SHIFT",
-	-- 		action = wezterm.action.DisableDefaultAssignment,
-	-- 	},
+local module = {}
+
+local keys = {
 	{
 		mods = "ALT|SHIFT",
 		key = [[RightArrow]],
@@ -72,13 +45,19 @@ local module = {
 		mods = "LEADER",
 		action = wezterm.action.ActivateKeyTable({
 			name = "resize_pane",
+			timeout_milliseconds = 1000,
 			one_shot = false,
 		}),
 	},
-	-- { key = "LeftArrow", mods = "LEADER", action = act.AdjustPaneSize({ "Left", 4 }) },
-	-- { key = "DownArrow", mods = "SHIFT|ALT|CTRL", action = act.AdjustPaneSize({ "Down", 4 }) },
-	-- { key = "UpArrow", mods = "CTRL|SHIFT|ALT", action = act.AdjustPaneSize({ "Up", 4 }) },
-	-- { key = "RightArrow", mods = "SHIFT|ALT|CTRL", action = act.AdjustPaneSize({ "Right", 4 }) },
+	{
+		key = "p",
+		mods = "LEADER",
+		action = act.ActivateKeyTable({
+			name = "activate_pane",
+			timeout_milliseconds = 1000,
+			one_shot = false,
+		}),
+	},
 	{
 		mods = "ALT",
 		key = "n",
@@ -111,5 +90,98 @@ local module = {
 	{ key = "8", mods = "ALT", action = wezterm.action({ ActivateTab = 7 }) },
 	{ key = "9", mods = "ALT", action = wezterm.action({ ActivateTab = 8 }) },
 }
+
+local key_tables = {
+	resize_pane = {
+		{ key = "LeftArrow", action = act.AdjustPaneSize({ "Left", 2 }) },
+		{ key = "RightArrow", action = act.AdjustPaneSize({ "Right", 2 }) },
+		{ key = "UpArrow", action = act.AdjustPaneSize({ "Up", 2 }) },
+		{ key = "DownArrow", action = act.AdjustPaneSize({ "Down", 2 }) },
+
+		-- Cancel the mode by pressing escape
+		{ key = "Escape", action = "PopKeyTable" },
+	},
+	activate_pane = {
+		{
+			key = "LeftArrow",
+			action = wezterm.action.SplitPane({
+				top_level = false,
+				direction = "Left",
+				size = { Percent = 50 },
+			}),
+		},
+		{
+			key = "RightArrow",
+			action = wezterm.action.SplitPane({
+				top_level = false,
+				direction = "Right",
+				size = { Percent = 50 },
+			}),
+		},
+		{
+			key = "UpArrow",
+			action = wezterm.action.SplitPane({
+				top_level = false,
+				direction = "Up",
+				size = { Percent = 50 },
+			}),
+		},
+		{
+			key = "DownArrow",
+			action = wezterm.action.SplitPane({
+				top_level = false,
+				direction = "Down",
+				size = { Percent = 50 },
+			}),
+		},
+	},
+}
+
+local keys_disabled = {
+	{
+		key = "UpArrow",
+		mods = "CTRL|SHIFT|ALT",
+		action = wezterm.action.DisableDefaultAssignment,
+	},
+	{
+		key = "DownArrow",
+		mods = "CTRL|SHIFT|ALT",
+		action = wezterm.action.DisableDefaultAssignment,
+	},
+	-- {
+	-- 	key = "DownArrow",
+	-- 	mods = "CTRL|SHIFT",
+	-- 	action = wezterm.action.DisableDefaultAssignment,
+	-- },
+	-- {
+	-- 	key = "UpArrow",
+	-- 	mods = "CTRL|SHIFT",
+	-- 	action = wezterm.action.DisableDefaultAssignment,
+	-- },
+	-- {
+	-- 	key = "LeftArrow",
+	-- 	mods = "CTRL|SHIFT",
+	-- 	action = wezterm.action.DisableDefaultAssignment,
+	-- },
+	-- {
+	-- 	key = "RightArrow",
+	-- 	mods = "CTRL|SHIFT",
+	-- 	action = wezterm.action.DisableDefaultAssignment,
+	-- },
+}
+
+function TableConcat(k, keys_d)
+	for i = 1, #keys_d do
+		k[#k + 1] = keys_d[i]
+	end
+	return k
+end
+
+-- for k, v in pairs(keys_disabled) do
+-- 	keys[k] = v
+-- end
+
+module.keys = TableConcat(keys, keys_disabled)
+module.key_tables = key_tables
 
 return module

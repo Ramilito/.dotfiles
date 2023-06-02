@@ -21,7 +21,8 @@ end
 -- end
 
 return {
-	leader = { key = "a", mods = "CTRL|SHIFT", timeout_milliseconds = 1000 },
+	leader = { key = "Space", mods = "ALT" },
+	-- leader = { key = "a", mods = "CTRL|SHIFT", timeout_milliseconds = 1000 },
 	wsl_domains = {
 		{
 			name = "WSL:Ubuntu-22.04",
@@ -68,7 +69,8 @@ return {
 	disable_default_key_bindings = false,
 	adjust_window_size_when_changing_font_size = false,
 	front_end = "WebGpu",
-  colors = colors,
-  keys = keys,
-  hyperlink_rules = hyperlink,
+	colors = colors,
+	keys = keys.keys,
+	key_tables = keys.key_tables,
+	hyperlink_rules = hyperlink,
 }

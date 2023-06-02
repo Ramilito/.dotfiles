@@ -15,6 +15,14 @@ wezterm.on("format-tab-title", function(tab)
 	})
 end)
 
+wezterm.on("update-right-status", function(window, pane)
+	local name = window:active_key_table()
+	if name then
+		name = "TABLE: " .. name
+	end
+	window:set_right_status(name or "")
+end)
+
 wezterm.on("update-right-status", function(window)
 	-- window:set_right_status(wezterm.format({
 	--   { Attribute = { Intensity = "Bold" } },
