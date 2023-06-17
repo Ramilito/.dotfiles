@@ -139,6 +139,16 @@ local key_tables = {
 
 local keys_disabled = {
 	{
+		key = "LeftArrow",
+		mods = "CTRL|SHIFT|ALT",
+		action = wezterm.action.DisableDefaultAssignment,
+	},
+	{
+		key = "RightArrow",
+		mods = "CTRL|SHIFT|ALT",
+		action = wezterm.action.DisableDefaultAssignment,
+	},
+	{
 		key = "UpArrow",
 		mods = "CTRL|SHIFT|ALT",
 		action = wezterm.action.DisableDefaultAssignment,

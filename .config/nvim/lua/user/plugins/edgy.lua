@@ -3,18 +3,32 @@ return {
 	{
 		"folke/edgy.nvim",
 		event = "VeryLazy",
+		keys = {
+			{
+				"<leader>ue",
+				function()
+					require("edgy").toggle()
+				end,
+				desc = "Edgy Toggle",
+			},
+      -- stylua: ignore
+      { "<leader>uE", function() require("edgy").select() end, desc = "Edgy Select Window" },
+		},
 		opts = {
 			animate = {
 				enabled = false,
-			},
-			wo = {
-				winbar = true,
 			},
 			bottom = {
 				{
 					ft = "toggleterm",
 					size = { height = 0.4 },
-					-- exclude floating windows
+					filter = function(buf, win)
+						return vim.api.nvim_win_get_config(win).relative == ""
+					end,
+				},
+				{
+					ft = "noice",
+					size = { height = 0.4 },
 					filter = function(buf, win)
 						return vim.api.nvim_win_get_config(win).relative == ""
 					end,
@@ -32,7 +46,7 @@ return {
 				{
 					ft = "help",
 					size = { height = 20 },
-					-- only show help buffers
+					-- don't open help files in edgy that we're editing
 					filter = function(buf)
 						return vim.bo[buf].buftype == "help"
 					end,
@@ -41,7 +55,19 @@ return {
 			},
 			left = {
 				{
-					title = "Git",
+					title = "Neo-Tree",
+					ft = "neo-tree",
+					filter = function(buf)
+						return vim.b[buf].neo_tree_source == "filesystem"
+					end,
+					pinned = true,
+					open = function()
+						vim.api.nvim_input("<esc><space>e")
+					end,
+					size = { height = 0.5 },
+				},
+				{
+					title = "Neo-Tree Git",
 					ft = "neo-tree",
 					filter = function(buf)
 						return vim.b[buf].neo_tree_source == "git_status"
@@ -50,7 +76,7 @@ return {
 					open = "Neotree position=right git_status",
 				},
 				{
-					title = "Buffers",
+					title = "Neo-Tree Buffers",
 					ft = "neo-tree",
 					filter = function(buf)
 						return vim.b[buf].neo_tree_source == "buffers"
@@ -58,22 +84,37 @@ return {
 					pinned = true,
 					open = "Neotree position=top buffers",
 				},
-
-				{
-					title = "Neo-Tree",
-					ft = "neo-tree",
-					filter = function(buf)
-						return vim.b[buf].neo_tree_source == "filesystem"
-					end,
-					size = { height = 0.5 },
-				},
-				-- {
-				--   ft = "Outline",
-				--   pinned = true,
-				--   open = "SymbolsOutline",
-				-- },
 				"neo-tree",
 			},
+			keys = {
+				-- increase width
+				["<c-s-Right>"] = function(win)
+					win:resize("width", 2)
+				end,
+				-- decrease width
+				["<c-s-Left>"] = function(win)
+					win:resize("width", -2)
+				end,
+				-- increase height
+				["<c-s-Up>"] = function(win)
+					win:resize("height", 2)
+				end,
+				-- decrease height
+				["<c-s-Down>"] = function(win)
+					win:resize("height", -2)
+				end,
+			},
 		},
+	},
+
+	-- prevent neo-tree from opening files in edgy windows
+	{
+		"nvim-neo-tree/neo-tree.nvim",
+		optional = true,
+		opts = function(_, opts)
+			opts.open_files_do_not_replace_types = opts.open_files_do_not_replace_types
+				or { "terminal", "Trouble", "qf", "Outline" }
+			table.insert(opts.open_files_do_not_replace_types, "edgy")
+		end,
 	},
 }
