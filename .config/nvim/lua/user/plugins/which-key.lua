@@ -17,6 +17,7 @@ return { "folke/which-key.nvim",
       ["<leader>s"] = { name = "+search" },
       ["<leader>u"] = { name = "+utils" },
       ["<leader>w"] = { name = "+windows" },
+      ["<leader>x"] = { name = "+trouble" },
     })
     -- require("which-key").setup({
     --   plugins = {
