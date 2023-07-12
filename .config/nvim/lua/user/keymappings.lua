@@ -11,7 +11,7 @@ map("n", "l", "<nop>", { noremap = true, silent = true })
 -- Quit
 map(
 	"n",
-	"<leader>qq",
+	"<leader>q",
 	'<cmd>lua require("user.functions").smart_quit()<CR>',
 	{ desc = "Quit", noremap = true, silent = true }
 )
