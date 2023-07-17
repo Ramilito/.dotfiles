@@ -3,8 +3,6 @@ source ~/zsh-defer/zsh-defer.plugin.zsh
 
 export ZSH="$HOME/.oh-my-zsh"
 
-FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
-
 source "$HOME/.config/zsh/plugins.zsh"
 source $ZSH/oh-my-zsh.sh
 
