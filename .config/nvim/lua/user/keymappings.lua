@@ -103,7 +103,7 @@ map(
 map(
 	"n",
 	"<leader>nn",
-	"<cmd>Neorg workspace notes <cr> <bar> <cmd> Neorg keybind norg core.norg.dirman.new.note<cr>",
+	"<cmd>Neorg workspace notes <cr> <bar> <cmd> Neorg keybind norg core.dirman.new.note<cr>",
 	{ desc = "Norg", noremap = true, silent = true }
 )
 
