@@ -34,8 +34,8 @@ local M = {
 			["<CR>"] = cmp.mapping.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = true }),
 		})
 
-		local cmp_sources = lsp.defaults.cmp_sources({ name = "copilot" })
-		table.insert(cmp_sources, { name = "copilot" })
+		-- local cmp_sources = lsp.defaults.cmp_sources({ name = "copilot" })
+		-- table.insert(cmp_sources, { name = "copilot" })
 
 		lsp.setup_nvim_cmp({
 			mapping = cmp_mappings,
