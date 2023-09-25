@@ -37,11 +37,6 @@ M.lazygit_toggle = function()
     cmd = cmd,
     hidden = true,
     direction = "float",
-    float_opts = {
-      border = "none",
-      width = 100000,
-      height = 100000,
-    },
     on_open = function(_)
       vim.cmd "startinsert!"
     end,
