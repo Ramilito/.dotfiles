@@ -28,6 +28,7 @@ local otherPlugins = {
   require("user.plugins.nvim-bqf"),
   require("user.plugins.nvim-navic"),
   require("user.plugins.neorg"),
+  -- require("user.plugins.indent-blankline"),
 }
 for k in pairs(otherPlugins) do
   table.insert(plugins, otherPlugins[k])
