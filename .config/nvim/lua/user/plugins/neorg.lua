@@ -15,9 +15,9 @@ local M = {
     build = ":Neorg sync-parsers",
     opts = {
       load = {
-        ["core.defaults"] = {}, -- Loads default behaviour
+        ["core.defaults"] = {},  -- Loads default behaviour
         ["core.concealer"] = {}, -- Adds pretty icons to your documents
-        ["core.dirman"] = { -- Manages Neorg workspaces
+        ["core.dirman"] = {      -- Manages Neorg workspaces
           config = {
             workspaces = {
               notes = "~/.config/notes",
@@ -26,16 +26,17 @@ local M = {
         },
       },
     },
-    dependencies = { { "nvim-lua/plenary.nvim" } },
+    dependencies = { "nvim-web-devicons", "nvim-lua/plenary.nvim" },
   }
 }
-require("nvim-web-devicons").set_icon({
-	norg = {
-		icon = "",
-		color = "#56949f",
-		cterm_color = "65",
-		name = "Norg",
-	},
-})
 
+-- require("nvim-web-devicons").set_icon({
+--   norg = {
+--     icon = "",
+--     color = "#56949f",
+--     cterm_color = "65",
+--     name = "Norg",
+--   },
+-- })
+--
 return M
