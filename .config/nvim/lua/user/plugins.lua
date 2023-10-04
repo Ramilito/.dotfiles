@@ -1,7 +1,6 @@
 local M = {
 	{ "nvim-lua/plenary.nvim" },
 	{ "jose-elias-alvarez/typescript.nvim",          lazy = true },
-	{ "jose-elias-alvarez/null-ls.nvim",             lazy = true },
 	{ "mbbill/undotree",                             event = "BufReadPre" },
 	{ "akinsho/toggleterm.nvim",                     lazy = true },
 	{ "famiu/bufdelete.nvim",                        cmd = "Bdelete" },
