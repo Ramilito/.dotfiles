@@ -3,7 +3,7 @@ require("lazy").setup({
     -- { "folke/LazyVim", import = "lazyvim.plugins" },
     { import = "user.plugins" },
   },
-  defaults = { lazy = true },
+  defaults = { lazy = false },
   install = { colorscheme = { "tokyonight", "habamax", "catppuccin" } },
   checker = { enabled = false },
   diff = {
