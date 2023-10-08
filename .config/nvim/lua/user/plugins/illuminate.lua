@@ -2,7 +2,18 @@ return {
   "RRethy/vim-illuminate",
   event = "BufReadPost",
   config = function()
-    require("illuminate").configure({ delay = 200 })
+    require("illuminate").configure({
+      providers = {
+        'regex',
+        'lsp',
+        'treesitter',
+      },
+      delay = 300
+    })
+    -- change the highlight style
+    -- vim.api.nvim_set_hl(0, "IlluminatedWordText", { link = "Visual" })
+    -- vim.api.nvim_set_hl(0, "IlluminatedWordRead", { link = "Visual" })
+    -- vim.api.nvim_set_hl(0, "IlluminatedWordWrite", { link = "Visual" })
   end,
   keys = {
     {
