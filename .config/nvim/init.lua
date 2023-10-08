@@ -23,11 +23,12 @@ local otherPlugins = {
   require("user.plugins.treesitter"),
   require("user.plugins.trouble"),
   require("user.plugins.which-key"),
-  require("user.plugins.silicon"),
   require("user.plugins.nvimtree"),
   require("user.plugins.nvim-bqf"),
   require("user.plugins.nvim-navic"),
   require("user.plugins.neorg"),
+  require("user.plugins.silicon"),
+  require("user.plugins.illuminate"),
   -- require("user.plugins.indent-blankline"),
 }
 for k in pairs(otherPlugins) do
