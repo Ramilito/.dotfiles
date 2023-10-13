@@ -1,6 +1,5 @@
 local M = {}
 
-local navic = require "nvim-navic"
 local utils = require "user.utils"
 
 local is_empty = function(s)
@@ -31,7 +30,7 @@ local function get_file()
   elseif get_buf_option "mod" then
     return "%#WinWarning#" .. " " .. filename
   else
-    return "%#NavicText#" .. "  " .. filename
+    return "  " .. filename
   end
 end
 
@@ -39,6 +38,7 @@ local function get_file_inactive()
   local diagnostics = utils.get_diagnostics()
   local icon, hl = utils.get_icon()
   hl = "WinInactive"
+-- BufferInactive
   local filename = "%#" .. hl .. "#" .. "   " .. " " .. "%t" .. "%*"
   if icon then
     filename = "%#" .. hl .. "#" .. icon .. " " .. "%t" .. "%*"
@@ -55,33 +55,17 @@ local function get_file_inactive()
   end
 end
 
-local function get_location()
-  local location = navic.get_location()
-  if not is_empty(location) then
-    return "%#NavicText#" .. " " .. ">" .. " " .. location .. "%*"
-  end
-  return ""
-end
-
 function M.get_winbar_inactive()
   -- Use lualine disable file types
-  if excludes() then
-    return ""
-  end
-
-  if navic.is_available() then
-    return get_file_inactive() .. "%*"
-  else
-    return "%#WinInactive#" .. "%*" .. get_file_inactive() .. "%#WinInactive#" .. "%*"
-  end
+  -- if excludes() then
+  --   return ""
+  -- end
+  --
+  return "%#WinInactive#" .. "%*" .. get_file_inactive() .. "%#WinInactive#" .. "%*"
 end
 
 function M.get_winbar()
-  if navic.is_available() then
-    return get_file() .. "%#NavicSeparator#" .. "%*" .. get_location() .. "%#NavicSeparator#" .. "%*"
-  else
-    return "%#NavicSeparator#" .. "%*" .. get_file() .. "%#NavicSeparator#" .. "%*"
-  end
+  return "%*" .. get_file() .. "%*"
 end
 
 return M

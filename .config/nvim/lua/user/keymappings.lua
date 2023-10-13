@@ -115,3 +115,8 @@ Map("n", "gR", "<cmd>TroubleToggle lsp_references<cr>", { desc = "References" })
 -- Indenting
 Map("v", "<", "<gv", { desc = "Indent left" })
 Map("v", ">", ">gv", { desc = "Indent right" })
+
+-- Map("n", "?", "!", { desc = "Backward search" })
+Map("n", "?", "/", { desc = "Forward search", silent = false })
+
+
