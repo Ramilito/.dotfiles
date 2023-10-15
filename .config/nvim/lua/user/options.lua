@@ -1,32 +1,16 @@
 local opt = vim.opt
-local o = vim.o
 local g = vim.g
 
-o.wrap = false
-
-o.ignorecase = true
-o.smartcase = true
-o.shortmess = "filnxtToOFWIcC"
-
 g.loaded_matchparen = 0
-o.showmatch = false
-
 g.mapleader = " "
 g.maplocalleader = " "
 
 -- Statuscolumn
-o.number = true
-o.relativenumber = true
+opt.number = true
+opt.relativenumber = true
 -- opt.foldcolumn     = "1"
 opt.signcolumn = "number"
 
--- Set colorscheme
--- vim.o.termguicolors = true
--- vim.cmd [[ colorscheme tokyonight-night ]]
--- vim.cmd [[ colorscheme catppuccin ]]
-
--- vim.o.clipboard = 'unnamedplus'
---
 -- Undotree
 opt.swapfile = false
 opt.backup = false
@@ -41,10 +25,10 @@ opt.foldlevelstart = 99
 opt.foldmethod     = "indent"
 opt.foldnestmax    = 10
 
+-- opt.concealcursor = "nc"
+-- opt.conceallevel = 2 -- Hide * markup for bold and italic
 opt.cmdheight = 1
 opt.completeopt = "menu,menuone,noselect"
--- opt.conceallevel = 2 -- Hide * markup for bold and italic
--- opt.concealcursor = "nc"
 opt.cursorline = true -- Enable highlighting of the current line
 opt.expandtab = true
 opt.grepformat = "%f:%l:%c:%m"
@@ -61,11 +45,19 @@ opt.showmode = false -- dont show mode since we have a statusline
 opt.showtabline = 0
 opt.sidescrolloff = 8 -- Columns of context
 opt.smartindent = true -- Insert indents automatically
+opt.smoothscroll = true
 opt.spelllang = { "en" }
 opt.splitkeep = "screen"
+opt.splitright = true -- Put new windows right of current
 opt.tabstop = 2
 opt.timeoutlen = 1000
 opt.updatetime = 50
+opt.wrap = false
+opt.showmatch = false
+opt.ignorecase = true
+opt.smartcase = true
+opt.shortmess = "filnxtToOFWIcC"
+
 
 if vim.fn.has "wsl" == 1 then
   g.clipboard = {
