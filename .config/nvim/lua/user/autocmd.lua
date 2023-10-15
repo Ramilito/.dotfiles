@@ -10,7 +10,7 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 	end,
 })
 
-vim.api.nvim_create_autocmd({ "CursorMoved", "VimEnter" }, {
+vim.api.nvim_create_autocmd({ "BufEnter", "VimEnter" }, {
 	group = augroup("status_line"),
 	callback = function()
 		local winbar_filetype_exclude = {
@@ -40,13 +40,12 @@ vim.api.nvim_create_autocmd({ "CursorMoved", "VimEnter" }, {
 		local config = vim.api.nvim_win_get_config(win_number)
 
 		if config.relative == "" then
-			-- opt_local.winbar = "%{%v:lua.require'user.winbar'.get_winbar()%}"
-			-- opt_local.statuscolumn = "%=%s%=%@SignCb@%=%{v:relnum?v:relnum:v:lnum}%C|"
 			vim.opt_local.winbar = " " .. require("user.winbar").get_winbar()
 			vim.opt_local.statuscolumn = require("user.statuscolumn")
 		else
 			vim.opt_local.winbar = nil
 		end
+		-- vim.wo.winhighlight = 'Normal:NvimSeparator'
 	end,
 })
 
@@ -61,7 +60,7 @@ vim.api.nvim_create_autocmd("FileType", {
 })
 
 vim.api.nvim_create_autocmd({ "TextChanged", "TextChangedI", "InsertLeave" }, {
-  pattern = "*.norg",
+	pattern = "*.norg",
 	group = augroup("auto-save"),
 	callback = function()
 		vim.cmd("silent! update")
