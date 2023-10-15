@@ -9,7 +9,7 @@ local M = {
 	{ "famiu/bufdelete.nvim",                        cmd = "Bdelete" },
 	{ "norcalli/nvim-terminal.lua",                  ft = "terminal",     config = true },
 	{ "dstein64/vim-startuptime",                    cmd = "StartupTime" },
-	-- LSP
+	-- LSP ------------------------------
 	{ 'VonHeikemen/lsp-zero.nvim',                   branch = 'v3.x' },
 	{ 'williamboman/mason.nvim' },
 	{ 'williamboman/mason-lspconfig.nvim' },
@@ -17,7 +17,7 @@ local M = {
 	{ 'hrsh7th/cmp-nvim-lsp' },
 	{ 'hrsh7th/nvim-cmp' },
 	{ 'L3MON4D3/LuaSnip' },
-	--
+	-------------------------------------
 	{
 		"Mofiqul/vscode.nvim",
 		lazy = false,
@@ -27,16 +27,18 @@ local M = {
 			vim.o.background = "dark"
 		end,
 	},
-
-	-- Detect tabstop and shiftwidth automatically
-	'tpope/vim-sleuth',
+	-- Automatically add closing tags for HTML and JSX
 	{
-		"echasnovski/mini.pairs",
-		version = false,
-		event = "VeryLazy",
-		config = function()
-			require("mini.pairs").setup()
-		end,
+		"windwp/nvim-ts-autotag",
+		ft = {
+			'html', 'javascript', 'typescript', 'javascriptreact', 'typescriptreact', 'svelte', 'vue', 'tsx', 'jsx',
+			'rescript',
+			'xml',
+			'php',
+			'markdown',
+			'astro', 'glimmer', 'handlebars', 'hbs'
+		},
+		opts = {},
 	},
 	{
 		"numToStr/Comment.nvim",
