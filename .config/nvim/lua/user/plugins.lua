@@ -1,12 +1,13 @@
 local M = {
 	{ "nvim-lua/plenary.nvim" },
 	{ "jose-elias-alvarez/typescript.nvim",          lazy = true },
-	{ "mbbill/undotree",                             event = "BufReadPre" },
 	{ "akinsho/toggleterm.nvim",                     lazy = true },
-	{ "famiu/bufdelete.nvim",                        cmd = "Bdelete" },
+	{ "nvim-treesitter/nvim-treesitter-context",     event = "VeryLazy" },
+	{ "mbbill/undotree",                             event = "BufReadPre" },
 	{ "JoosepAlviste/nvim-ts-context-commentstring", event = "VeryLazy" },
-	{ "norcalli/nvim-terminal.lua",                  ft = "terminal",     config = true },
 	{ "MunifTanjim/nui.nvim",                        event = "VeryLazy" },
+	{ "famiu/bufdelete.nvim",                        cmd = "Bdelete" },
+	{ "norcalli/nvim-terminal.lua",                  ft = "terminal",     config = true },
 	{ "dstein64/vim-startuptime",                    cmd = "StartupTime" },
 	-- LSP
 	{ 'VonHeikemen/lsp-zero.nvim',                   branch = 'v3.x' },

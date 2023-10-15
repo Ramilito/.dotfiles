@@ -30,10 +30,10 @@ local otherPlugins = {
   require("user.plugins.illuminate"),
   -- require("user.plugins.indent-blankline"),
 }
+
 for k in pairs(otherPlugins) do
   table.insert(plugins, otherPlugins[k])
 end
 
 require("lazy").setup(plugins)
--- require("user.lazy")
 require("user.lsp")
