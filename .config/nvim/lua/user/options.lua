@@ -8,6 +8,9 @@ o.ignorecase = true
 o.smartcase = true
 o.shortmess = "filnxtToOFWIcC"
 
+g.loaded_matchparen = 0
+o.showmatch = false
+
 g.mapleader = " "
 g.maplocalleader = " "
 
