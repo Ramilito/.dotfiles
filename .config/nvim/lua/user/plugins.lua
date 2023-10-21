@@ -1,6 +1,5 @@
 local M = {
   { "nvim-lua/plenary.nvim" },
-  { "j-hui/fidget.nvim",                           event = "LspAttach", },
   { "jose-elias-alvarez/typescript.nvim",          lazy = true },
   { "akinsho/toggleterm.nvim",                     lazy = true },
   { "nvim-treesitter/nvim-treesitter-context",     event = "VeryLazy" },
@@ -28,6 +27,14 @@ local M = {
       require('mini.cursorword').setup({ delay = 300 })
     end,
     version = '*'
+  },
+  {
+    "j-hui/fidget.nvim",
+    tag = "legacy",
+    event = "LspAttach",
+    opts = {
+      -- options
+    },
   },
   {
     "Mofiqul/vscode.nvim",
