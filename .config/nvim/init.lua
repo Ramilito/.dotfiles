@@ -21,7 +21,6 @@ local otherPlugins = {
   require("user.plugins.gitsigns"),
   require("user.plugins.telescope"),
   require("user.plugins.treesitter"),
-  require("user.plugins.mini-statusline"),
   require("user.plugins.trouble"),
   require("user.plugins.which-key"),
   require("user.plugins.nvimtree"),
