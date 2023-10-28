@@ -27,6 +27,7 @@ local M = {
     { "<leader>sh", "<cmd> Telescope help_tags <CR>", desc = "Help Page" },
     { "<leader>sr", "<cmd> Telescope oldfiles <CR>", desc = "Search Recent" },
     { "<leader>sk", "<cmd> Telescope keymaps <CR>", desc = "Show Keys" },
+    { "<leader>sw", "<cmd> Telescope grep_string <CR>", desc = "Find word" },
   },
 }
 
