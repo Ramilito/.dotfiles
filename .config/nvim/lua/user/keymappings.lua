@@ -118,5 +118,3 @@ Map("v", ">", ">gv", { desc = "Indent right" })
 
 -- Map("n", "?", "!", { desc = "Backward search" })
 Map("n", "?", "/", { desc = "Forward search", silent = false })
-
-
