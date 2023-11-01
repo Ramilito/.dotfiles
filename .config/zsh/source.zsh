@@ -17,3 +17,4 @@ zsh-defer source "$HOME/.cargo/env"
 # zsh-defer test -f ~/.kube/kubesess/scripts/sh/completion.sh && source ~/.kube/kubesess/scripts/sh/completion.sh
 source ${HOMEBREW_PREFIX}/share/zsh/site-functions/kubesess.sh
 source ${HOMEBREW_PREFIX}/opt/kubesess/etc/bash_completion.d/completion.sh
+source <(stern --completion=zsh)
