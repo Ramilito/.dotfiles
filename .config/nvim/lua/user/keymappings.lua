@@ -26,10 +26,16 @@ Map("n", "<TAB>", ":bnext<CR>", { desc = "Buffer next" })
 Map("n", "<S-TAB>", ":bprevious<CR>", { desc = "Buffer prev" })
 
 -- Better window navigation
-Map("n", "<C-Left>", "<c-w><left>", { desc = "Window left" })
-Map("n", "<C-Right>", "<c-w><right>", { desc = "Window right" })
-Map("n", "<C-Up>", "<c-w><up>", { desc = "Window up" })
-Map("n", "<C-Down>", "<c-w><down>", { desc = "Window down" })
+-- Normal
+-- Map("n", "<C-Left>", "<c-w><left>", { desc = "Window left" })
+-- Map("n", "<C-Right>", "<c-w><right>", { desc = "Window right" })
+-- Map("n", "<C-Up>", "<c-w><up>", { desc = "Window up" })
+-- Map("n", "<C-Down>", "<c-w><down>", { desc = "Window down" })
+-- Wezterm
+Map({'n', 't'}, '<C-Left>', '<CMD>NavigatorLeft<CR>')
+Map({'n', 't'}, '<C-Right>', '<CMD>NavigatorRight<CR>')
+Map({'n', 't'}, '<C-Down>', '<CMD>NavigatorDown<CR>')
+Map({'n', 't'}, '<C-Up>', '<CMD>NavigatorUp<CR>')
 
 -- -- Resize windows
 Map("n", "<C-S-Left>", ":vertical resize -2<CR>", { desc = "Resize left" })

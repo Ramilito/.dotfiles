@@ -27,6 +27,7 @@ local otherPlugins = {
   require("user.plugins.nvim-bqf"),
   require("user.plugins.neorg"),
   require("user.plugins.silicon"),
+  require("user.plugins.navigator"),
 }
 
 for k in pairs(otherPlugins) do

@@ -22,3 +22,5 @@ export PATH="$PATH:/Users/ramidaghlawi/.dotnet/tools"
 
 export AWS_DEFAULT_OUTPUT="yaml"
 export AWS_PAGER="yq"
+export SKIP_HUSKY=1
+
