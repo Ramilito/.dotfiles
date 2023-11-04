@@ -32,10 +32,20 @@ Map("n", "<S-TAB>", ":bprevious<CR>", { desc = "Buffer prev" })
 -- Map("n", "<C-Up>", "<c-w><up>", { desc = "Window up" })
 -- Map("n", "<C-Down>", "<c-w><down>", { desc = "Window down" })
 -- Wezterm
-Map({'n', 't'}, '<C-Left>', '<CMD>NavigatorLeft<CR>')
-Map({'n', 't'}, '<C-Right>', '<CMD>NavigatorRight<CR>')
-Map({'n', 't'}, '<C-Down>', '<CMD>NavigatorDown<CR>')
-Map({'n', 't'}, '<C-Up>', '<CMD>NavigatorUp<CR>')
+-- Map({'n', 't'}, '<C-Left>', '<CMD>NavigatorLeft<CR>')
+-- Map({'n', 't'}, '<C-Right>', '<CMD>NavigatorRight<CR>')
+-- Map({'n', 't'}, '<C-Down>', '<CMD>NavigatorDown<CR>')
+-- Map({'n', 't'}, '<C-Up>', '<CMD>NavigatorUp<CR>')
+-- Buffer Navigation
+Map('n', '<c-Left>', '<CMD>NavigatorLeft<CR>', { desc = 'Move Split left' })
+Map('n', '<c-Right>', '<CMD>NavigatorRight<CR>', { desc = 'Move Split right' })
+Map('n', '<c-Down>', '<CMD>NavigatorDown<CR>', { desc = 'Move Split down' })
+Map('n', '<c-Up>', '<CMD>NavigatorUp<CR>', { desc = 'Move Split up' })
+
+-- Map('n', '<c-a-Left>', '<c-w>+', { desc = 'Adjust Split vertical+' })
+-- Map('n', '<c-a-Right>', '<c-w>-', { desc = 'Adjust Split vertical-' })
+-- Map('n', '<c-a-Down>', '<c-w>>', { desc = 'Adjust Split horizontal+' })
+-- Map('n', '<c-a-Up>', '<c-w><', { desc = 'Adjust Split horizontal-' })
 
 -- -- Resize windows
 Map("n", "<A-Left>", ":vertical resize -2<CR>", { desc = "Resize left" })
