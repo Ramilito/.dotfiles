@@ -21,36 +21,6 @@ end
 --   -- Configs for Linux only
 --   -- font_dirs    = { '$HOME/.dotfiles/.fonts' }
 -- end
-local function isViProcess(pane)
-  return pane:get_title():find('n?vim') ~= nil
-end
-
-local function conditionalActivatePane(window, pane, pane_direction, vim_direction)
-  if isViProcess(pane) then
-    wezterm.log_info("this is a vim process")
-    window:perform_action(
-    -- This should match the keybinds you set in Neovim.
-      wezterm.action.SendKey({ key = vim_direction, mods = 'CTRL' }),
-      pane
-    )
-  else
-    window:perform_action(wezterm.action.ActivatePaneDirection(pane_direction), pane)
-  end
-end
-
-wezterm.on("ActivatePaneDirection-right", function(window, pane)
-  conditionalActivatePane(window, pane, "Right", "RightArrow")
-end)
-wezterm.on("ActivatePaneDirection-left", function(window, pane)
-  conditionalActivatePane(window, pane, "Left", "LeftArrow")
-end)
-wezterm.on("ActivatePaneDirection-up", function(window, pane)
-  conditionalActivatePane(window, pane, "Up", "UpArrow")
-end)
-wezterm.on("ActivatePaneDirection-down", function(window, pane)
-  conditionalActivatePane(window, pane, "Down", "DownArrow")
-end)
-
 
 return {
   leader = { key = "Space", mods = "CTRL|ALT" },
