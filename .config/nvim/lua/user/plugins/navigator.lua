@@ -1,7 +1,6 @@
 return {
   "numToStr/Navigator.nvim",
   config = function()
-    require("Navigator").setup({
-      mux = "wezterm" })
+    require("Navigator").setup()
   end,
 }
