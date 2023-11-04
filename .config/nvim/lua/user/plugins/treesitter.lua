@@ -6,6 +6,7 @@ return {
     event = { "BufReadPost", "BufNewFile" },
     dependencies = {
       {
+        'JoosepAlviste/nvim-ts-context-commentstring',
         "nvim-treesitter/nvim-treesitter-textobjects",
         init = function()
           -- PERF: no need to load the plugin, if we only need its queries for mini.ai

@@ -2,7 +2,10 @@ local M = {
   { "nvim-lua/plenary.nvim" },
   { "jose-elias-alvarez/typescript.nvim",          lazy = true },
   { "akinsho/toggleterm.nvim",                     lazy = true },
-  { "nvim-treesitter/nvim-treesitter-context",     event = "VeryLazy" },
+  { "nvim-treesitter/nvim-treesitter-context",     event = "VeryLazy",
+  config = function()
+    require('ts_context_commentstring').setup{}
+  end },
   { "mbbill/undotree",                             event = "BufReadPre" },
   { "JoosepAlviste/nvim-ts-context-commentstring", event = "VeryLazy" },
   { "MunifTanjim/nui.nvim",                        event = "VeryLazy" },
@@ -62,7 +65,9 @@ local M = {
     "numToStr/Comment.nvim",
     event = "VeryLazy",
     config = function()
-      require("Comment").setup()
+      require("Comment").setup({
+        pre_hook = require('ts_context_commentstring.integrations.comment_nvim').create_pre_hook()
+      })
     end,
   },
 }
