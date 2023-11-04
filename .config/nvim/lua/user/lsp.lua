@@ -21,19 +21,18 @@ require('mason-lspconfig').setup({
 })
 
 local cmp = require('cmp')
-local cmp_select = { behavior = cmp.SelectBehavior.Select }
-
 cmp.setup({
   sources = {
     { name = 'path' },
-    { name = 'nvim_lsp' },
-    { name = 'nvim_lua' },
+    {name = 'nvim_lsp'},
+    {name = 'nvim_lua'},
   },
   formatting = lsp_zero.cmp_format(),
   mapping = cmp.mapping.preset.insert({
-    ['<C-p>']     = cmp.mapping.select_prev_item(cmp_select),
-    ['<C-n>']     = cmp.mapping.select_next_item(cmp_select),
-    ['<CR>']      = cmp.mapping.confirm({ behavior = cmp.SelectBehavior.Replace, select = true }),
-    ['<C-Space>'] = cmp.mapping.complete(),
-  }),
+    ['<CR>'] = cmp.mapping.confirm({
+      behavior = cmp.ConfirmBehavior.Replace,
+      select = false,
+    })
+  })
 })
+

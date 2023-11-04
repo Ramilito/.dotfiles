@@ -38,10 +38,10 @@ Map({'n', 't'}, '<C-Down>', '<CMD>NavigatorDown<CR>')
 Map({'n', 't'}, '<C-Up>', '<CMD>NavigatorUp<CR>')
 
 -- -- Resize windows
-Map("n", "<C-S-Left>", ":vertical resize -2<CR>", { desc = "Resize left" })
-Map("n", "<C-S-Right>", ":vertical resize +2<CR>", { desc = "Resize rigth" })
-Map("n", "<C-S-Up>", ":resize -2<CR>", { desc = "Resize up" })
-Map("n", "<C-S-Down>", ":resize +2<CR>", { desc = "Resize down" })
+Map("n", "<A-Left>", ":vertical resize -2<CR>", { desc = "Resize left" })
+Map("n", "<A-Right>", ":vertical resize +2<CR>", { desc = "Resize rigth" })
+Map("n", "<A-Up>", ":resize -2<CR>", { desc = "Resize up" })
+Map("n", "<A-Down>", ":resize +2<CR>", { desc = "Resize down" })
 
 -- Move text up and down
 Map("i", "<S-Down>", "<Esc>:m .+1<CR>==gi", { desc = "Move up" })
