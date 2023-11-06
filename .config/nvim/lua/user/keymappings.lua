@@ -77,9 +77,8 @@ Map("i", "<C-H>", "<C-w>", { desc = "Delete word" })
 Map("i", "<S-Del>", "<Del>", { desc = "Delete char" })
 Map("n", "<S-Del>", "<Del>", { desc = "Delete char" })
 
--- no highlight
-Map("n", "<ESC>", "<cmd>noh<CR>", { desc = "nohl" })
--- Map('n', '<leader>h', '<cmd>nohlsearch<CR>', { desc = "nohl" })
+-- clear search
+Map("n", "<ESC>", ":let @/ = ''<CR>", { desc = "clear search" })
 
 -- close buffer
 Map("n", "<leader>c", "<cmd>Bdelete<CR>", { desc = "Close buffer" })
