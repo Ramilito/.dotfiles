@@ -26,32 +26,24 @@ Map("n", "<TAB>", ":bnext<CR>", { desc = "Buffer next" })
 Map("n", "<S-TAB>", ":bprevious<CR>", { desc = "Buffer prev" })
 
 -- Better window navigation
--- Normal
 -- Map("n", "<C-Left>", "<c-w><left>", { desc = "Window left" })
 -- Map("n", "<C-Right>", "<c-w><right>", { desc = "Window right" })
 -- Map("n", "<C-Up>", "<c-w><up>", { desc = "Window up" })
 -- Map("n", "<C-Down>", "<c-w><down>", { desc = "Window down" })
--- Wezterm
--- Map({'n', 't'}, '<C-Left>', '<CMD>NavigatorLeft<CR>')
--- Map({'n', 't'}, '<C-Right>', '<CMD>NavigatorRight<CR>')
--- Map({'n', 't'}, '<C-Down>', '<CMD>NavigatorDown<CR>')
--- Map({'n', 't'}, '<C-Up>', '<CMD>NavigatorUp<CR>')
--- Buffer Navigation
-Map('n', '<c-Left>', '<CMD>NavigatorLeft<CR>', { desc = 'Move Split left' })
-Map('n', '<c-Right>', '<CMD>NavigatorRight<CR>', { desc = 'Move Split right' })
-Map('n', '<c-Down>', '<CMD>NavigatorDown<CR>', { desc = 'Move Split down' })
-Map('n', '<c-Up>', '<CMD>NavigatorUp<CR>', { desc = 'Move Split up' })
+Map({'n', 't'}, '<C-Left>', '<CMD>NavigatorLeft<CR>')
+Map({'n', 't'}, '<C-Right>', '<CMD>NavigatorRight<CR>')
+Map({'n', 't'}, '<C-Down>', '<CMD>NavigatorDown<CR>')
+Map({'n', 't'}, '<C-Up>', '<CMD>NavigatorUp<CR>')
 
--- Map('n', '<c-a-Left>', '<c-w>+', { desc = 'Adjust Split vertical+' })
--- Map('n', '<c-a-Right>', '<c-w>-', { desc = 'Adjust Split vertical-' })
--- Map('n', '<c-a-Down>', '<c-w>>', { desc = 'Adjust Split horizontal+' })
--- Map('n', '<c-a-Up>', '<c-w><', { desc = 'Adjust Split horizontal-' })
-
--- -- Resize windows
-Map("n", "<A-Left>", ":vertical resize -2<CR>", { desc = "Resize left" })
-Map("n", "<A-Right>", ":vertical resize +2<CR>", { desc = "Resize rigth" })
-Map("n", "<A-Up>", ":resize -2<CR>", { desc = "Resize up" })
-Map("n", "<A-Down>", ":resize +2<CR>", { desc = "Resize down" })
+-- Resize windows
+-- Map("n", "<C-S-Left>", ":vertical resize -2<CR>", { desc = "Resize left" })
+-- Map("n", "<C-S-Right>", ":vertical resize +2<CR>", { desc = "Resize rigth" })
+-- Map("n", "<C-S-Up>", ":resize -2<CR>", { desc = "Resize up" })
+-- Map("n", "<C-S-Down>", ":resize +2<CR>", { desc = "Resize down" })
+Map({'n', 't'}, '<C-S-Left>', '<CMD>NavigatorSizeLeft<CR>')
+Map({'n', 't'}, '<C-S-Right>', '<CMD>NavigatorSizeRight<CR>')
+Map({'n', 't'}, '<C-S-Down>', '<CMD>NavigatorSizeDown<CR>')
+Map({'n', 't'}, '<C-S-Up>', '<CMD>NavigatorSizeUp<CR>')
 
 -- Move text up and down
 Map("i", "<S-Down>", "<Esc>:m .+1<CR>==gi", { desc = "Move up" })

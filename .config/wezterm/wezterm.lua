@@ -6,10 +6,11 @@ local hyperlink = require("hyperlink")
 -- ---@diagnostic disable-next-line: unused-local
 -- local events = require("events")
 
-local default_domain = 'local'
+-- local default_domain = 'local'
 
 if wezterm.target_triple == "x86_64-pc-windows-msvc" then
-  default_domain = 'WSL:Ubuntu-22.04'
+	default_prog = { "wsl", "--cd", "~" }
+  -- default_domain = 'WSL:Ubuntu-22.04'
 end
 
 -- if wezterm.target_triple == 'x86_64-apple-darwin' then
@@ -25,7 +26,7 @@ end
 return {
   leader = { key = "Space", mods = "CTRL|ALT" },
   -- leader = { key = "a", mods = "CTRL|SHIFT", timeout_milliseconds = 1000 },
-  default_domain = default_domain,
+  -- default_domain = default_domain,
   wsl_domains = {
     {
       name = "WSL:Ubuntu-22.04",
@@ -33,6 +34,7 @@ return {
       default_cwd = "~",
     },
   },
+	default_prog = default_prog,
   font = wezterm.font_with_fallback({
     "JetBrains Mono Medium",
     "Apple Color Emoji",

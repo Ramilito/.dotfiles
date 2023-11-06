@@ -37,6 +37,12 @@ local function bind_if(cond, key, mods, action)
 end
 
 local keys = {
+  -- Adjust Neovim And Wezterm Windows With Navigator.nvim
+  bind_if(is_outside_vim, 'LeftArrow', 'CTRL|SHIFT', act.AdjustPaneSize { 'Left', 2 }),
+  bind_if(is_outside_vim, 'RightArrow', 'CTRL|SHIFT', act.AdjustPaneSize { 'Right', 2 }),
+  bind_if(is_outside_vim, 'DownArrow', 'CTRL|SHIFT', act.AdjustPaneSize { 'Down', 2 }),
+  bind_if(is_outside_vim, 'UpArrow', 'CTRL|SHIFT', act.AdjustPaneSize { 'Up', 2 }),
+
   bind_if(is_outside_vim, 'LeftArrow', 'CTRL', act.ActivatePaneDirection('Left')),
   bind_if(is_outside_vim, 'RightArrow', 'CTRL', act.ActivatePaneDirection('Right')),
   bind_if(is_outside_vim, 'UpArrow', 'CTRL', act.ActivatePaneDirection('Up')),
@@ -197,26 +203,6 @@ local keys_disabled = {
   {
     key = "DownArrow",
     mods = "CTRL|SHIFT|ALT",
-    action = wezterm.action.DisableDefaultAssignment,
-  },
-  {
-    key = "DownArrow",
-    mods = "CTRL|SHIFT",
-    action = wezterm.action.DisableDefaultAssignment,
-  },
-  {
-    key = "UpArrow",
-    mods = "CTRL|SHIFT",
-    action = wezterm.action.DisableDefaultAssignment,
-  },
-  {
-    key = "LeftArrow",
-    mods = "CTRL|SHIFT",
-    action = wezterm.action.DisableDefaultAssignment,
-  },
-  {
-    key = "RightArrow",
-    mods = "CTRL|SHIFT",
     action = wezterm.action.DisableDefaultAssignment,
   },
 }
