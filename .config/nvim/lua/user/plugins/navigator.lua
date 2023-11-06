@@ -1,5 +1,5 @@
 return {
-  "numToStr/Navigator.nvim",
+  "ramilito/Navigator.nvim",
   config = function()
     require("Navigator").setup()
   end,
