@@ -22,7 +22,6 @@ local otherPlugins = {
   require("user.plugins.treesitter"),
   require("user.plugins.trouble"),
   require("user.plugins.which-key"),
-  require("user.plugins.nvimtree"),
   require("user.plugins.nvim-bqf"),
   require("user.plugins.neorg"),
   require("user.plugins.silicon"),
