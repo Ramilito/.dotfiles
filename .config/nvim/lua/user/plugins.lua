@@ -37,6 +37,7 @@ local M = {
           ["S"] = "actions.select_split",
           ["<leader>e"] = "actions.close",
           ["<C-s>"] = false,
+          ["<BS>"] = "actions.parent",
         },
         use_default_keymaps = true,
       })
