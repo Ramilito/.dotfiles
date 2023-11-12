@@ -45,6 +45,7 @@ function M.config()
       mappings = {
         i = {
           ['<C-p>'] = require('telescope.actions.layout').toggle_preview,
+          ['<c-d>'] = require('telescope.actions').delete_buffer,
           ["<c-t>"] = function(...)
             return require("trouble.providers.telescope").open_with_trouble(...)
           end,
