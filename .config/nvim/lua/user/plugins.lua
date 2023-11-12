@@ -1,11 +1,14 @@
 local M = {
   { "nvim-lua/plenary.nvim" },
-  { "jose-elias-alvarez/typescript.nvim",          lazy = true },
-  { "akinsho/toggleterm.nvim",                     lazy = true },
-  { "nvim-treesitter/nvim-treesitter-context",     event = "VeryLazy",
-  config = function()
-    require('ts_context_commentstring').setup{}
-  end },
+  { "jose-elias-alvarez/typescript.nvim", lazy = true },
+  { "akinsho/toggleterm.nvim",            lazy = true },
+  {
+    "nvim-treesitter/nvim-treesitter-context",
+    event = "VeryLazy",
+    config = function()
+      require('ts_context_commentstring').setup {}
+    end
+  },
   { "mbbill/undotree",                             event = "BufReadPre" },
   { "JoosepAlviste/nvim-ts-context-commentstring", event = "VeryLazy" },
   { "MunifTanjim/nui.nvim",                        event = "VeryLazy" },
@@ -23,7 +26,22 @@ local M = {
   { 'hrsh7th/nvim-cmp' },
   { 'L3MON4D3/LuaSnip' },
   -------------------------------------
-
+  {
+    'stevearc/oil.nvim',
+    opts = {},
+    dependencies = { "nvim-tree/nvim-web-devicons" },
+    config = function()
+      require("oil").setup({
+        keymaps = {
+          ["s"] = "actions.select_vsplit",
+          ["S"] = "actions.select_split",
+          ["<leader>e"] = "actions.close",
+          ["<C-s>"] = false,
+        },
+        use_default_keymaps = true,
+      })
+    end
+  },
   {
     'echasnovski/mini.nvim',
     config = function()
