@@ -57,7 +57,7 @@ Map("v", "<S-Down>", ":m '>+1<CR>gv=gv", { desc = "Move down" })
 vim.keymap.set(
   "n",
   "<C-p>",
-  "<cmd> Telescope buffers <CR>",
+  '<cmd>lua require("telescope.builtin").buffers({ sort_mru = true }) <CR>',
   { desc = "[ ] Find existing buffers" }
 )
 
