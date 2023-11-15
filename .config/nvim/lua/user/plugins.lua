@@ -27,7 +27,7 @@ local M = {
   { 'L3MON4D3/LuaSnip' },
   -------------------------------------
   {
-    'stevearc/oil.nvim',
+    'ramilito/oil.nvim',
     opts = {},
     dependencies = { "nvim-tree/nvim-web-devicons" },
     config = function()
