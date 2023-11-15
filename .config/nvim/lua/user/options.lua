@@ -57,7 +57,7 @@ opt.showmatch = false
 opt.ignorecase = true
 opt.smartcase = true
 opt.shortmess = "filnxtToOFWIcC"
-
+opt.shellcmdflag = "-ic"
 
 if vim.fn.has "wsl" == 1 then
   g.clipboard = {
