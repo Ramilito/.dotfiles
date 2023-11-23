@@ -85,10 +85,10 @@ return {
           -- "markdown",
           -- "wgsl",
         },
-        context_commentstring = {
-          enable = true,
-          enable_autocmd = false,
-        },
+        -- context_commentstring = {
+        --   enable = true,
+        --   enable_autocmd = false,
+        -- },
         highlight = {
           additional_vim_regex_highlighting = false,
           enable = true,

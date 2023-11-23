@@ -17,13 +17,18 @@ local M = {
       load = {
         ["core.defaults"] = {},  -- Loads default behaviour
         ["core.concealer"] = {}, -- Adds pretty icons to your documents
-        ["core.dirman"] = {      -- Manages Neorg workspaces
+        ["core.presenter"] = {
+          config = {
+            zen_mode = "zen-mode" },
+        },
+        ["core.dirman"] = { -- Manages Neorg workspaces
           config = {
             workspaces = {
               notes = "~/.config/notes",
             },
           },
         },
+        ["core.integrations.treesitter"] = {}, -- Adds pretty icons to your documents
       },
     },
     dependencies = { "nvim-web-devicons", "nvim-lua/plenary.nvim" },

@@ -26,6 +26,7 @@ local otherPlugins = {
   require("user.plugins.neorg"),
   require("user.plugins.silicon"),
   require("user.plugins.navigator"),
+  require("user.plugins.ai"),
 }
 
 for k in pairs(otherPlugins) do

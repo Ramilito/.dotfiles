@@ -76,3 +76,10 @@ vim.api.nvim_create_autocmd({ "TextChanged", "TextChangedI", "InsertLeave" }, {
 --     end
 --   end),
 -- })
+
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "oil_preview",
+  callback = function(params)
+    vim.keymap.set("n", "<CR>", "o", { buffer = params.buf, remap = true, nowait = true })
+  end,
+})
