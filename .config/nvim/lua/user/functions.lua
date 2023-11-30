@@ -36,7 +36,7 @@ M.lazygit_toggle = function()
   local lazygit = Terminal:new({
     cmd = cmd,
     hidden = true,
-    direction = "float",
+    direction = "tab",
     on_open = function(_)
       vim.cmd "startinsert!"
     end,
@@ -47,9 +47,9 @@ M.lazygit_toggle = function()
 end
 
 local function close_terminal_on_zero_exit(terminal, _, exit_code)
-    if exit_code == 0 then
-        terminal:close()
-    end
+  if exit_code == 0 then
+    terminal:close()
+  end
 end
 
 return M

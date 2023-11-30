@@ -25,7 +25,7 @@ gui:
     selectedRangeBgColor:
       - reverse
 os:
-  editCommand: 'nvim'
+  edit: 'nvim'
 reporting: "off"  
 
 keybinding:
