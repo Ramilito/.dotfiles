@@ -83,3 +83,10 @@ vim.api.nvim_create_autocmd("FileType", {
     vim.keymap.set("n", "<CR>", "o", { buffer = params.buf, remap = true, nowait = true })
   end,
 })
+
+-- vim.api.nvim_create_autocmd('ColorScheme', {
+--   callback = function()
+--     vim.cmd([[highlight CursorLine guibg=#2d2d2d cterm=underline]])
+--     vim.cmd([[highlight CursorColumn guibg=#2d2d2d cterm=underline]])
+--   end
+-- })

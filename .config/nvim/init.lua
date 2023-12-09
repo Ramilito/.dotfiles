@@ -14,7 +14,7 @@ vim.opt.rtp:prepend(lazypath)
 require("user.options")
 require("user.highlights")
 require("user.autocmd")
-
+-- require("user.indentline")
 local plugins = require("user.plugins")
 local otherPlugins = {
   require("user.plugins.gitsigns"),
@@ -26,7 +26,7 @@ local otherPlugins = {
   require("user.plugins.neorg"),
   require("user.plugins.silicon"),
   require("user.plugins.navigator"),
-  require("user.plugins.ai"),
+  -- require("user.plugins.ai"),
 }
 
 for k in pairs(otherPlugins) do
