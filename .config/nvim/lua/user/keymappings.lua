@@ -8,8 +8,11 @@ function Map(mode, lhs, rhs, opts)
   vim.keymap.set(mode, lhs, rhs, options)
 end
 
+
+-- Map("n", "<leader>m", 'q', { desc = "Macro" })
+
 -- unMaps
-Map("n", "q", "<nop>")
+-- Map("n", "q", "<nop>")
 Map("n", "Q", "<nop>")
 Map("n", "h", "<nop>")
 Map("n", "j", "<nop>")
@@ -78,7 +81,7 @@ Map("i", "<S-Del>", "<Del>", { desc = "Delete char" })
 Map("n", "<S-Del>", "<Del>", { desc = "Delete char" })
 
 -- clear search
-Map("n", "<ESC>", ":let @/ = ''<CR>", { desc = "clear search" })
+Map("n", "<ESC>", ":let @/=''<CR>", { desc = "clear search" })
 
 -- close buffer
 Map("n", "<leader>c", "<cmd>Bdelete<CR>", { desc = "Close buffer" })
