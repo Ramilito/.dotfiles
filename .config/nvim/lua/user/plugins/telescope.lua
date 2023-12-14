@@ -22,7 +22,7 @@ local M = {
   keys = {
     { "<leader>sf", "<cmd> Telescope find_files <CR>",                                        desc = "Search Files" },
     { "<leader>sa", "<cmd> Telescope find_files follow=true no_ignore=true hidden=true <CR>", desc = "Search All" },
-    { "<leader>st", "<cmd> Telescope live_grep <CR>",                                         desc = "Live Grep" },
+    { "<leader>st", "<cmd> Telescope live_grep<CR>",                                          desc = "Live Grep" },
     { "<leader>sb", "<cmd> Telescope buffers <CR>",                                           desc = "Find Buffers" },
     { "<leader>sh", "<cmd> Telescope help_tags <CR>",                                         desc = "Help Page" },
     { "<leader>sr", "<cmd> Telescope oldfiles <CR>",                                          desc = "Search Recent" },
@@ -40,6 +40,16 @@ function M.config()
       layout_strategy = "horizontal",
       layout_config = {
         prompt_position = "top",
+      },
+      vimgrep_arguments = {
+        "rg",
+        "--color=never",
+        "--no-heading",
+        "--with-filename",
+        "--line-number",
+        "--column",
+        "--smart-case",
+        "--hidden"
       },
       sorting_strategy = "ascending",
       mappings = {
