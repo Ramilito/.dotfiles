@@ -1,18 +1,11 @@
 local M = {
   {
     "nvim-neorg/neorg",
-    -- lazy = true,
-    event = "VeryLazy",
-    -- ft = "norg",
-    -- cmd = "Neorg mode norg",
-    -- keys = {
-    --   {
-    --     "<leader>nn",
-    --     "<cmd>Neorg keybind norg core.norg.dirman.new.note<cr>",
-    --     desc = "Neorg mode",
-    --   },
-    -- },
+    lazy = true,
+    -- event = "VeryLazy",
     build = ":Neorg sync-parsers",
+    cmd = "Neorg",
+    ft = "norg",
     opts = {
       load = {
         ["core.defaults"] = {},  -- Loads default behaviour
@@ -44,5 +37,5 @@ local M = {
 --     name = "Norg",
 --   },
 -- })
---
+
 return M
