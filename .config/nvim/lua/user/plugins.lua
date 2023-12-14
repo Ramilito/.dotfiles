@@ -27,13 +27,21 @@ local M = {
 
   -- LSP ------------------------------
   { 'VonHeikemen/lsp-zero.nvim',                   branch = 'v3.x' },
+  { 'neovim/nvim-lspconfig' },
   { 'williamboman/mason.nvim' },
   { 'williamboman/mason-lspconfig.nvim' },
-  { 'neovim/nvim-lspconfig' },
   { 'hrsh7th/cmp-nvim-lsp' },
-  { 'hrsh7th/nvim-cmp' },
   { 'L3MON4D3/LuaSnip' },
   -------------------------------------
+
+  -- LuaSnip ------------------------------
+  { "rafamadriz/friendly-snippets", lazy = true },
+  {
+    'L3MON4D3/LuaSnip',
+    event = "InsertEnter",
+    lazy = true,
+    dependencies = { "rafamadriz/friendly-snippets" },
+  },
   {
     'stevearc/oil.nvim',
     opts = {},
@@ -104,6 +112,7 @@ local M = {
         pre_hook = require('ts_context_commentstring.integrations.comment_nvim').create_pre_hook()
       })
     end,
+
   },
 }
 
