@@ -35,7 +35,7 @@ local M = {
   -------------------------------------
 
   -- LuaSnip ------------------------------
-  { "rafamadriz/friendly-snippets", lazy = true },
+  { 'rafamadriz/friendly-snippets', lazy = true },
   {
     'L3MON4D3/LuaSnip',
     event = "InsertEnter",
