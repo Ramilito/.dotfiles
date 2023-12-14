@@ -73,7 +73,6 @@ return {
           "sql",
           "svelte",
           "teal",
-          "terraform",
           "toml",
           "tsx",
           "typescript",
