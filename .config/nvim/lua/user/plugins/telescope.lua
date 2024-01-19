@@ -18,6 +18,7 @@ local M = {
   lazy = true,
   dependencies = {
     { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
+    { "debugloop/telescope-undo.nvim" }
   },
   keys = {
     { "<leader>sf", "<cmd> Telescope find_files <CR>",                                        desc = "Search Files" },
@@ -74,6 +75,7 @@ function M.config()
   })
 
   telescope.load_extension("fzf")
+  telescope.load_extension("undo")
 end
 
 return M
