@@ -104,7 +104,7 @@ Map("n", "<leader>f", "<cmd>LspZeroFormat<cr>", { desc = "Format" })
 -- Map("n", "<leader>e", "<cmd> NvimTreeToggle <CR>", { desc = "Explorer" })
 Map("n", "<leader>e", "<cmd> Oil <CR>", { desc = "Explorer" })
 
-Map("n", "<leader>gu", "<cmd> UndotreeToggle <CR>", { desc = "Explorer" })
+Map("n", "<leader>su", '<cmd>lua require("telescope").extensions.undo.undo({ side_by_side = true }) <CR>', { desc = "Undo" })
 
 -- Git
 Map("n", "<leader>gg", '<cmd>lua require("user.functions").lazygit_toggle()<cr>', { desc = "Lazygit" })
