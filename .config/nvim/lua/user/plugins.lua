@@ -4,28 +4,29 @@ local M = {
   { "akinsho/toggleterm.nvim",            lazy = true },
   {
     "folke/zen-mode.nvim",
-    opts = {
-      -- your configuration comes here
-      -- or leave it empty to use the default settings
-      -- refer to the configuration section below
-    }
+    opts = {}
   },
   {
     "nvim-treesitter/nvim-treesitter-context",
     event = "VeryLazy",
+    enabled = not vim.fn.has("win64"),
     config = function()
       require('ts_context_commentstring').setup {}
     end
   },
-  { "JoosepAlviste/nvim-ts-context-commentstring", event = "VeryLazy" },
-  { "MunifTanjim/nui.nvim",                        event = "VeryLazy" },
-  { "famiu/bufdelete.nvim",                        cmd = "Bdelete" },
-  { "norcalli/nvim-terminal.lua",                  ft = "terminal",     config = true },
-  { "dstein64/vim-startuptime",                    cmd = "StartupTime" },
+  {
+    "JoosepAlviste/nvim-ts-context-commentstring",
+    event = "VeryLazy",
+    enabled = not vim.fn.has("win64")
+  },
+  { "MunifTanjim/nui.nvim",             event = "VeryLazy" },
+  { "famiu/bufdelete.nvim",             cmd = "Bdelete" },
+  { "norcalli/nvim-terminal.lua",       ft = "terminal",    config = true },
+  { "dstein64/vim-startuptime",         cmd = "StartupTime" },
 
 
   -- LSP ------------------------------
-  { 'VonHeikemen/lsp-zero.nvim',                   branch = 'v3.x' },
+  { 'VonHeikemen/lsp-zero.nvim',        branch = 'v3.x' },
   { 'neovim/nvim-lspconfig' },
   { 'williamboman/mason.nvim' },
   { 'williamboman/mason-lspconfig.nvim' },

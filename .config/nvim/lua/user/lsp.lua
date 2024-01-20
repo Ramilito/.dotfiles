@@ -21,8 +21,9 @@ require('mason-lspconfig').setup({
 })
 
 local cmp = require('cmp')
+
 require("luasnip.loaders.from_vscode").lazy_load()
-cmp.setup({
+local cmp_opts = {
   snippet = {
     expand = function(args)
       require 'luasnip'.lsp_expand(args.body)
@@ -35,12 +36,19 @@ cmp.setup({
     { name = 'nvim_lua' },
     { name = 'buffer' },
   },
-  formatting = lsp_zero.cmp_format(),
   mapping = cmp.mapping.preset.insert({
     ['<C-Space>'] = cmp.mapping.complete(),
+    -- ['<PageDown>'] = cmp.mapping.scroll_docs(-4),
+    -- ['<PageUp>'] = cmp.mapping.scroll_docs(4),
     ['<CR>'] = cmp.mapping.confirm({
       behavior = cmp.ConfirmBehavior.Replace,
       select = false,
     })
   })
-})
+}
+
+if not vim.fn.has("win64") then
+  cmp_opts.formatting = lsp_zero.cmp_format()
+end
+
+cmp.setup(cmp_opts)

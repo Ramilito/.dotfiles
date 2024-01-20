@@ -59,7 +59,7 @@ vim.g.indentline_char = '│'
 vim.o.listchars       = 'trail:•,extends:#,nbsp:.,precedes:❮,extends:❯,tab:│ ,leadmultispace:│ '
 vim.opt.list          = true
 
-if vim.fn.has("windows_nt") and not vim.fn.has("wsl") then
+if vim.fn.has("win64") then
   opt.clipboard="unnamedplus"
 end
 if vim.fn.has "wsl" == 1 then
