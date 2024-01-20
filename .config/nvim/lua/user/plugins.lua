@@ -17,7 +17,6 @@ local M = {
       require('ts_context_commentstring').setup {}
     end
   },
-  { "mbbill/undotree",                             event = "BufReadPre" },
   { "JoosepAlviste/nvim-ts-context-commentstring", event = "VeryLazy" },
   { "MunifTanjim/nui.nvim",                        event = "VeryLazy" },
   { "famiu/bufdelete.nvim",                        cmd = "Bdelete" },
