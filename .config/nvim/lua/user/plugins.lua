@@ -9,7 +9,7 @@ local M = {
   {
     "nvim-treesitter/nvim-treesitter-context",
     event = "VeryLazy",
-    enabled = not vim.fn.has("win64"),
+    enabled = not vim.g.neovide,
     config = function()
       require('ts_context_commentstring').setup {}
     end
@@ -17,7 +17,7 @@ local M = {
   {
     "JoosepAlviste/nvim-ts-context-commentstring",
     event = "VeryLazy",
-    enabled = not vim.fn.has("win64")
+    enabled = not vim.g.neovide
   },
   { "MunifTanjim/nui.nvim",             event = "VeryLazy" },
   { "famiu/bufdelete.nvim",             cmd = "Bdelete" },

@@ -101,8 +101,7 @@ Map("v", "<leader>/", "<Plug>(comment_toggle_linewise_visual)", { desc = "Commen
 Map("v", "<leader>f", "vim.lsp.buf.format(opts)", { desc = "Format" })
 Map("n", "<leader>f", "<cmd>LspZeroFormat<cr>", { desc = "Format" })
 
--- Map("n", "<leader>e", "<cmd> NvimTreeToggle <CR>", { desc = "Explorer" })
-Map("n", "<leader>e", "<cmd> Oil <CR>", { desc = "Explorer" })
+Map("n", "<leader>e", "<cmd>lua MiniFiles.open() <CR>", { desc = "Explorer" })
 
 Map("n", "<leader>su", '<cmd>lua require("telescope").extensions.undo.undo({ side_by_side = true }) <CR>', { desc = "Undo" })
 
