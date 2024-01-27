@@ -15,7 +15,7 @@ return {
           local enabled = false
           if opts.textobjects then
             for _, mod in ipairs({ "move", "select", "swap", "lsp_interop" }) do
-              if opts.textobjects[mod] and opts.textobjects[mod].enable then
+              if opts.textobjects[mod] and opts.textobjects[mod].enable and not vim.g.neovide then
                 enabled = true
                 break
               end
