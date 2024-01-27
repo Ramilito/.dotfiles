@@ -47,26 +47,24 @@ local M = {
     dependencies = { "rafamadriz/friendly-snippets" },
   },
   {
-    'stevearc/oil.nvim',
-    opts = {},
-    dependencies = { "nvim-tree/nvim-web-devicons" },
-    config = function()
-      require("oil").setup({
-        keymaps = {
-          ["s"] = "actions.select_vsplit",
-          ["S"] = "actions.select_split",
-          ["<leader>e"] = "actions.close",
-          ["<C-s>"] = false,
-          ["<BS>"] = "actions.parent",
-        },
-        use_default_keymaps = true,
-      })
-    end
-  },
-  {
     'echasnovski/mini.nvim',
     config = function()
       require('mini.cursorword').setup({ delay = 300 })
+      require('mini.files').setup({
+        mappings = {
+          close       = '<esc>',
+          go_in       = '',
+          go_in_plus  = '<cr>',
+          go_out      = '<BS>',
+          go_out_plus = '',
+          reset       = '',
+          reveal_cwd  = '@',
+          show_help   = 'g?',
+          synchronize = '=',
+          trim_left   = '<',
+          trim_right  = '>',
+        },
+      })
     end,
     version = '*'
   },
