@@ -18,3 +18,5 @@ zsh-defer source "$HOME/.cargo/env"
 source ${HOMEBREW_PREFIX}/share/zsh/site-functions/kubesess.sh
 source ${HOMEBREW_PREFIX}/opt/kubesess/etc/bash_completion.d/completion.sh
 source <(stern --completion=zsh)
+
+eval "$(zoxide init --cmd cd zsh)"
