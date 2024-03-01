@@ -14,8 +14,8 @@ end
 
 local M = {
   "nvim-telescope/telescope.nvim",
-  cmd = { "Telescope" },
-  lazy = true,
+  -- cmd = { "Telescope" },
+  lazy = false,
   dependencies = {
     { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
     { "debugloop/telescope-undo.nvim" },

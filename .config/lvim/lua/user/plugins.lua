@@ -1,5 +1,4 @@
 lvim.plugins = {
-  { "stevearc/dressing.nvim" },
   { "Hoffs/omnisharp-extended-lsp.nvim" },
   { "folke/zen-mode.nvim" },
   { "j-hui/fidget.nvim" },
