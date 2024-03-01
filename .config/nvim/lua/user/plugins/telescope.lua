@@ -18,7 +18,8 @@ local M = {
   lazy = true,
   dependencies = {
     { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
-    { "debugloop/telescope-undo.nvim" }
+    { "debugloop/telescope-undo.nvim" },
+    { "nvim-telescope/telescope-ui-select.nvim" }
   },
   keys = {
     { "<leader>sf", "<cmd> Telescope find_files <CR>",                                        desc = "Search Files" },
@@ -72,9 +73,17 @@ function M.config()
       selection_caret = " ",
       winblend = borderless and 0 or 10,
     },
+    extensions = {
+      ["ui-select"] = {
+        require("telescope.themes").get_dropdown {
+          -- even more opts
+        }
+      }
+    }
   })
 
   telescope.load_extension("fzf")
+  telescope.load_extension("ui-select")
   telescope.load_extension("undo")
 end
 
