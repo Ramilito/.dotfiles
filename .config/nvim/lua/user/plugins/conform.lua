@@ -5,10 +5,11 @@ local M = {
 		require("conform").setup({
 			formatters_by_ft = {
 				lua = { "stylua" },
-				-- Conform will run multiple formatters sequentially
 				python = { "isort", "black" },
-				-- Use a sub-list to run only the first available formatter
-				javascript = { { "prettierd", "prettier" } },
+				javascript = { { "prettierd", "prettier", "eslint_d" } },
+				typescript = { { "prettierd", "prettier", "eslint_d" } },
+				typescriptreact = { { "prettierd", "prettier", "eslint_d" } },
+				css = { { "prettierd", "prettier", "eslint_d" } },
 				json = { "jq" },
 				rust = { "rustfmt" },
 				sh = { "shellcheck" },
