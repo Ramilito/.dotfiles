@@ -28,6 +28,7 @@ local otherPlugins = {
   require("user.plugins.navigator"),
   require("user.plugins.mini-files"),
   require("user.plugins.conform"),
+  require("user.plugins.neogit"),
   -- require("user.plugins.ai"),
 }
 
