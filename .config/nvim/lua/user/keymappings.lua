@@ -103,8 +103,9 @@ Map("n", "<leader>f", "<cmd>lua require('conform').format() <cr>", {desc = "Form
 Map("n", "<leader>su", '<cmd>lua require("telescope").extensions.undo.undo({ side_by_side = true }) <CR>', { desc = "Undo" })
 
 -- Git
-Map("n", "<leader>gg", '<cmd>lua require("user.functions").lazygit_toggle()<cr>', { desc = "Lazygit" })
--- Map("n", "<leader>gg", '<cmd>Neogit<cr>', { desc = "Neogit" })
+-- Map("n", "<leader>gg", '<cmd>lua require("user.functions").lazygit_toggle()<cr>', { desc = "Lazygit" })
+Map("n", "<leader>gg", '<cmd>Neogit<cr>', { desc = "Neogit" })
+Map("n", "<leader>gc", '<cmd>G commit<cr>', { desc = "Commit" })
 
 --norg
 Map("n", "<leader>nn", "<cmd>Neorg workspace notes <cr> <bar> <cmd> Neorg keybind norg core.dirman.new.note<cr>",

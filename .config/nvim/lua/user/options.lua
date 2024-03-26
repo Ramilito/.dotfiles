@@ -55,9 +55,9 @@ opt.ignorecase        = true
 opt.smartcase         = true
 opt.shortmess         = "filnxtToOFWIcC"
 opt.shellcmdflag      = "-ic"
-vim.g.indentline_char = '│'
-vim.o.listchars       = 'trail:•,extends:#,nbsp:.,precedes:❮,extends:❯,tab:│ ,leadmultispace:│ '
-vim.opt.list          = true
+-- vim.g.indentline_char = '│'
+-- vim.o.listchars       = 'trail:•,extends:#,nbsp:.,precedes:❮,extends:❯,tab:│ ,leadmultispace:│ '
+-- vim.opt.list          = true
 
 if vim.fn.has("win64") then
   opt.clipboard="unnamedplus"

@@ -1,5 +1,6 @@
 local M = {
 	{ "nvim-lua/plenary.nvim" },
+	{ "tpope/vim-fugitive", lazy = true },
 	{ "jose-elias-alvarez/typescript.nvim", lazy = true },
 	{ "akinsho/toggleterm.nvim", lazy = true },
 	{
