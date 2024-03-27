@@ -3,7 +3,7 @@ local M = {
     "nvim-neorg/neorg",
     lazy = true,
     -- event = "VeryLazy",
-    build = ":Neorg sync-parsers",
+    -- build = ":Neorg sync-parsers",
     cmd = "Neorg",
     ft = "norg",
     opts = {
