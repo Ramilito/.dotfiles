@@ -66,27 +66,3 @@ vim.api.nvim_create_autocmd({ "TextChanged", "TextChangedI", "InsertLeave" }, {
     vim.cmd("silent! update")
   end,
 })
-
--- vim.api.nvim_create_autocmd("User", {
---   pattern = "OilEnter",
---   callback = vim.schedule_wrap(function(args)
---     local oil = require("oil")
---     if vim.api.nvim_get_current_buf() == args.data.buf and oil.get_cursor_entry() then
---       oil.select({ preview = true })
---     end
---   end),
--- })
-
-vim.api.nvim_create_autocmd("FileType", {
-  pattern = "oil_preview",
-  callback = function(params)
-    vim.keymap.set("n", "<CR>", "o", { buffer = params.buf, remap = true, nowait = true })
-  end,
-})
-
--- vim.api.nvim_create_autocmd('ColorScheme', {
---   callback = function()
---     vim.cmd([[highlight CursorLine guibg=#2d2d2d cterm=underline]])
---     vim.cmd([[highlight CursorColumn guibg=#2d2d2d cterm=underline]])
---   end
--- })
