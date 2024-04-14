@@ -113,14 +113,6 @@ Map("n", "<leader>nn", "<cmd>Neorg workspace notes <cr> <bar> <cmd> Neorg keybin
 
 Map("n", "<leader>nj", "<cmd>Neorg workspace notes <cr> <bar> <cmd> Neorg journal today<cr>", { desc = "Norg" })
 
--- trouble
-Map("n", "<leader>xx", "<cmd>TroubleToggle<cr>", { desc = "Toggle" })
-Map("n", "<leader>xw", "<cmd>TroubleToggle workspace_diagnostics<cr>", { desc = "Workspace" })
-Map("n", "<leader>xd", "<cmd>TroubleToggle document_diagnostics<cr>", { desc = "Document" })
-Map("n", "<leader>xl", "<cmd>TroubleToggle loclist<cr>", { desc = "Loclist" })
-Map("n", "<leader>xq", "<cmd>TroubleToggle quickfix<cr>", { desc = "Quickfix" })
-Map("n", "gR", "<cmd>TroubleToggle lsp_references<cr>", { desc = "References" })
-
 -- Indenting
 Map("v", "<", "<gv", { desc = "Indent left" })
 Map("v", ">", ">gv", { desc = "Indent right" })
