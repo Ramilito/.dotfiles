@@ -5,7 +5,7 @@ return function(config)
     "JetBrains Mono Medium",
     "Apple Color Emoji",
   })
-  config.font_size = 11
+  config.font_size = 10
   config.max_fps = 120
   config.enable_wayland = false
   config.pane_focus_follows_mouse = false

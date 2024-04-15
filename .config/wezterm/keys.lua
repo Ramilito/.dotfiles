@@ -28,6 +28,7 @@ end
 return function(config)
   config.leader = { key = "Space", mods = "CTRL|ALT" }
   config.keys = {
+    { key = 'l', mods = 'ALT', action = wezterm.action.ShowLauncher },
     -- Adjust Neovim And Wezterm Windows With Navigator.nvim
     bind_if(is_outside_vim, 'LeftArrow', 'CTRL|SHIFT', act.AdjustPaneSize { 'Left', 2 }),
     bind_if(is_outside_vim, 'RightArrow', 'CTRL|SHIFT', act.AdjustPaneSize { 'Right', 2 }),

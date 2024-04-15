@@ -3,9 +3,7 @@ local keys = require("keys")
 local ui = require("ui")
 local colors = require("colors")
 local hyperlink = require("hyperlink")
-
--- ---@diagnostic disable-next-line: unused-local
--- -- local events = require("events")
+local events = require("events")
 
 local config = {}
 if wezterm.config_builder then
