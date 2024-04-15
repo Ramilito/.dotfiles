@@ -1,4 +1,5 @@
-return {
+
+local rules = {
 	{
 		regex = "\\b\\w+://[\\w.-]+:[0-9]{2,15}\\S*\\b",
 		format = "$0",
@@ -24,3 +25,7 @@ return {
 		format = "https://example.com/tasks/?t=$1",
 	},
 }
+
+return function(config)
+  config.hyperlink_rules = rules
+end
