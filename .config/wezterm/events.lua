@@ -35,18 +35,18 @@ local mux = wezterm.mux
 local function start_server(project_dir, window)
   local tab, pane, window = window:spawn_tab { 
     cwd = project_dir .. '/services/vger-server',
-    workspace = "server",
   }
+  pane:send_text("nvim\n")
 
-  local server_pane = pane:split({
+  local build_pane = pane:split({
     direction = "Bottom",
     size = 0.3,
     cwd = project_dir .. '/services/vger-server',
   })
 
-  server_pane:send_text("make dev\n")
+  build_pane:send_text("make dev\n")
 
-  local elastic_pane = server_pane:split({
+  local elastic_pane = build_pane:split({
     direction = "Right",
     size = 0.3,
     cwd = project_dir .. '/services/vger-server',
@@ -59,16 +59,20 @@ end
 
 local function start_client(project_dir, window)
   local tab, pane, window = window:spawn_tab({
-    workspace = "client",
     cwd = project_dir .. '/services/vger-client',
   })
 
-  local pane = pane:split({
+  pane:send_text("nvim\n")
+
+  local build_pane = pane:split({
     direction = "Bottom",
     size = 0.6,
     cwd = project_dir .. '/services/vger-client',
   })
-  pane:send_text("make dev\n")
+
+  build_pane:send_text("make dev\n")
+
+  tab:set_title("client")
 end
 
 
@@ -77,10 +81,11 @@ wezterm.on("gui-startup", function(cmd)
 
   local tab, pane, window = mux.spawn_window({
     workspace = "config",
-    cwd = "/home/ramilito/.config"
+    cwd = "/home/ramilito/.config",
   })
   tab:set_title("config")
 
+  pane:send_text("nvim\n")
   start_client(project_dir, window)
   start_server(project_dir, window)
 
