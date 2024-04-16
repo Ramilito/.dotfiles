@@ -1,9 +1,10 @@
 local is_dark = true
 
 local theme = {
-	inactive = "#666666",
+	inactive_bg = "#181818",
+	inactive_fg = "#9d9d9d",
 	bg = "#1f1f1f",
-	bg2 = "#373737",
+	bg2 = "#181818",
 	fg = "#cccccc",
 	blue = "#569CD6",
 	green = "#608B4E",
@@ -73,18 +74,20 @@ local colors = {
 		is_dark and theme.surface1 or theme.subtext0,
 	},
 	tab_bar = {
-		background = theme.bg,
+		background = theme.inactive_bg,
 		active_tab = {
-			bg_color = theme.bg,
+			bg_color = theme.bg2,
 			fg_color = theme.fg,
-			intensity = "Half",
+			intensity = "Bold",
 			underline = "None",
 			italic = false,
 			strikethrough = false,
 		},
 		inactive_tab = {
-			bg_color = theme.bg2,
-			fg_color = theme.fg,
+			bg_color = theme.inactive_bg,
+			fg_color = theme.inactive_fg,
+			intensity = "Half",
+			underline = "None",
 		},
 		inactive_tab_hover = {
 			bg_color = theme.bg2,
