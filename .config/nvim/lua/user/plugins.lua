@@ -59,15 +59,6 @@ local M = {
 			-- options
 		},
 	},
-	{
-		"Mofiqul/vscode.nvim",
-		lazy = false,
-		priority = 1000,
-		config = function()
-			vim.cmd([[colorscheme vscode]])
-			vim.o.background = "dark"
-		end,
-	},
 	-- Automatically add closing tags for HTML and JSX
 	{
 		"windwp/nvim-ts-autotag",

@@ -1,7 +1,10 @@
 local is_dark = true
 
 local theme = {
-	base = "#1e1e1e",
+	inactive = "#666666",
+	bg = "#1f1f1f",
+	bg2 = "#373737",
+	fg = "#cccccc",
 	blue = "#569CD6",
 	green = "#608B4E",
 	red = "#F44747",
@@ -36,10 +39,10 @@ local theme = {
 local colors = {
 	split = theme.surface0,
 	foreground = theme.text,
-	background = theme.base,
+	background = theme.bg,
 	cursor_bg = theme.rosewater,
 	cursor_border = theme.rosewater,
-	cursor_fg = is_dark and theme.base or theme.crust,
+	cursor_fg = is_dark and theme.bg or theme.crust,
 	selection_bg = theme.surface2,
 	selection_fg = theme.text,
 	visual_bell = theme.surface0,
@@ -70,35 +73,34 @@ local colors = {
 		is_dark and theme.surface1 or theme.subtext0,
 	},
 	tab_bar = {
-		background = theme.crust,
+		background = theme.bg,
 		active_tab = {
-			bg_color = "none",
-			fg_color = theme.subtext1,
-			intensity = "Bold",
+			bg_color = theme.bg,
+			fg_color = theme.fg,
+			intensity = "Half",
 			underline = "None",
 			italic = false,
 			strikethrough = false,
 		},
 		inactive_tab = {
-			bg_color = theme.crust,
-			fg_color = theme.surface2,
+			bg_color = theme.bg2,
+			fg_color = theme.fg,
 		},
 		inactive_tab_hover = {
-			bg_color = theme.mantle,
-			fg_color = theme.subtext0,
+			bg_color = theme.bg2,
+			fg_color = theme.fg,
 		},
 		new_tab = {
-			bg_color = theme.crust,
-			fg_color = theme.subtext0,
+			bg_color = theme.bg,
+			fg_color = theme.fg,
 		},
 		new_tab_hover = {
-			bg_color = theme.crust,
-			fg_color = theme.subtext0,
+			bg_color = theme.bg,
+			fg_color = theme.fg,
 		},
 	},
 }
 
 return function(config)
-  config.colors = colors
+	config.colors = colors
 end
-
