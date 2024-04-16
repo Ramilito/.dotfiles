@@ -32,16 +32,17 @@ local mux = wezterm.mux
 -- end)
 --
 
-local function start_server(project_dir, window)
+local function start_server(root_dir, window)
+local project_dir = root_dir ..'/services/vger-server'
   local tab, pane, window = window:spawn_tab { 
-    cwd = project_dir .. '/services/vger-server',
+    cwd = project_dir
   }
   pane:send_text("nvim\n")
 
   local build_pane = pane:split({
     direction = "Bottom",
     size = 0.3,
-    cwd = project_dir .. '/services/vger-server',
+    cwd = project_dir
   })
 
   build_pane:send_text("make dev\n")
@@ -49,25 +50,35 @@ local function start_server(project_dir, window)
   local elastic_pane = build_pane:split({
     direction = "Right",
     size = 0.3,
-    cwd = project_dir .. '/services/vger-server',
+    cwd = project_dir
   })
 
   elastic_pane:send_text("k port-forward svc/elasticsearch-es-http 9200:9200 -n elastic\n")
+
+  local kgp_pane = elastic_pane:split({
+    direction = "Bottom",
+    size = 0.5,
+    cwd = project_dir
+  })
+
+  kgp_pane:send_text("watch 'kubectl get pods -n services'\n")
+
 
   tab:set_title("server")
 end
 
 local function start_client(project_dir, window)
+  local project_dir = root_dir ..'/services/vger-client'
   local tab, pane, window = window:spawn_tab({
-    cwd = project_dir .. '/services/vger-client',
+    cwd = project_dir
   })
 
   pane:send_text("nvim\n")
 
   local build_pane = pane:split({
     direction = "Bottom",
-    size = 0.6,
-    cwd = project_dir .. '/services/vger-client',
+    size = 0.3,
+    cwd = project_dir
   })
 
   build_pane:send_text("make dev\n")
