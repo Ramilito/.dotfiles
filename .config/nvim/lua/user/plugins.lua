@@ -10,14 +10,6 @@ local M = {
 		"nvim-treesitter/nvim-treesitter-context",
 		event = "VeryLazy",
 		enabled = not vim.g.neovide,
-		config = function()
-			require("ts_context_commentstring").setup({})
-		end,
-	},
-	{
-		"JoosepAlviste/nvim-ts-context-commentstring",
-		event = "VeryLazy",
-		enabled = not vim.g.neovide,
 	},
 	{ "MunifTanjim/nui.nvim", event = "VeryLazy" },
 	{ "famiu/bufdelete.nvim", cmd = "Bdelete" },
@@ -82,23 +74,6 @@ local M = {
 			"hbs",
 		},
 		opts = {},
-	},
-	{
-		"numToStr/Comment.nvim",
-		lazy = true,
-		keys = {
-			{ "gcc", mode = "n", desc = "Comment toggle current line" },
-			{ "gc", mode = { "n", "o" }, desc = "Comment toggle linewise" },
-			{ "gc", mode = "x", desc = "Comment toggle linewise (visual)" },
-			{ "gbc", mode = "n", desc = "Comment toggle current block" },
-			{ "gb", mode = { "n", "o" }, desc = "Comment toggle blockwise" },
-			{ "gb", mode = "x", desc = "Comment toggle blockwise (visual)" },
-		},
-		config = function()
-			require("Comment").setup({
-				pre_hook = require("ts_context_commentstring.integrations.comment_nvim").create_pre_hook(),
-			})
-		end,
 	},
 	{
 		"jinh0/eyeliner.nvim",
