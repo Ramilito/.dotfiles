@@ -94,8 +94,6 @@ Map(
   { desc = "Close all but current" }
 )
 Map("n", "<leader>ul", "<cmd>Lazy<cr>", { desc = "Lazy" })
-Map("n", "<leader>/", ":normal gcc<CR>", { desc = "Comment" })
-Map("v", "<leader>/", "<Plug>(comment_toggle_linewise_visual)", { desc = "Comment" })
 
 Map("v", "<leader>f", "<cmd>lua require('conform').format(opts) <cr>", {desc = "Format"})
 Map("n", "<leader>f", "<cmd>lua require('conform').format() <cr>", {desc = "Format"})
@@ -103,7 +101,7 @@ Map("n", "<leader>f", "<cmd>lua require('conform').format() <cr>", {desc = "Form
 Map("n", "<leader>su", '<cmd>lua require("telescope").extensions.undo.undo({ side_by_side = true }) <CR>', { desc = "Undo" })
 
 -- Git
--- Map("n", "<leader>gg", '<cmd>lua require("user.functions").lazygit_toggle()<cr>', { desc = "Lazygit" })
+Map("n", "<leader>gt", '<cmd>lua require("user.functions").lazygit_toggle()<cr>', { desc = "Lazygit" })
 Map("n", "<leader>gg", '<cmd>Neogit<cr>', { desc = "Neogit" })
 Map("n", "<leader>gc", '<cmd>G commit<cr>', { desc = "Commit" })
 
