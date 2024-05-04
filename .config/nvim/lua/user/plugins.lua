@@ -15,21 +15,6 @@ local M = {
 	{ "famiu/bufdelete.nvim", cmd = "Bdelete" },
 	{ "norcalli/nvim-terminal.lua", ft = "terminal", config = true },
 	{ "dstein64/vim-startuptime", cmd = "StartupTime" },
-
-	-- LSP ------------------------------
-	{ "VonHeikemen/lsp-zero.nvim", branch = "v3.x" },
-	{ "neovim/nvim-lspconfig" },
-	{ "williamboman/mason.nvim" },
-	{ "williamboman/mason-lspconfig.nvim" },
-	{ "hrsh7th/cmp-nvim-lsp" },
-	{ "hrsh7th/nvim-cmp" },
-	"saadparwaiz1/cmp_luasnip",
-	"hrsh7th/cmp-nvim-lua",
-	"hrsh7th/cmp-nvim-lsp",
-	"hrsh7th/cmp-buffer",
-	"hrsh7th/cmp-path",
-	-- LuaSnip ------------------------------
-	{ "rafamadriz/friendly-snippets", lazy = true },
 	{
 		"L3MON4D3/LuaSnip",
 		event = "InsertEnter",

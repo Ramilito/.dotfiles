@@ -39,7 +39,6 @@ for k in pairs(otherPlugins) do
 end
 
 require("lazy").setup(plugins)
-require("user.lsp")
 
 require("user.keymappings")
 
