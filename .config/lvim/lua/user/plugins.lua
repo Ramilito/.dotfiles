@@ -13,7 +13,6 @@ lvim.plugins = {
   { "github/copilot.vim" },
   { "folke/trouble.nvim", cmd = "TroubleToggle" },
   -- { 's1n7ax/nvim-window-picker', tag = 'v1.*' },
-  -- { "SmiteshP/nvim-navic", requires = "neovim/nvim-lspconfig" },
   { "dstein64/vim-startuptime", cmd = "StartupTime" },
   { "folke/todo-comments.nvim", dependencies = "nvim-lua/plenary.nvim" },
   { 'krivahtoo/silicon.nvim', build = './install.sh' },
