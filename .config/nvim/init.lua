@@ -31,6 +31,7 @@ local otherPlugins = {
 	require("user.plugins.conform"),
 	require("user.plugins.neogit"),
 	require("user.plugins.profile"),
+	require("user.plugins.lsp-zero"),
 	-- require("user.plugins.ai"),
 }
 
