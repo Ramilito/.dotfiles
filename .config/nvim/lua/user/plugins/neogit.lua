@@ -1,7 +1,14 @@
 return {
 	"NeogitOrg/neogit",
-  -- lazy = true,
-  event = "VeryLazy",
+	lazy = true,
+	-- event = "VeryLazy",
+	keys = {
+		{
+			"<leader>gg",
+       "<cmd>Neogit<cr>",
+			desc = "Open Neogit",
+		},
+	},
 	dependencies = {
 		"nvim-lua/plenary.nvim", -- required
 		"sindrets/diffview.nvim", -- optional - Diff integration

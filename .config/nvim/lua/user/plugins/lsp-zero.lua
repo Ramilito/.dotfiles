@@ -28,7 +28,7 @@ local M = {
 			lsp_zero.default_keymaps({ buffer = bufnr, preserve_mappings = false })
 		end)
 
-		lsp_zero.setup_servers({ "tsserver", "rust_analyzer" })
+		lsp_zero.setup_servers({ "lua_ls", "tsserver", "rust_analyzer" })
 		local cmp = require("cmp")
 
 		require("luasnip.loaders.from_vscode").lazy_load()
