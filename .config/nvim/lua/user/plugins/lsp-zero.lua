@@ -25,7 +25,7 @@ local M = {
 	config = function()
 		local lsp_zero = require("lsp-zero")
 		lsp_zero.on_attach(function(client, bufnr)
-			client.server_capabilities.semanticTokensProvider = nil
+			-- client.server_capabilities.semanticTokensProvider = nil
 			lsp_zero.default_keymaps({ buffer = bufnr, preserve_mappings = false })
 		end)
 
