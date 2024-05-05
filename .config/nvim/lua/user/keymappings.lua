@@ -102,7 +102,7 @@ Map("n", "<leader>su", '<cmd>lua require("telescope").extensions.undo.undo({ sid
 
 -- Git
 Map("n", "<leader>gt", '<cmd>lua require("user.functions").lazygit_toggle()<cr>', { desc = "Lazygit" })
-Map("n", "<leader>gg", '<cmd>Neogit<cr>', { desc = "Neogit" })
+-- Map("n", "<leader>gg", '<cmd>Neogit<cr>', { desc = "Neogit" })
 Map("n", "<leader>gc", '<cmd>G commit<cr>', { desc = "Commit" })
 
 --norg
