@@ -17,21 +17,23 @@ require("user.autocmd")
 -- require("user.indentline")
 local plugins = require("user.plugins")
 local otherPlugins = {
-	require("user.plugins.theme"),
 	require("user.plugins.gitsigns"),
+	require("user.plugins.conform"),
+	require("user.plugins.devicons"),
+	require("user.plugins.lsp-zero"),
+	require("user.plugins.mini-files"),
+	require("user.plugins.navigator"),
+	require("user.plugins.neogit"),
+	require("user.plugins.neorg"),
+	require("user.plugins.nvim-bqf"),
+	require("user.plugins.profile"),
+	require("user.plugins.silicon"),
 	require("user.plugins.telescope"),
+	require("user.plugins.theme"),
 	require("user.plugins.treesitter"),
 	require("user.plugins.trouble"),
 	require("user.plugins.which-key"),
-	require("user.plugins.nvim-bqf"),
-	require("user.plugins.neorg"),
-	require("user.plugins.silicon"),
-	require("user.plugins.navigator"),
-	require("user.plugins.mini-files"),
-	require("user.plugins.conform"),
-	require("user.plugins.neogit"),
-	require("user.plugins.profile"),
-	require("user.plugins.lsp-zero"),
+	require("user.plugins.winbar"),
 	-- require("user.plugins.ai"),
 }
 
