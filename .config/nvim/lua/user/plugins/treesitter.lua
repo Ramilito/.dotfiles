@@ -56,7 +56,7 @@ return {
           "markdown",
           "markdown_inline",
           "nix",
-          "norg",
+          -- "norg",
           "org",
           "python",
           "regex",

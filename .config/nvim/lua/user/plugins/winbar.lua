@@ -2,11 +2,11 @@ return {
 	{
 		"ramilito/winbar.nvim",
 		event = "VimEnter",
+		dependencies = { "nvim-tree/nvim-web-devicons" },
 		config = function()
-			local wb = require("winbar")
-			wb.setup({
+			require("winbar").setup({
 				icons = true,
-				diagnostics = false,
+				diagnostics = true,
 				buf_modified = true,
 			})
 		end,
