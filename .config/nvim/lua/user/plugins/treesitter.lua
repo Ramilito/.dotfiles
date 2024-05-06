@@ -67,6 +67,7 @@ return {
           "tsx",
           "typescript",
           "vim",
+          "vimdoc",
           "yaml",
           -- "comment", -- comments are slowing down TS bigtime, so disable for now
           -- "markdown",
