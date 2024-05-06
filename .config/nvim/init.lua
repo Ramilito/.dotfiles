@@ -24,7 +24,7 @@ local otherPlugins = {
 	require("user.plugins.mini-files"),
 	require("user.plugins.navigator"),
 	require("user.plugins.neogit"),
-	require("user.plugins.neorg"),
+	-- require("user.plugins.neorg"),
 	require("user.plugins.nvim-bqf"),
 	require("user.plugins.profile"),
 	require("user.plugins.silicon"),
