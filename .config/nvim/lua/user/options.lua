@@ -5,6 +5,7 @@ g.loaded_matchparen = 0
 g.mapleader = " "
 g.maplocalleader = " "
 
+opt.termguicolors = true
 -- Statuscolumn
 opt.number = true
 opt.relativenumber = true
