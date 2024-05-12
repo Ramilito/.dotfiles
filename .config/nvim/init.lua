@@ -34,6 +34,7 @@ local otherPlugins = {
 	require("user.plugins.trouble"),
 	require("user.plugins.which-key"),
 	require("user.plugins.winbar"),
+	require("user.plugins.kubectl"),
 	-- require("user.plugins.ai"),
 }
 
