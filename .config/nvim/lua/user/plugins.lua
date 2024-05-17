@@ -6,6 +6,7 @@ local M = {
 		"folke/zen-mode.nvim",
 		opts = {},
 	},
+	-- { "mrjones2014/smart-splits.nvim", lazy = false },
 	{
 		"nvim-treesitter/nvim-treesitter-context",
 		event = "VeryLazy",

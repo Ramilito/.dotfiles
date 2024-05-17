@@ -1,48 +1,9 @@
 local wezterm = require("wezterm")
 local act = wezterm.action
 
-local module = {}
-
-local w = require("wezterm")
-local a = w.action
-
-local function is_inside_vim(pane)
-	return pane:get_title():find("n?vim") ~= nil
-end
-
-local function is_outside_vim(pane)
-	return not is_inside_vim(pane)
-end
-
-local function bind_if(cond, key, mods, action)
-	local function callback(win, pane)
-		if cond(pane) then
-			win:perform_action(action, pane)
-		else
-			win:perform_action(a.SendKey({ key = key, mods = mods }), pane)
-		end
-	end
-
-	return { key = key, mods = mods, action = w.action_callback(callback) }
-end
-
 return function(config)
 	config.keys = {
 		{ key = "Space", mods = "ALT", action = wezterm.action.ShowLauncher },
-		-- Adjust Neovim And Wezterm Windows With Navigator.nvim
-		bind_if(is_outside_vim, "LeftArrow", "CTRL|SHIFT", act.AdjustPaneSize({ "Left", 2 })),
-		bind_if(is_outside_vim, "RightArrow", "CTRL|SHIFT", act.AdjustPaneSize({ "Right", 2 })),
-		bind_if(is_outside_vim, "DownArrow", "CTRL|SHIFT", act.AdjustPaneSize({ "Down", 2 })),
-		bind_if(is_outside_vim, "UpArrow", "CTRL|SHIFT", act.AdjustPaneSize({ "Up", 2 })),
-
-		bind_if(is_outside_vim, "LeftArrow", "CTRL", act.ActivatePaneDirection("Left")),
-		bind_if(is_outside_vim, "RightArrow", "CTRL", act.ActivatePaneDirection("Right")),
-		bind_if(is_outside_vim, "UpArrow", "CTRL", act.ActivatePaneDirection("Up")),
-		bind_if(is_outside_vim, "DownArrow", "CTRL", act.ActivatePaneDirection("Down")),
-		bind_if(is_outside_vim, "LeftArrow", "ALT", act.AdjustPaneSize({ "Left", 2 })),
-		bind_if(is_outside_vim, "RightArrow", "ALT", act.AdjustPaneSize({ "Right", 2 })),
-		bind_if(is_outside_vim, "UpArrow", "ALT", act.AdjustPaneSize({ "Up", 2 })),
-		bind_if(is_outside_vim, "DownArrow", "ALT", act.AdjustPaneSize({ "Down", 2 })),
 		{
 			mods = "ALT|SHIFT",
 			key = [[RightArrow]],

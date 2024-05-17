@@ -22,7 +22,7 @@ local otherPlugins = {
 	require("user.plugins.devicons"),
 	require("user.plugins.lsp-zero"),
 	require("user.plugins.mini-files"),
-	require("user.plugins.navigator"),
+	require("user.plugins.smart-splits"),
 	require("user.plugins.neogit"),
 	-- require("user.plugins.neorg"),
 	require("user.plugins.nvim-bqf"),
