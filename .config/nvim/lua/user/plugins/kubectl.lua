@@ -14,7 +14,10 @@ return {
 			},
 		},
 		config = function()
-			require("kubectl").setup()
+			require("kubectl").setup({
+				hints = true,
+				context = true,
+			})
 		end,
 	},
 }
