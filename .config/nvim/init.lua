@@ -19,6 +19,7 @@ local plugins = require("user.plugins")
 local otherPlugins = {
 	require("user.plugins.gitsigns"),
 	require("user.plugins.conform"),
+	require("user.plugins.markdown"),
 	require("user.plugins.devicons"),
 	require("user.plugins.lsp-zero"),
 	require("user.plugins.mini-files"),
