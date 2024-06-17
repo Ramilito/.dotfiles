@@ -2,8 +2,7 @@ return {
 	{
 		"ramilito/kubectl.nvim",
 		dir = "~/workspace/mine/kubectl.nvim/",
-		-- event = "VimEnter",
-		-- dependencies = { "nvim-tree/nvim-web-devicons" },
+		dependencies = { "nvim-lua/plenary.nvim" },
 		keys = {
 			{
 				"<leader>k",
@@ -15,8 +14,17 @@ return {
 		},
 		config = function()
 			require("kubectl").setup({
+				namespace = "All",
+				auto_refresh = {
+					enabled = false,
+					interval = 2000, -- milliseconds
+				},
 				hints = true,
 				context = true,
+				float_size = {
+					width = 0.9,
+					height = 0.8,
+				},
 			})
 		end,
 	},
