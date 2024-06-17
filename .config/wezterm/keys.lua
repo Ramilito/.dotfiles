@@ -89,6 +89,7 @@ return function(config)
 		{ key = "7", mods = "ALT", action = wezterm.action({ ActivateTab = 6 }) },
 		{ key = "8", mods = "ALT", action = wezterm.action({ ActivateTab = 7 }) },
 		{ key = "9", mods = "ALT", action = wezterm.action({ ActivateTab = 8 }) },
+		{ key = "Enter", mods = "CTRL", action = wezterm.action.SendString("\x1b[13;5u") },
 		{
 			key = "LeftArrow",
 			mods = "CTRL|SHIFT|ALT",
