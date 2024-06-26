@@ -2,8 +2,6 @@ return {
 	{
 		"ramilito/kubectl.nvim",
 		dir = "~/workspace/mine/kubectl.nvim/",
-		-- event = "VimEnter",
-		-- dependencies = { "nvim-tree/nvim-web-devicons" },
 		keys = {
 			{
 				"<leader>k",
