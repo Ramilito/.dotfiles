@@ -31,11 +31,7 @@ local M = {
 	},
 	{
 		"j-hui/fidget.nvim",
-		tag = "legacy",
-		event = "LspAttach",
-		opts = {
-			-- options
-		},
+		opts = {},
 	},
 	{
 		"JoosepAlviste/nvim-ts-context-commentstring",
