@@ -4,7 +4,7 @@ require("lazy").setup({
     { import = "user.plugins" },
   },
   defaults = { lazy = false },
-  install = { colorscheme = { "tokyonight", "habamax", "catppuccin" } },
+  install = { colorscheme = { "tokyonight", "habamax", "catppuccin", "vscode" } },
   checker = { enabled = false },
   diff = {
     cmd = "terminal_git",

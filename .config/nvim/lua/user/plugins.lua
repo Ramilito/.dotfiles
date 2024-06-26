@@ -2,10 +2,7 @@ local M = {
 	{ "nvim-lua/plenary.nvim" },
 	{ "jose-elias-alvarez/typescript.nvim", lazy = true },
 	{ "akinsho/toggleterm.nvim", lazy = true },
-	{
-		"folke/zen-mode.nvim",
-		opts = {},
-	},
+	-- { "mbbill/undotree", lazy = true, keys = { { "<leader>su", "<cmd>UndotreeToggle<cr>", desc = "Undotree" } } },
 	-- { "mrjones2014/smart-splits.nvim", lazy = false },
 	{
 		"nvim-treesitter/nvim-treesitter-context",
@@ -31,6 +28,7 @@ local M = {
 	},
 	{
 		"j-hui/fidget.nvim",
+		event = "LspAttach",
 		opts = {},
 	},
 	{

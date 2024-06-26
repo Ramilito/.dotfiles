@@ -63,9 +63,13 @@ opt.shellcmdflag      = "-ic"
 if vim.fn.has("win64") then
   opt.clipboard="unnamedplus"
 end
-if vim.fn.has "wsl" == 1 then
-  opt.undodir      = os.getenv("HOME") .. "/.config/nvim/undodir"
+
+if not vim.g.neovide then
   opt.undofile     = true
+  opt.undodir      = os.getenv("HOME") .. "/.config/nvim/undodir"
+end
+
+if vim.fn.has "wsl" == 1 then
   opt.smoothscroll = true
   g.clipboard = {
     name = "win32yank-wsl",
