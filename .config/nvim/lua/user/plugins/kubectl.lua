@@ -15,6 +15,7 @@ return {
 			require("kubectl").setup({
 				namespace = "All",
 				notifications = {
+
 					enabled = true,
 					verbose = false,
 				},
