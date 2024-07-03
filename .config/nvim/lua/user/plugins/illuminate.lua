@@ -4,11 +4,11 @@ return {
   config = function()
     require("illuminate").configure({
       providers = {
-        'regex',
-        'lsp',
-        'treesitter',
+        "regex",
+        "lsp",
+        "treesitter",
       },
-      delay = 300
+      delay = 300,
     })
     -- change the highlight style
     -- vim.api.nvim_set_hl(0, "IlluminatedWordText", { link = "Visual" })

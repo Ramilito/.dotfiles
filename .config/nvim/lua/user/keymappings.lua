@@ -8,7 +8,6 @@ function Map(mode, lhs, rhs, opts)
   vim.keymap.set(mode, lhs, rhs, options)
 end
 
-
 -- Map("n", "<leader>m", 'q', { desc = "Macro" })
 
 -- unMaps
@@ -18,7 +17,6 @@ Map("n", "h", "<nop>")
 Map("n", "j", "<nop>")
 Map("n", "k", "<nop>")
 Map("n", "l", "<nop>")
-
 
 -- Quit
 Map("n", "<leader>q", '<cmd> lua require("user.functions").smart_quit()<CR>', { desc = "Quit" })
@@ -39,15 +37,15 @@ Map("n", "<S-TAB>", ":bprevious<CR>", { desc = "Buffer prev" })
 -- Map("n", "<C-S-Right>", ":vertical resize +2<CR>", { desc = "Resize rigth" })
 -- Map("n", "<C-S-Up>", ":resize -2<CR>", { desc = "Resize up" })
 -- Map("n", "<C-S-Down>", ":resize +2<CR>", { desc = "Resize down" })
-vim.keymap.set('n', '<C-S-Left>', require('smart-splits').resize_left)
-vim.keymap.set('n', '<C-S-Down>', require('smart-splits').resize_down)
-vim.keymap.set('n', '<C-S-Up>', require('smart-splits').resize_up)
-vim.keymap.set('n', '<C-S-Right>', require('smart-splits').resize_right)
+vim.keymap.set("n", "<C-S-Left>", require("smart-splits").resize_left)
+vim.keymap.set("n", "<C-S-Down>", require("smart-splits").resize_down)
+vim.keymap.set("n", "<C-S-Up>", require("smart-splits").resize_up)
+vim.keymap.set("n", "<C-S-Right>", require("smart-splits").resize_right)
 -- moving between splits
-vim.keymap.set('n', '<C-Left>', require('smart-splits').move_cursor_left)
-vim.keymap.set('n', '<C-Down>', require('smart-splits').move_cursor_down)
-vim.keymap.set('n', '<C-Up>', require('smart-splits').move_cursor_up)
-vim.keymap.set('n', '<C-Right>', require('smart-splits').move_cursor_right)
+vim.keymap.set("n", "<C-Left>", require("smart-splits").move_cursor_left)
+vim.keymap.set("n", "<C-Down>", require("smart-splits").move_cursor_down)
+vim.keymap.set("n", "<C-Up>", require("smart-splits").move_cursor_up)
+vim.keymap.set("n", "<C-Right>", require("smart-splits").move_cursor_right)
 
 -- Move text up and down
 Map("i", "<S-Down>", "<Esc>:m .+1<CR>==gi", { desc = "Move up" })
@@ -88,16 +86,11 @@ Map("n", "<ESC>", ":let @/=''<CR>", { desc = "clear search" })
 Map("n", "<leader>c", "<cmd>bdelete<CR>", { desc = "Close buffer" })
 
 -- close all but current buffer
-Map(
-  "n",
-  "<leader>C",
-  '<cmd>lua require("user.functions").close_all_but_current()<CR>',
-  { desc = "Close all but current" }
-)
+Map("n", "<leader>C", '<cmd>lua require("user.functions").close_all_but_current()<CR>', { desc = "Close all but current" })
 Map("n", "<leader>ul", "<cmd>Lazy<cr>", { desc = "Lazy" })
 
-Map("v", "<leader>f", "<cmd>lua require('conform').format(opts) <cr>", {desc = "Format"})
-Map("n", "<leader>f", "<cmd>lua require('conform').format() <cr>", {desc = "Format"})
+Map("v", "<leader>f", "<cmd>lua require('conform').format(opts) <cr>", { desc = "Format" })
+Map("n", "<leader>f", "<cmd>lua require('conform').format() <cr>", { desc = "Format" })
 
 Map("n", "<leader>su", '<cmd>lua require("telescope").extensions.undo.undo({ side_by_side = true }) <CR>', { desc = "Undo" })
 
@@ -106,8 +99,7 @@ Map("n", "<leader>gt", '<cmd>lua require("user.functions").lazygit_toggle()<cr>'
 -- Map("n", "<leader>gg", '<cmd>Neogit<cr>', { desc = "Neogit" })
 
 --norg
-Map("n", "<leader>nn", "<cmd>Neorg workspace notes <cr> <bar> <cmd> Neorg keybind norg core.dirman.new.note<cr>",
-  { desc = "Norg" })
+Map("n", "<leader>nn", "<cmd>Neorg workspace notes <cr> <bar> <cmd> Neorg keybind norg core.dirman.new.note<cr>", { desc = "Norg" })
 
 Map("n", "<leader>nj", "<cmd>Neorg workspace notes <cr> <bar> <cmd> Neorg journal today<cr>", { desc = "Norg" })
 

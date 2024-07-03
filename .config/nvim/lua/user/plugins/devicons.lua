@@ -1,4 +1,4 @@
 return {
-  'nvim-tree/nvim-web-devicons',
-  event = 'VimEnter'
+  "nvim-tree/nvim-web-devicons",
+  event = "VimEnter",
 }

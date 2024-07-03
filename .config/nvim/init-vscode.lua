@@ -23,5 +23,4 @@ for k in pairs(otherPlugins) do
   table.insert(plugins, otherPlugins[k])
 end
 
-
 require("lazy").setup(plugins)

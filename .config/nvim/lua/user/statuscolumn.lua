@@ -20,7 +20,7 @@ _G.StatusColumn = {
       end
 
       vim.cmd.execute("'" .. lnum .. "fold" .. state .. "'")
-    end
+    end,
   },
 
   display = {
@@ -62,30 +62,30 @@ _G.StatusColumn = {
       end
 
       return icon
-    end
+    end,
   },
 
   sections = {
     sign_column = {
-      [[%s]]
+      [[%s]],
     },
     line_number = {
       -- [[%=%{v:lua.StatusColumn.display.line()}]]
-      [[%=%{v:relnum?v:relnum:v:lnum}]]
+      [[%=%{v:relnum?v:relnum:v:lnum}]],
     },
-    spacing     = {
-      [[ ]]
+    spacing = {
+      [[ ]],
     },
-    folds       = {
+    folds = {
       [[%#FoldColumn#]], -- HL
       -- [[%@v:lua.StatusColumn.handler.fold@]],
-      [[%{v:lua.StatusColumn.display.fold()}]]
+      [[%{v:lua.StatusColumn.display.fold()}]],
     },
-    border      = {
+    border = {
       [[%#StatusColumnBorder#]], -- HL
       [[▐]],
     },
-    padding     = {
+    padding = {
       [[%#StatusColumnBuffer#]], -- HL
       [[ ]],
     },
@@ -109,7 +109,7 @@ _G.StatusColumn = {
     vim.defer_fn(function()
       vim.api.nvim_win_set_option(vim.api.nvim_get_current_win(), "statuscolumn", value)
     end, 1)
-  end
+  end,
 }
 
 return StatusColumn.build({

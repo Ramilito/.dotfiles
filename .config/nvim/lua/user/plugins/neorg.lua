@@ -8,12 +8,13 @@ local M = {
     ft = "norg",
     opts = {
       load = {
-        ["core.defaults"] = {},  -- Loads default behaviour
+        ["core.defaults"] = {}, -- Loads default behaviour
         ["core.concealer"] = {}, -- Adds pretty icons to your documents
         ["core.export"] = {}, -- Adds pretty icons to your documents
         ["core.presenter"] = {
           config = {
-            zen_mode = "zen-mode" },
+            zen_mode = "zen-mode",
+          },
         },
         ["core.dirman"] = { -- Manages Neorg workspaces
           config = {
@@ -26,7 +27,7 @@ local M = {
       },
     },
     dependencies = { "nvim-web-devicons", "nvim-lua/plenary.nvim" },
-  }
+  },
 }
 
 -- require("nvim-web-devicons").set_icon({
