@@ -14,8 +14,12 @@ return {
 		config = function()
 			require("kubectl").setup({
 				namespace = "All",
+				notifications = {
+					enabled = true,
+					verbose = false,
+				},
 				auto_refresh = {
-					enabled = false,
+					enabled = true,
 					interval = 2000, -- milliseconds
 				},
 				hints = true,
