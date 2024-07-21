@@ -2,15 +2,6 @@ return {
   {
     "ramilito/kubectl.nvim",
     dir = "~/workspace/mine/kubectl.nvim/",
-    keys = {
-      {
-        "<leader>k",
-        function()
-          require("kubectl").open()
-        end,
-        desc = "Kubectl",
-      },
-    },
     config = function()
       require("kubectl").setup({
         namespace = "All",
@@ -19,10 +10,11 @@ return {
           verbose = false,
         },
         auto_refresh = {
-          enabled = true,
-          interval = 2000, -- milliseconds
+          enabled = false,
+          interval = 2500, -- milliseconds
         },
         hints = true,
+        obj_fresh = 10,
         context = true,
         float_size = {
           width = 0.9,
