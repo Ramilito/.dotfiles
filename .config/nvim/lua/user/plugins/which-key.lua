@@ -3,15 +3,16 @@ return {
   event = "VeryLazy",
   opts = {
     preset = "modern",
-    delay = 0,
+    delay = 1000,
     spec = {
-      { "<leader>g", group = "+git" },
-      { "<leader>n", group = "+neorg" },
-      { "<leader>s", group = "+search" },
-      { "<leader>u", group = "+utils" },
-      { "<leader>x", group = "+trouble" },
-      { "g", group = "goto" },
+      { "<leader>g", group = "+Git" },
+      { "<leader>n", group = "+Neorg" },
+      { "<leader>s", group = "+Search" },
+      { "<leader>u", group = "+Utils" },
+      { "<leader>x", group = "+Trouble" },
+      { "g", group = "Goto" },
     },
+    icons = { mappings = false },
     plugins = {
       operator = false,
       motions = false,
@@ -26,7 +27,7 @@ return {
       function()
         require("which-key").show({ global = false })
       end,
-      desc = "Buffer Local Keymaps (which-key)",
+      desc = "Buffer Local Keymaps",
     },
   },
 }
