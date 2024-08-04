@@ -10,8 +10,8 @@ return {
           verbose = false,
         },
         auto_refresh = {
-          enabled = false,
-          interval = 2500, -- milliseconds
+          enabled = true,
+          interval = 2000, -- milliseconds
         },
         hints = true,
         obj_fresh = 10,

@@ -111,3 +111,4 @@ Map("v", ">", ">gv", { desc = "Indent right" })
 Map("n", "?", "/", { desc = "Forward search", silent = false })
 
 Map("n", "<leader>k", '<cmd>lua require("kubectl").open()<cr>')
+Map('n', '<leader>m', '<cmd> lua require("user.functions").move_messages_to_buffer()<CR>')

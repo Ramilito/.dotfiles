@@ -52,4 +52,34 @@ M.lazygit_toggle = function()
   lazygit:toggle()
 end
 
+function M.move_messages_to_buffer()
+  -- Capture the current messages
+  local messages = vim.fn.execute("messages")
+
+  -- Get all the messages
+  local history = {}
+  for i = 1, vim.fn.histnr("cmd") do
+    local msg = vim.fn.histget("cmd", i)
+    if msg ~= "" then
+      table.insert(history, msg)
+    end
+  end
+
+  -- Combine messages and history
+  messages = messages .. "\n" .. table.concat(history, "\n")
+
+  -- Create a new buffer
+  local buf = vim.api.nvim_create_buf(false, true) -- Create a new buffer with no file and no listed
+
+  -- Split the messages by newlines to get lines for the buffer
+  local lines = vim.split(messages, "\n", true)
+
+  -- Set the lines in the buffer
+  vim.api.nvim_buf_set_lines(buf, 0, -1, false, lines)
+
+  -- Open the buffer in a new window
+  vim.api.nvim_command("split")
+  vim.api.nvim_set_current_buf(buf)
+end
+
 return M
