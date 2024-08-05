@@ -5,6 +5,9 @@ return {
     config = function()
       require("kubectl").setup({
         namespace = "All",
+        diff = {
+          bin = "kubediff",
+        },
         notifications = {
           enabled = true,
           verbose = false,
@@ -13,6 +16,7 @@ return {
           enabled = true,
           interval = 2000, -- milliseconds
         },
+        obj_fresh = 10,
         hints = true,
         obj_fresh = 10,
         context = true,
