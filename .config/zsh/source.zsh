@@ -13,10 +13,16 @@ fi
 
 zsh-defer source "$HOME/.cargo/env"
 
-# zsh-defer test -f ~/.kube/kubesess/scripts/sh/kubesess.sh && source ~/.kube/kubesess/scripts/sh/kubesess.sh
-# zsh-defer test -f ~/.kube/kubesess/scripts/sh/completion.sh && source ~/.kube/kubesess/scripts/sh/completion.sh
-source ${HOMEBREW_PREFIX}/share/zsh/site-functions/kubesess.sh
-source ${HOMEBREW_PREFIX}/opt/kubesess/etc/bash_completion.d/completion.sh
+if [[ $(uname) == "Darwin" ]]; then
+    source ${HOMEBREW_PREFIX}/share/zsh/site-functions/kubesess.sh
+    source ${HOMEBREW_PREFIX}/opt/kubesess/etc/bash_completion.d/completion.sh
+elif [[ $(uname) == "Linux" ]]; then
+    zsh-defer test -f ~/.kube/kubesess/scripts/sh/kubesess.sh && source ~/.kube/kubesess/scripts/sh/kubesess.sh
+    zsh-defer test -f ~/.kube/kubesess/scripts/sh/completion.sh && source ~/.kube/kubesess/scripts/sh/completion.sh
+else
+    echo 'Unknown OS!'
+fi
+
 source <(stern --completion=zsh)
 
 eval "$(zoxide init --cmd cd zsh)"
