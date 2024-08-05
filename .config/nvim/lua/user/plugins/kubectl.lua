@@ -16,7 +16,6 @@ return {
           enabled = true,
           interval = 2000, -- milliseconds
         },
-        obj_fresh = 10,
         hints = true,
         obj_fresh = 10,
         context = true,
