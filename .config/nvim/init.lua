@@ -33,8 +33,9 @@ local otherPlugins = {
   require("user.plugins.theme"),
   require("user.plugins.treesitter"),
   require("user.plugins.trouble"),
-  require("user.plugins.which-key"),
+  -- require("user.plugins.which-key"),
   require("user.plugins.winbar"),
+  -- require("user.plugins.dashboard"),
   require("user.plugins.kubectl"),
   -- require("user.plugins.ai"),
 }
