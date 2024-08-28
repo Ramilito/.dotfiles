@@ -3,7 +3,7 @@ return {
   lazy = true,
   cmd = "Silicon",
   config = function()
-    require("silicon").setup({
+    require("nvim-silicon").setup({
       -- Configuration here, or leave empty to use defaults
     })
   end,
