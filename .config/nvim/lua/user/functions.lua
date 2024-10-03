@@ -9,7 +9,6 @@ end
 M.smart_quit = function()
   local bufnr = vim.api.nvim_get_current_buf()
   local modified = vim.api.nvim_get_option_value("modified", { buf = bufnr })
-  -- require("edgy").close()
   if modified then
     vim.ui.input({
       prompt = "You have unsaved changes. Quit anyway? (y/n) ",

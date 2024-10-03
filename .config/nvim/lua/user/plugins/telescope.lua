@@ -1,17 +1,3 @@
-local function project_files()
-  local opts = {}
-  if vim.loop.fs_stat(".git") then
-    opts.show_untracked = true
-    require("telescope.builtin").git_files(opts)
-  else
-    local client = vim.lsp.get_active_clients()[1]
-    if client then
-      opts.cwd = client.config.root_dir
-    end
-    require("telescope.builtin").find_files(opts)
-  end
-end
-
 local M = {
   "nvim-telescope/telescope.nvim",
   -- cmd = { "Telescope" },
@@ -37,6 +23,7 @@ local M = {
       desc = "Find Buffers",
     },
     { "<leader>sh", "<cmd> Telescope help_tags <CR>", desc = "Help Page" },
+    { "<leader>sc", "<cmd> Telescope highlights <CR>", desc = "Highlights" },
     {
       "<leader>sr",
       "<cmd> Telescope oldfiles <CR>",
@@ -48,7 +35,6 @@ local M = {
 }
 
 function M.config()
-  local actions = require("telescope.actions")
   local telescope = require("telescope")
   local borderless = true
   telescope.setup({

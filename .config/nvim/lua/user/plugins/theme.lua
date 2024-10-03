@@ -15,4 +15,5 @@ local M = {
     vim.o.background = "dark"
   end,
 }
+
 return M
