@@ -23,6 +23,7 @@ opt.foldlevelstart = 99
 -- opt.foldmethod     = "expr"
 opt.foldmethod = "indent"
 opt.foldnestmax = 10
+opt.foldtext = ""
 
 -- opt.concealcursor = "nc"
 -- opt.conceallevel = 2 -- Hide * markup for bold and italic
@@ -57,14 +58,21 @@ opt.smartcase = true
 opt.shortmess = "filnxtToOFWIcC"
 opt.shellcmdflag = "-ic"
 -- vim.g.indentline_char = '│'
--- vim.o.listchars       = 'trail:•,extends:#,nbsp:.,precedes:❮,extends:❯,tab:│ ,leadmultispace:│ '
--- vim.opt.list          = true
+-- vim.o.list = true -- Show some invisible characters (tabs...
+-- vim.opt.listchars = {
+--   -- trail = '·',
+--   eol = "↲",
+--   extends = "",
+--   precedes = "",
+--   tab = "┆·",
+--   -- leadmultispace = '│ ',
+-- }
 
 if vim.fn.has("win64") then
   opt.clipboard = "unnamedplus"
 end
 
-if not vim.g.neovide then
+if not vim.g.neovide and not vim.fn.has("win64") then
   opt.undofile = true
   opt.undodir = os.getenv("HOME") .. "/.config/nvim/undodir"
 end
