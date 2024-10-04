@@ -8,13 +8,9 @@ return {
         diff = {
           bin = "kubediff",
         },
-        notifications = {
-          enabled = true,
-          verbose = false,
-        },
         auto_refresh = {
           enabled = true,
-          interval = 2000, -- milliseconds
+          interval = 200, -- milliseconds
         },
         hints = true,
         obj_fresh = 10,
