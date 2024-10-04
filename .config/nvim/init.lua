@@ -21,7 +21,6 @@ local otherPlugins = {
   require("user.plugins.conform"),
   require("user.plugins.markdown"),
   require("user.plugins.devicons"),
-  require("user.plugins.lsp-zero"),
   require("user.plugins.mini-files"),
   require("user.plugins.smart-splits"),
   require("user.plugins.neogit"),
@@ -38,6 +37,7 @@ local otherPlugins = {
   -- require("user.plugins.dashboard"),
   require("user.plugins.kubectl"),
   -- require("user.plugins.ai"),
+  require("user.plugins.lsp-zero"),
 }
 
 for k in pairs(otherPlugins) do
