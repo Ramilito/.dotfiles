@@ -27,3 +27,7 @@ alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 config checkout
 
 ```
+## Dependencies
+
+- zsh-defer: `git clone https://github.com/romkatv/zsh-defer.git ~/zsh-defer`
+
