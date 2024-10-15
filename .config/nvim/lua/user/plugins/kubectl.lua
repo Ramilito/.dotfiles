@@ -12,6 +12,9 @@ return {
           enabled = true,
           interval = 200, -- milliseconds
         },
+        lineage = {
+          enabled = true,
+        },
         hints = true,
         obj_fresh = 10,
         context = true,

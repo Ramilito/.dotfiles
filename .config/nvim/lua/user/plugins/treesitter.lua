@@ -33,7 +33,7 @@ return {
       { "<C-S-Enter>", desc = "Decrement selection", mode = "x" },
     },
     config = function()
-      require("nvim-treesitter.install").compilers = { "gcc-12" }
+      require("nvim-treesitter.install").compilers = { "gcc" }
 
       require("nvim-treesitter.configs").setup({
         ensure_installed = {
