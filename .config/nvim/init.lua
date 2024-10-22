@@ -37,6 +37,7 @@ local otherPlugins = {
   require("user.plugins.kubectl"),
   -- require("user.plugins.ai"),
   require("user.plugins.lsp-zero"),
+  require("user.plugins.obsidian"),
 }
 
 for k in pairs(otherPlugins) do

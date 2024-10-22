@@ -3,7 +3,7 @@ local keys = require("keys")
 local ui = require("ui")
 local colors = require("colors")
 local hyperlink = require("hyperlink")
-local events = require("events")
+-- local events = require("events")
 local plugins = require("plugins")
 
 local config = {}
