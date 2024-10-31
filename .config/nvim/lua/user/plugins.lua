@@ -1,5 +1,4 @@
 local M = {
-  { "nvim-lua/plenary.nvim" },
   { "jose-elias-alvarez/typescript.nvim", lazy = true },
   { "akinsho/toggleterm.nvim", lazy = true },
   -- { "mbbill/undotree", lazy = true, keys = { { "<leader>su", "<cmd>UndotreeToggle<cr>", desc = "Undotree" } } },

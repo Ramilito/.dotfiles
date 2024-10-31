@@ -15,7 +15,8 @@ return {
     -- Required.
     "nvim-lua/plenary.nvim",
 
-    -- see below for full list of optional dependencies 👇
+    "hrsh7th/nvim-cmp",
+    "nvim-telescope/telescope.nvim",
   },
   opts = {
     daily_notes = {
