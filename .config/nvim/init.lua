@@ -36,7 +36,8 @@ local otherPlugins = {
   -- require("user.plugins.dashboard"),
   require("user.plugins.kubectl"),
   -- require("user.plugins.ai"),
-  require("user.plugins.lsp-zero"),
+  -- require("user.plugins.lsp-zero"),
+  require("user.plugins.lsp"),
   require("user.plugins.obsidian"),
 }
 

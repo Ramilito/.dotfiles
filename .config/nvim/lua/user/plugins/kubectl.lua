@@ -13,7 +13,7 @@ return {
           interval = 200, -- milliseconds
         },
         lineage = {
-          enabled = true,
+          enabled = false,
         },
         hints = true,
         obj_fresh = 10,
