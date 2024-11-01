@@ -3,10 +3,11 @@ local M = {
   cmd = { "Telescope" },
   dependencies = {
     { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
-    { "debugloop/telescope-undo.nvim" },
-    { "nvim-telescope/telescope-ui-select.nvim" },
-    { "nvim-telescope/telescope-symbols.nvim" },
-    { "nvim-tree/nvim-web-devicons" },
+    "debugloop/telescope-undo.nvim",
+    "nvim-telescope/telescope-ui-select.nvim",
+    "nvim-telescope/telescope-symbols.nvim",
+    "nvim-tree/nvim-web-devicons",
+    "epwalsh/obsidian.nvim",
   },
   keys = {
     {
@@ -30,6 +31,7 @@ local M = {
     },
     { "<leader>sk", "<cmd> Telescope keymaps <CR>", desc = "Show Keys" },
     { "<leader>sw", "<cmd> Telescope grep_string <CR>", desc = "Find word" },
+    { "<leader>sn", "<cmd> ObsidianQuickSwitch <CR>", desc = "Find Note" },
   },
 }
 

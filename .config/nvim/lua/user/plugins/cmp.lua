@@ -28,12 +28,10 @@ return {
         },
       },
       "saadparwaiz1/cmp_luasnip",
-
-      -- Adds other completion capabilities.
-      --  nvim-cmp does not ship with all sources by default. They are split
-      --  into multiple repos for maintenance purposes.
       "hrsh7th/cmp-nvim-lsp",
+      "hrsh7th/cmp-nvim-lua",
       "hrsh7th/cmp-path",
+      "hrsh7th/cmp-buffer",
     },
     config = function()
       -- See `:help cmp`
@@ -65,7 +63,6 @@ return {
 
           ["<C-Space>"] = cmp.mapping.complete({}),
 
-
           ["<C-right>"] = cmp.mapping(function()
             if luasnip.expand_or_locally_jumpable() then
               luasnip.expand_or_jump()
@@ -76,7 +73,6 @@ return {
               luasnip.jump(-1)
             end
           end, { "i", "s" }),
-
         }),
         sources = {
           {
