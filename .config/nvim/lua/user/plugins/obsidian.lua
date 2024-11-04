@@ -39,7 +39,7 @@ return {
       },
       {
         name = "podme",
-        path = "~/workspace/podme",
+        path = "~/workspace/podme/notes",
       },
     },
 

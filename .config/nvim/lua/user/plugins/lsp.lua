@@ -16,6 +16,29 @@ return {
       "hrsh7th/cmp-nvim-lsp",
     },
     config = function()
+      local capabilities = vim.lsp.protocol.make_client_capabilities()
+      capabilities = vim.tbl_deep_extend("force", capabilities, require("cmp_nvim_lsp").default_capabilities())
+
+      local lspconfig = require("lspconfig")
+      lspconfig.rust_analyzer.setup({
+        settings = {
+          ["rust-analyzer"] = {},
+        },
+      })
+
+      lspconfig.lua_ls.setup({
+        -- Server-specific settings. See `:help lspconfig-setup`
+        settings = {
+          Lua = {
+            completion = {
+              callSnippet = "Replace",
+            },
+            -- You can toggle below to ignore Lua_LS's noisy `missing-fields` warnings
+            -- diagnostics = { disable = { 'missing-fields' } },
+          },
+        },
+      })
+
       vim.api.nvim_create_autocmd("LspAttach", {
         group = vim.api.nvim_create_augroup("kickstart-lsp-attach", { clear = true }),
         callback = function(event)
