@@ -34,16 +34,16 @@ local otherPlugins = {
   require("user.plugins.theme"),
   require("user.plugins.treesitter"),
   require("user.plugins.trouble"),
-  -- require("user.plugins.which-key"),
+  require("user.plugins.which-key"),
   require("user.plugins.winbar"),
-  -- require("user.plugins.dashboard"),
   require("user.plugins.kubectl"),
   -- require("user.plugins.ai"),
-  -- require("user.plugins.lsp-zero"),
   require("user.plugins.cmp"),
   require("user.plugins.mason"),
   require("user.plugins.lsp"),
   require("user.plugins.obsidian"),
+  require("user.plugins.zen-mode"),
+  require("user.plugins.image"),
 }
 
 for k in pairs(otherPlugins) do
