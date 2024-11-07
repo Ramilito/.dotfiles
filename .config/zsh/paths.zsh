@@ -20,6 +20,10 @@ export NVM_DIR="$HOME/.nvm"
 export PATH="$PATH:$HOME/.kube/kubediff"
 export PATH="$PATH:/Users/ramidaghlawi/.dotnet/tools"
 
+if [[ "$OSTYPE" == "darwin"* ]]; then
+    export PATH="$PATH:/Applications/Wezterm.app/Contents/MacOS"
+fi
+
 export AWS_DEFAULT_OUTPUT="yaml"
 export AWS_PAGER="yq"
 export SKIP_HUSKY=1
