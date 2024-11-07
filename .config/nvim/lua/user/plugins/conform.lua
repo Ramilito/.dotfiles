@@ -19,6 +19,12 @@ local M = {
         tf = { "terraform_fmt" },
         ["terraform-vars"] = { "terraform_fmt" },
       },
+      formatters = {
+        csharpier = {
+          command = "dotnet-csharpier",
+          args = { "--write-stdout" },
+        },
+      },
     })
   end,
 }
