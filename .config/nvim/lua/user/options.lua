@@ -73,7 +73,7 @@ if vim.fn.has("win64") then
   opt.clipboard = "unnamedplus"
 end
 
-if not vim.g.neovide and not vim.fn.has("win64") then
+if not vim.g.neovide and vim.fn.has("win64") == 0 then
   opt.undofile = true
   opt.undodir = os.getenv("HOME") .. "/.config/nvim/undodir"
 end

@@ -20,6 +20,18 @@ return {
       capabilities = vim.tbl_deep_extend("force", capabilities, require("cmp_nvim_lsp").default_capabilities())
 
       local lspconfig = require("lspconfig")
+
+      lspconfig.omnisharp.setup({
+        cmd = { "dotnet", "/Users/ramidaghlawi//omnisharp-osx/OmniSharp.dll" },
+        capabilities = capabilities,
+        enable_roslyn_analysers = true,
+        enable_import_completion = true,
+        organize_imports_on_format = true,
+        enable_decompilation_support = true,
+        enable_editorconfig_support = true,
+        filetypes = { "cs", "vb", "csproj", "sln", "slnx", "props", "csx", "targets" },
+      })
+
       lspconfig.rust_analyzer.setup({
         settings = {
           ["rust-analyzer"] = {},
