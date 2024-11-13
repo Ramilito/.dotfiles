@@ -59,15 +59,15 @@ opt.smartcase = true
 opt.shortmess = "filnxtToOFWIcC"
 opt.shellcmdflag = "-ic"
 -- vim.g.indentline_char = '│'
--- vim.o.list = true -- Show some invisible characters (tabs...
--- vim.opt.listchars = {
+vim.o.list = true -- Show some invisible characters (tabs...
+vim.opt.listchars = {
 --   -- trail = '·',
 --   eol = "↲",
---   extends = "",
+  extends = "",
 --   precedes = "",
 --   tab = "┆·",
 --   -- leadmultispace = '│ ',
--- }
+}
 
 if vim.fn.has("win64") then
   opt.clipboard = "unnamedplus"
