@@ -17,6 +17,7 @@ return {
 
     "hrsh7th/nvim-cmp",
     "nvim-telescope/telescope.nvim",
+    "nvim-treesitter/nvim-treesitter",
   },
   opts = {
     daily_notes = {
@@ -47,6 +48,9 @@ return {
     completion = {
       nvim_cmp = true,
       min_chars = 2,
+    },
+    ui = {
+      enable = false,
     },
     picker = {
       -- Set your preferred picker. Can be one of 'telescope.nvim', 'fzf-lua', or 'mini.pick'.

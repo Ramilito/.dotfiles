@@ -43,7 +43,7 @@ local otherPlugins = {
   require("user.plugins.lsp"),
   require("user.plugins.obsidian"),
   require("user.plugins.zen-mode"),
-  require("user.plugins.image"),
+  -- require("user.plugins.image"),
 }
 
 for k in pairs(otherPlugins) do
