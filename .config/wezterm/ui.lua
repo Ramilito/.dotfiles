@@ -8,7 +8,7 @@ return function(config)
   })
   config.font_size = 9
   config.dpi = 144
-  config.max_fps = 120
+  config.max_fps = 240
   config.enable_wayland = false
   config.pane_focus_follows_mouse = false
   config.warn_about_missing_glyphs = false
