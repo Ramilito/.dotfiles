@@ -17,14 +17,14 @@ vim.opt.rtp:prepend(lazypath)
 require("user.options")
 require("user.highlights")
 require("user.autocmd")
--- require("user.indentline")
 local plugins = require("user.plugins")
 local otherPlugins = {
   require("user.plugins.gitsigns"),
   require("user.plugins.conform"),
-  require("user.plugins.devicons"),
   require("user.plugins.render-markdown"),
   require("user.plugins.mini-files"),
+  require("user.plugins.mini-ai"),
+  require("user.plugins.mini-surround"),
   require("user.plugins.smart-splits"),
   require("user.plugins.neogit"),
   require("user.plugins.nvim-bqf"),
@@ -37,7 +37,6 @@ local otherPlugins = {
   require("user.plugins.which-key"),
   require("user.plugins.winbar"),
   require("user.plugins.kubectl"),
-  -- require("user.plugins.ai"),
   require("user.plugins.cmp"),
   require("user.plugins.mason"),
   require("user.plugins.lsp"),
