@@ -3,6 +3,7 @@ return {
   cmd = { "Mason" },
   dependencies = {
     "WhoIsSethDaniel/mason-tool-installer.nvim",
+    "stevearc/dressing.nvim"
   },
   config = function()
     local capabilities = vim.lsp.protocol.make_client_capabilities()
