@@ -1,4 +1,5 @@
 # zmodload zsh/zprof
+DISABLE_AUTO_UPDATE=true
 source ~/zsh-defer/zsh-defer.plugin.zsh
 
 export ZSH="$HOME/.oh-my-zsh"

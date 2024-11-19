@@ -1,17 +1,5 @@
-
-if [[ $OSTYPE == 'darwin'* ]]; then
-  zsh-defer source "/opt/homebrew/opt/fzf/shell/key-bindings.zsh"
-  zsh-defer source "/opt/homebrew/opt/fzf/shell/completion.zsh"
-else
-  zsh-defer source /usr/share/doc/fzf/examples/key-bindings.zsh
-  zsh-defer source /usr/share/doc/fzf/examples/completion.zsh
-fi
-
-if hash stern 2>/dev/null; then
-  source <(stern --completion=zsh)
-fi
-
 zsh-defer source "$HOME/.cargo/env"
+zsh-defer eval "$(fzf --zsh)"
 
 if [[ $(uname) == "Darwin" && -n $(brew list kubesess 2>/dev/null) ]]; then
     HOMEBREW_PREFIX=$(brew --prefix)
@@ -23,3 +11,4 @@ else
 fi
 
 eval "$(zoxide init --cmd cd zsh)"
+eval "$(fnm env --use-on-cd --shell zsh)"
