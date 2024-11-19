@@ -10,5 +10,9 @@ else
     zsh-defer test -f ~/.kube/kubesess/scripts/sh/completion.sh && source ~/.kube/kubesess/scripts/sh/completion.sh
 fi
 
+zsh-defer source $ZSH/plugins/kubectl/kubectl.plugin.zsh
+zsh-defer source $ZSH/plugins/docker/docker.plugin.zsh
+zsh-defer source $ZSH/plugins/terraform/terraform.plugin.zsh
+
 eval "$(zoxide init --cmd cd zsh)"
 eval "$(fnm env --use-on-cd --shell zsh)"
