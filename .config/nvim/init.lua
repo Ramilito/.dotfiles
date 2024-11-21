@@ -37,7 +37,7 @@ local otherPlugins = {
   require("user.plugins.which-key"),
   require("user.plugins.winbar"),
   require("user.plugins.kubectl"),
-  require("user.plugins.cmp"),
+  require("user.plugins.blink-cmp"),
   require("user.plugins.mason"),
   require("user.plugins.lsp"),
   require("user.plugins.obsidian"),

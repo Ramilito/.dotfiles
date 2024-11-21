@@ -13,13 +13,16 @@ return {
     "neovim/nvim-lspconfig",
     dependencies = {
       { "j-hui/fidget.nvim", opts = {} },
-      "hrsh7th/cmp-nvim-lsp",
+      "saghen/blink.cmp",
     },
-    config = function()
+    config = function(_, opts)
       local capabilities = vim.lsp.protocol.make_client_capabilities()
-      capabilities = vim.tbl_deep_extend("force", capabilities, require("cmp_nvim_lsp").default_capabilities())
-
       local lspconfig = require("lspconfig")
+
+      for server, config in pairs(opts.servers or {}) do
+        config.capabilities = require("blink.cmp").get_lsp_capabilities(config.capabilities)
+        lspconfig[server].setup(config)
+      end
 
       lspconfig.omnisharp.setup({
         cmd = { "dotnet", "/Users/ramidaghlawi//omnisharp-osx/OmniSharp.dll" },
@@ -32,6 +35,7 @@ return {
         filetypes = { "cs", "vb", "csproj", "sln", "slnx", "props", "csx", "targets" },
       })
 
+      lspconfig.ts_ls.setup({})
       lspconfig.rust_analyzer.setup({
         settings = {
           ["rust-analyzer"] = {},
