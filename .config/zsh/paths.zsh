@@ -6,7 +6,6 @@ export PATH=$PATH:/usr/local/go/bin
 export PATH=$PATH:$HOME/go/bin
 export PATH=$PATH:$HOME/.istioctl/bin
 export PATH="$HOME/.local/bin:$PATH"
-export KUBECONFIG=$HOME/.kube/config
 export PATH=$PATH:$HOME/.linkerd2/bin
 export RIPGREP_CONFIG_PATH=$HOME/.ripgreprpc
 export GO111MODULE=on
@@ -19,7 +18,7 @@ export USE_GKE_GCLOUD_AUTH_PLUGIN=True
 export NVM_DIR="$HOME/.nvm"
 export PATH="$PATH:$HOME/.kube/kubediff"
 export PATH="$PATH:/Users/ramidaghlawi/.dotnet/tools"
-
+export KUBECONFIG=$(find ~/.kube/ -maxdepth 1 -type f -printf ":%p" | sed 's/^://')
 if [[ "$OSTYPE" == "darwin"* ]]; then
     export PATH="$PATH:/Applications/Wezterm.app/Contents/MacOS"
 fi
