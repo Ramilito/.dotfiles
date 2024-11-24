@@ -1,0 +1,2 @@
+after-startup-command = ['exec-and-forget sketchybar']
+

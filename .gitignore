@@ -12,6 +12,8 @@
 !/.config/
 /.config/*
 
+!/.config/aerospace.toml
+!/.config/sketchybar/
 !/.config/nvim/
 !/.config/lvim/
 !/.config/kitty/
