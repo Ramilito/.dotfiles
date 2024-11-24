@@ -7,3 +7,4 @@ alias k8s='nvim +"lua require(\"kubectl\").open()"'
 alias kk="kubecolor"
 alias kdpt="kubectl get pods --all-namespaces -o wide | grep Terminated | awk '{print $1,$2}' | xargs -L1 kubectl delete pod -n"
 
+alias cat=bat
