@@ -13,6 +13,7 @@
 /.config/*
 
 !/.config/.aerospace.toml
+!/.config/whkdrc
 !/.config/sketchybar/
 !/.config/nvim/
 !/.config/lvim/
