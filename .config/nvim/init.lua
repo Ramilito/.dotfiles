@@ -27,6 +27,7 @@ local otherPlugins = {
   require("user.plugins.mini-surround"),
   require("user.plugins.smart-splits"),
   require("user.plugins.neogit"),
+  require("user.plugins.diffview"),
   require("user.plugins.nvim-bqf"),
   require("user.plugins.profile"),
   require("user.plugins.silicon"),
