@@ -125,8 +125,8 @@ alt-comma = 'layout accordion horizontal vertical'
 #
 # # See: https://nikitabobko.github.io/AeroSpace/commands#move
 alt-ctrl-left = 'focus left'
-alt-ctrl-down = 'focus down'
-alt-ctrl-up = 'focus up'
+# alt-ctrl-down = 'focus down'
+# alt-ctrl-up = 'focus up'
 alt-ctrl-right = 'focus right'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#resize
