@@ -36,8 +36,7 @@ local otherPlugins = {
   require("user.plugins.treesitter"),
   require("user.plugins.trouble"),
   require("user.plugins.which-key"),
-  require("user.plugins.winbar"),
-  require("user.plugins.kubectl"),
+
   require("user.plugins.blink-cmp"),
   require("user.plugins.mason"),
   require("user.plugins.lsp"),
@@ -45,6 +44,13 @@ local otherPlugins = {
   require("user.plugins.zen-mode"),
   -- require("user.plugins.image"),
 }
+
+if vim.fn.has("win64") == 0 then
+  vim.list_extend(otherPlugins, {
+    require("user.plugins.winbar"),
+    require("user.plugins.kubectl"),
+  })
+end
 
 for k in pairs(otherPlugins) do
   table.insert(plugins, otherPlugins[k])

@@ -22,10 +22,10 @@ alt + shift + oem_4     : komorebic cycle-focus previous # oem_4 is [
 alt + shift + oem_6     : komorebic cycle-focus next # oem_6 is ]
 
 # Move windows
-alt + shift + left         : komorebic move left
-alt + shift + down         : komorebic move down
-alt + shift + up         : komorebic move up
-alt + shift + right         : komorebic move right
+alt + ctrl + shift + left         : komorebic move left
+alt + ctrl + shift + down         : komorebic move down
+alt + ctrl + shift + up         : komorebic move up
+alt + ctrl + shift + right         : komorebic move right
 alt + shift + return    : komorebic promote
 
 # Stack windows
