@@ -14,8 +14,8 @@ return {
   dependencies = {
     -- Required.
     "nvim-lua/plenary.nvim",
-
-    "hrsh7th/nvim-cmp",
+    -- "saghen/blink.cmp",
+    -- "hrsh7th/nvim-cmp",
     "nvim-telescope/telescope.nvim",
     "nvim-treesitter/nvim-treesitter",
   },
@@ -46,8 +46,14 @@ return {
 
     -- see below for full list of options 👇
     completion = {
-      nvim_cmp = true,
+      nvim_cmp = false,
       min_chars = 2,
+    },
+    sources = {
+      completion = {
+        -- remember to enable your providers here
+        enabled_providers = { "lsp", "path", "snippets", "buffer" },
+      },
     },
     ui = {
       enable = false,

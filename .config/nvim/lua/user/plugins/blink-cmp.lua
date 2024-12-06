@@ -1,10 +1,10 @@
 return {
   {
     "saghen/blink.cmp",
-    lazy = false,
+    lazy = true,
     dependencies = "rafamadriz/friendly-snippets",
     version = "v0.*",
-
+    event = "InsertEnter",
     ---@module 'blink.cmp'
     ---@type blink.cmp.Config
     opts = {
@@ -25,11 +25,22 @@ return {
       -- accept = { auto_brackets = { enabled = true } }
 
       trigger = { signature_help = { enabled = true } },
-      windows = {
+			windows = {
         autocomplete = {
-          draw = "minimal",
+          draw = "reversed",
+        },
+        documentation = {
+          auto_show = true,
+        },
+        ghost_text = {
+          enabled = true,
         },
       },
+      -- windows = {
+      --   autocomplete = {
+      --     draw = "minimal",
+      --   },
+      -- },
     },
     opts_extend = { "sources.completion.enabled_providers" },
   },
