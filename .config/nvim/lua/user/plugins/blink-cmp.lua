@@ -8,7 +8,10 @@ return {
     ---@module 'blink.cmp'
     ---@type blink.cmp.Config
     opts = {
-      keymap = { preset = "enter" },
+
+      keymap = {
+        preset = "enter",
+      },
 
       highlight = {
         use_nvim_cmp_as_default = true,
@@ -21,27 +24,25 @@ return {
         },
       },
 
-      -- experimental auto-brackets support
-      -- accept = { auto_brackets = { enabled = true } }
-
-      trigger = { signature_help = { enabled = true } },
-			windows = {
-        autocomplete = {
-          draw = "reversed",
+      completion = {
+        accept = {
+          auto_brackets = {
+            enabled = true,
+          },
+        },
+        menu = {
+          draw = {
+            treesitter = true,
+          },
         },
         documentation = {
           auto_show = true,
+          auto_show_delay_ms = 200,
         },
         ghost_text = {
-          enabled = true,
+          enabled = vim.g.ai_cmp,
         },
       },
-      -- windows = {
-      --   autocomplete = {
-      --     draw = "minimal",
-      --   },
-      -- },
     },
-    opts_extend = { "sources.completion.enabled_providers" },
   },
 }

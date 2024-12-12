@@ -75,6 +75,11 @@ function M.config()
       winblend = borderless and 0 or 10,
     },
     extensions = {
+      fzf = {
+        fuzzy = true, -- false will only do exact matching
+        override_generic_sorter = true, -- override the generic sorter
+        override_file_sorter = true, -- override the file sorter
+      },
       ["ui-select"] = {
         require("telescope.themes").get_dropdown({
           -- even more opts
