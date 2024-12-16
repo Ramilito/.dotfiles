@@ -33,22 +33,13 @@ M.close_all_but_current = function()
 end
 
 M.lazygit_toggle = function()
-  local Terminal = require("toggleterm.terminal").Terminal
-  local cmd = "lazygit"
+  local lazygit = require("snacks.lazygit")
+  local cmd = {}
+  local home = vim.fn.expand("$HOME")
   if vim.loop.cwd() == vim.call("expand", "~/.config") then
-    cmd = "lazygit --git-dir=$HOME/.dotfiles --work-tree=$HOME"
+    cmd = { args = { "--git-dir=" .. home .. "/.dotfiles", "--work-tree=" .. home } }
   end
-  local lazygit = Terminal:new({
-    cmd = cmd,
-    hidden = true,
-    direction = "tab",
-    on_open = function(_)
-      vim.cmd("startinsert!")
-    end,
-    on_close = close_terminal_on_zero_exit,
-    count = 99,
-  })
-  lazygit:toggle()
+  lazygit.open(cmd)
 end
 
 function M.move_messages_to_buffer()

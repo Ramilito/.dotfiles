@@ -18,7 +18,8 @@ export USE_GKE_GCLOUD_AUTH_PLUGIN=True
 export NVM_DIR="$HOME/.nvm"
 export PATH="$PATH:$HOME/.kube/kubediff"
 export PATH="$PATH:/Users/ramidaghlawi/.dotnet/tools"
-export KUBECONFIG=$(find ~/.kube/ -maxdepth 1 -type f -printf ":%p" | sed 's/^://')
+export KUBECONFIG=$(for file in $(find ~/.kube -maxdepth 1 -type f); do echo -n ":$file"; done)
+
 if [[ "$OSTYPE" == "darwin"* ]]; then
     export PATH="$PATH:/Applications/Wezterm.app/Contents/MacOS"
 fi
