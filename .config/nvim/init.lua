@@ -41,7 +41,7 @@ local otherPlugins = {
   require("user.plugins.mason"),
   require("user.plugins.lsp"),
   require("user.plugins.obsidian"),
-  require("user.plugins.zen-mode"),
+  require("user.plugins.snacks"),
   -- require("user.plugins.image"),
 }
 
