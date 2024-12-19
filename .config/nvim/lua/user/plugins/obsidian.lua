@@ -16,7 +16,8 @@ return {
     "nvim-lua/plenary.nvim",
     -- "saghen/blink.cmp",
     -- "hrsh7th/nvim-cmp",
-    "nvim-telescope/telescope.nvim",
+    -- "nvim-telescope/telescope.nvim",
+    "ibhagwan/fzf-lua",
     "nvim-treesitter/nvim-treesitter",
   },
   opts = {
@@ -60,7 +61,7 @@ return {
     },
     picker = {
       -- Set your preferred picker. Can be one of 'telescope.nvim', 'fzf-lua', or 'mini.pick'.
-      name = "telescope.nvim",
+      name = "fzf-lua",
       -- Optional, configure key mappings for the picker. These are the defaults.
       -- Not all pickers support all mappings.
       note_mappings = {

@@ -58,12 +58,6 @@ Map("v", "<S-Up>", ":m '<-2<CR>gv=gv", { desc = "Move up" })
 Map("v", "<S-Down>", ":m '>+1<CR>gv=gv", { desc = "Move down" })
 
 -- Map("n", "<C-p>", ":lua require'telescope'.find_open_buffers()<CR>", { desc = "Find open buffers" })
-vim.keymap.set(
-  "n",
-  "<C-p>",
-  '<cmd>lua require("telescope.builtin").buffers({ sort_mru = true }) <CR>',
-  { desc = "[ ] Find existing buffers" }
-)
 
 -- Don't overrite yanked text
 Map("v", "<leader>p", '"_dp', { desc = "Paste" })
