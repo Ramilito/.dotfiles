@@ -16,7 +16,25 @@ return {
     { "<C-p>", "<cmd> FzfLua buffers sort_mru=true sort_lastused=true <CR>", desc = "[ ] Find existing buffers" },
   },
   config = function()
-    -- calling `setup` is optional for customization
-    require("fzf-lua").setup({})
+    require("fzf-lua").setup({
+      fzf_opts = {
+        ["--no-scrollbar"] = true,
+        ["--history"] = vim.fn.stdpath("data") .. "/fzf-lua-history",
+      },
+      winopts = {
+        fzf_colors = true,
+        preview = {
+          scrollbar = false,
+        },
+      },
+    })
+
+    local config = require("fzf-lua.config")
+    local actions = require("fzf-lua.actions")
+
+    vim.print(config.defaults.keymap.fzf)
+    vim.print(config.defaults.keymap.builtin)
+    -- Quickfix
+    config.defaults.keymap.fzf["ctrl-q"] = "select-all+accept"
   end,
 }

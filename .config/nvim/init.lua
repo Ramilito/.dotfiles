@@ -32,7 +32,6 @@ local otherPlugins = {
   require("user.plugins.profile"),
   require("user.plugins.silicon"),
 	require("user.plugins.fzf-lua"),
-  -- require("user.plugins.telescope"),
   require("user.plugins.theme"),
   require("user.plugins.treesitter"),
   require("user.plugins.trouble"),
