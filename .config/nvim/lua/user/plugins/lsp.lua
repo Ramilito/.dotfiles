@@ -24,17 +24,6 @@ return {
         lspconfig[server].setup(config)
       end
 
-      lspconfig.omnisharp.setup({
-        cmd = { "dotnet", "/Users/ramidaghlawi//omnisharp-osx/OmniSharp.dll" },
-        capabilities = capabilities,
-        enable_roslyn_analysers = true,
-        enable_import_completion = true,
-        organize_imports_on_format = true,
-        enable_decompilation_support = true,
-        enable_editorconfig_support = true,
-        filetypes = { "cs", "vb", "csproj", "sln", "slnx", "props", "csx", "targets" },
-      })
-
       lspconfig.ts_ls.setup({})
       lspconfig.rust_analyzer.setup({
         settings = {
@@ -62,6 +51,8 @@ return {
             mode = mode or "n"
             vim.keymap.set(mode, keys, func, { buffer = event.buf, desc = "LSP: " .. desc })
           end
+
+          map("gd", require("fzf-lua").lsp_definitions, "[G]oto [D]efinition")
 
           -- map("gd", require("telescope.builtin").lsp_definitions, "[G]oto [D]efinition")
           -- map("gr", require("telescope.builtin").lsp_references, "[G]oto [R]eferences")
