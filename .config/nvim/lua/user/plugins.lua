@@ -1,5 +1,6 @@
 local M = {
   { "jose-elias-alvarez/typescript.nvim", lazy = true },
+	{ "Hoffs/omnisharp-extended-lsp.nvim", lazy = true },
   { "mbbill/undotree", lazy = true, keys = { { "<leader>su", "<cmd>UndotreeToggle<cr>", desc = "Undotree" } } },
   {
     "nvim-treesitter/nvim-treesitter-context",
