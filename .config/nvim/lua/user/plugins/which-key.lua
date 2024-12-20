@@ -6,7 +6,6 @@ return {
     delay = 1000,
     spec = {
       { "<leader>g", group = "+Git" },
-      { "<leader>n", group = "+Neorg" },
       { "<leader>s", group = "+Search" },
       { "<leader>u", group = "+Utils" },
       { "<leader>x", group = "+Trouble" },

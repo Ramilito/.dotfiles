@@ -24,6 +24,9 @@ return {
         },
       },
 
+			signature = {
+				enabled = true
+			},
       completion = {
         accept = {
           auto_brackets = {
