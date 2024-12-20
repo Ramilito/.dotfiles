@@ -76,20 +76,13 @@ return {
 					map("gI", "<cmd>FzfLua lsp_implementations jump_to_single_result=true ignore_current_line=true<cr>", "[G]oto [I]mplementations")
 					map("gy", "<cmd>FzfLua lsp_typedefs				 jump_to_single_result=true ignore_current_line=true<cr>", "[G]oto T[y]ype Definition")
 
-          -- map("gd", require("telescope.builtin").lsp_definitions, "[G]oto [D]efinition")
-          -- map("gr", require("telescope.builtin").lsp_references, "[G]oto [R]eferences")
-          -- map("gI", require("telescope.builtin").lsp_implementations, "[G]oto [I]mplementation")
-          -- map("<leader>D", require("telescope.builtin").lsp_type_definitions, "Type [D]efinition")
-          -- map("<leader>ds", require("telescope.builtin").lsp_document_symbols, "[D]ocument [S]ymbols")
-          -- map("<leader>ws", require("telescope.builtin").lsp_dynamic_workspace_symbols, "[W]orkspace [S]ymbols")
-
           -- Rename the variable under your cursor.
           --  Most Language Servers support renaming across files, etc.
-          map("<leader>rn", vim.lsp.buf.rename, "[R]e[n]ame")
+          map("<F2>", vim.lsp.buf.rename, "[R]e[n]ame")
 
           -- Execute a code action, usually your cursor needs to be on top of an error
           -- or a suggestion from your LSP for this to activate.
-          map("<leader>ca", vim.lsp.buf.code_action, "[C]ode [A]ction", { "n", "x" })
+          map("<F4>", vim.lsp.buf.code_action, "[C]ode [A]ction", { "n", "x" })
           map("gD", vim.lsp.buf.declaration, "[G]oto [D]eclaration")
           local client = vim.lsp.get_client_by_id(event.data.client_id)
 
