@@ -82,7 +82,7 @@ return {
 
           -- Execute a code action, usually your cursor needs to be on top of an error
           -- or a suggestion from your LSP for this to activate.
-          map("<F4>", "<cmd>FzfLua lsp_code_actions", "[C]ode [A]ction", { "n", "x" })
+          map("<F4>", "<cmd>FzfLua lsp_code_actions <cr>", "[C]ode [A]ction", { "n", "x" })
           map("gD", vim.lsp.buf.declaration, "[G]oto [D]eclaration")
           local client = vim.lsp.get_client_by_id(event.data.client_id)
 

@@ -35,7 +35,7 @@ local otherPlugins = {
   require("user.plugins.theme"),
   require("user.plugins.treesitter"),
   require("user.plugins.trouble"),
-  require("user.plugins.which-key"),
+  -- require("user.plugins.which-key"),
 	-- require("user.plugins.roslyn"),
   require("user.plugins.blink-cmp"),
   require("user.plugins.lsp"),
@@ -58,6 +58,22 @@ end
 require("lazy").setup(plugins)
 
 require("user.keymappings")
+
+if vim.env.PROF then
+  -- example for lazy.nvim
+  -- change this to the correct path for your plugin manager
+  local snacks = vim.fn.stdpath("data") .. "/lazy/snacks.nvim"
+  vim.opt.rtp:append(snacks)
+  require("snacks.profiler").startup({
+    startup = {
+      event = "VimEnter", -- stop profiler on this event. Defaults to `VimEnter`
+      -- event = "UIEnter",
+      -- event = "VeryLazy",
+    },
+  })
+end
+
+
 
 -- local should_profile = os.getenv("NVIM_PROFILE")
 -- if should_profile then
