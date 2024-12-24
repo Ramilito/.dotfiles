@@ -22,6 +22,9 @@ return {
           width = 0.9,
           height = 0.8,
         },
+        skew = {
+          log_level = vim.log.levels.OFF,
+        },
       })
     end,
   },
