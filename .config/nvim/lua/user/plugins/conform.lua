@@ -15,6 +15,7 @@ local M = {
         sh = { "shellcheck" },
         yaml = { "yq" },
         cs = { "csharpier" },
+        hcl = { "packer_fmt" },
         terraform = { "terraform_fmt" },
         tf = { "terraform_fmt" },
         ["terraform-vars"] = { "terraform_fmt" },

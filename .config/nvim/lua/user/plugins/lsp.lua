@@ -24,16 +24,16 @@ return {
         lspconfig[server].setup(config)
       end
 
-			local omnisharp_path = os.getenv("HOME")
-			local is_osx = vim.loop.os_uname().sysname == "Darwin"
-			if is_osx then
-				omnisharp_path = omnisharp_path .. "/omnisharp-osx"
-			else
-				omnisharp_path = omnisharp_path .. "/omnisharp"
-			end
+      local omnisharp_path = os.getenv("HOME")
+      local is_osx = vim.loop.os_uname().sysname == "Darwin"
+      if is_osx then
+        omnisharp_path = omnisharp_path .. "/omnisharp-osx"
+      else
+        omnisharp_path = omnisharp_path .. "/omnisharp"
+      end
 
       lspconfig.omnisharp.setup({
-				cmd = { "dotnet", omnisharp_path .. "/OmniSharp.dll" },
+        cmd = { "dotnet", omnisharp_path .. "/OmniSharp.dll" },
         capabilities = capabilities,
         enable_roslyn_analysers = true,
         enable_import_completion = true,
@@ -49,7 +49,7 @@ return {
           ["rust-analyzer"] = {},
         },
       })
-
+      lspconfig.terraformls.setup({})
       lspconfig.lua_ls.setup({
         -- Server-specific settings. See `:help lspconfig-setup`
         settings = {
@@ -71,10 +71,11 @@ return {
             vim.keymap.set(mode, keys, func, { buffer = event.buf, desc = "LSP: " .. desc })
           end
 
-					map("gd", "<cmd>FzfLua lsp_definitions     jump_to_single_result=true ignore_current_line=true<cr>", "[G]oto [D]efinition")
-					map("gr", "<cmd>FzfLua lsp_references      jump_to_single_result=true ignore_current_line=true<cr>", "[G]oto [R]eferences")
-					map("gI", "<cmd>FzfLua lsp_implementations jump_to_single_result=true ignore_current_line=true<cr>", "[G]oto [I]mplementations")
-					map("gy", "<cmd>FzfLua lsp_typedefs				 jump_to_single_result=true ignore_current_line=true<cr>", "[G]oto T[y]ype Definition")
+          map("gd", "<cmd>FzfLua lsp_definitions     jump_to_single_result=true ignore_current_line=true<cr>", "[G]oto [D]efinition")
+          map("gr", "<cmd>FzfLua lsp_references      jump_to_single_result=true ignore_current_line=true<cr>", "[G]oto [R]eferences")
+          map("gI", "<cmd>FzfLua lsp_implementations jump_to_single_result=true ignore_current_line=true<cr>", "[G]oto [I]mplementations")
+          map("gy", "<cmd>FzfLua lsp_typedefs				 jump_to_single_result=true ignore_current_line=true<cr>", "[G]oto T[y]ype Definition")
+          map("gl", "<cmd>:lua vim.diagnostic.open_float()<cr>", "[S]how [D]iagnostics")
 
           -- Rename the variable under your cursor.
           --  Most Language Servers support renaming across files, etc.

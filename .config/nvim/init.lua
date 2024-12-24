@@ -35,7 +35,7 @@ local otherPlugins = {
   require("user.plugins.theme"),
   require("user.plugins.treesitter"),
   require("user.plugins.trouble"),
-  -- require("user.plugins.which-key"),
+  require("user.plugins.which-key"),
 	-- require("user.plugins.roslyn"),
   require("user.plugins.blink-cmp"),
   require("user.plugins.lsp"),

@@ -10,32 +10,19 @@ return {
     opts = {
 
       keymap = {
-        preset = "enter",
+        preset = "default",
+
+        ["<Up>"] = { "select_prev", "fallback" },
+        ["<Down>"] = { "select_next", "fallback" },
       },
 
-      highlight = {
-        use_nvim_cmp_as_default = true,
+      signature = {
+        enabled = true,
       },
-      nerd_font_variant = "mono",
-
-      sources = {
-        completion = {
-          enabled_providers = { "lsp", "path", "snippets", "buffer" },
-        },
-      },
-
-			signature = {
-				enabled = true
-			},
       completion = {
         accept = {
           auto_brackets = {
             enabled = true,
-          },
-        },
-        menu = {
-          draw = {
-            treesitter = true,
           },
         },
         documentation = {
