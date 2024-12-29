@@ -19,7 +19,6 @@ plugins(config)
 
 config.check_for_updates = false
 config.disable_default_key_bindings = false
-
 if wezterm.target_triple == "x86_64-pc-windows-msvc" then
   config.default_domain = 'WSL:Ubuntu-24.04'
 end
