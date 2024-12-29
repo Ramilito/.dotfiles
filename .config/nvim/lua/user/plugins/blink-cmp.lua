@@ -2,8 +2,10 @@ return {
   {
     "saghen/blink.cmp",
     lazy = true,
-    dependencies = "rafamadriz/friendly-snippets",
-    version = "v0.*",
+    dependencies = {
+      "rafamadriz/friendly-snippets",
+    },
+    version = "*",
     event = "InsertEnter",
     ---@module 'blink.cmp'
     ---@type blink.cmp.Config
@@ -35,6 +37,14 @@ return {
         accept = {
           auto_brackets = {
             enabled = true,
+          },
+        },
+        menu = {
+          draw = {
+            columns = {
+              { "kind_icon", "label", "label_description", gap = 1 },
+              { "kind" },
+            },
           },
         },
         documentation = {
