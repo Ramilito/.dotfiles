@@ -12,7 +12,7 @@ return {
     { "<leader>sw", "<cmd> FzfLua grep_cWORD<CR>", mode = "n", desc = "Find current word" },
     { "<leader>sw", "<cmd> FzfLua grep_cWORD<CR>", mode = "v", desc = "Find current selection" },
     { "<leader>s/", "<cmd> FzfLua search_history<CR>", desc = "Search history" },
-    { "<leader>sr", "<cmd> FzfLua oldfiles sort_mru=true sort_lastused=true <CR>", desc = "Search recent" },
+    { "<leader>sr", "<cmd> FzfLua oldfiles sort_mru=true sort_lastused=true include_current_session=true <CR>", desc = "Search recent" },
     { "<leader>sn", "<cmd> ObsidianQuickSwitch <CR>", desc = "Find Note" },
 		-- git
     { "<leader>gc", "<cmd>FzfLua git_commits<CR>", desc = "Commits" },
