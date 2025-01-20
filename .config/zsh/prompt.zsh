@@ -2,9 +2,9 @@ prompt_context() {
     KUBE_CTX=$(kubesess -c context)
     KUBE_NS=$(kubesess -c namespace)
 
-    if [[ $KUBE_CTX == *"dev"* ]]; then
+    if [[ $KUBE_CTX == *"dev"* || $KUBE_CTX == "delivery" || $KUBE_CTX == "aks-podme-test" ]]; then
       echo "❗%{$fg[yellow]%}|$KUBE_CTX%{$reset_color%}:%F{6}$KUBE_NS%f"
-    elif [[ $KUBE_CTX == *"prod"* ]]; then
+    elif [[ $KUBE_CTX == *"prod"* || $KUBE_CTX == "podme" ]]; then
       echo "⛔%{$fg[red]%}|$KUBE_CTX%{$reset_color%}:%F{6}$KUBE_NS%f"
     elif [[ $KUBE_CTX == *"staging"* ]]; then
       echo "⛔%{$fg[red]%}|$KUBE_CTX%{$reset_color%}:%F{6}$KUBE_NS%f"
