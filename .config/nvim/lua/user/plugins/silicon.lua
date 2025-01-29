@@ -5,6 +5,7 @@ return {
   config = function()
     require("nvim-silicon").setup({
       -- Configuration here, or leave empty to use defaults
+      to_clipboard = true,
     })
   end,
 }
