@@ -3,40 +3,7 @@ if _G.StatusColumn then
 end
 
 _G.StatusColumn = {
-  handler = {
-    fold = function()
-      local lnum = vim.fn.getmousepos().line
-
-      -- Only lines with a mark should be clickable
-      if vim.fn.foldlevel(lnum) <= vim.fn.foldlevel(lnum - 1) then
-        return
-      end
-
-      local state
-      if vim.fn.foldclosed(lnum) == -1 then
-        state = "close"
-      else
-        state = "open"
-      end
-
-      vim.cmd.execute("'" .. lnum .. "fold" .. state .. "'")
-    end,
-  },
-
   display = {
-    line = function()
-      if vim.v.wrap then
-        return ""
-      end
-
-      local lnum = tostring(vim.v.lnum)
-      if #lnum == 1 then -- Prevent adding a tenth line from bumping the size of the column
-        return " " .. lnum
-      else
-        return lnum
-      end
-    end,
-
     fold = function()
       if vim.v.wrap then
         return ""
@@ -66,28 +33,12 @@ _G.StatusColumn = {
   },
 
   sections = {
-    sign_column = {
-      [[%s]],
-    },
     line_number = {
-      -- [[%=%{v:lua.StatusColumn.display.line()}]]
       [[%=%{v:relnum?v:relnum:v:lnum}]],
     },
-    spacing = {
-      [[ ]],
-    },
     folds = {
-      [[%#FoldColumn#]], -- HL
-      -- [[%@v:lua.StatusColumn.handler.fold@]],
+      [[%#FoldColumn#]],
       [[%{v:lua.StatusColumn.display.fold()}]],
-    },
-    border = {
-      [[%#StatusColumnBorder#]], -- HL
-      [[▐]],
-    },
-    padding = {
-      [[%#StatusColumnBuffer#]], -- HL
-      [[ ]],
     },
   },
 
@@ -113,10 +64,6 @@ _G.StatusColumn = {
 }
 
 return StatusColumn.build({
-  -- StatusColumn.sections.sign_column,
   StatusColumn.sections.line_number,
-  -- StatusColumn.sections.spacing,
   StatusColumn.sections.folds,
-  -- StatusColumn.sections.border,
-  -- StatusColumn.sections.padding
 })

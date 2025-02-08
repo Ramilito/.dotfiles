@@ -18,16 +18,14 @@ opt.swapfile = false
 opt.backup = false
 
 opt.foldenable = true
--- opt.foldexpr       = "nvim_treesitter#foldexpr()"
+opt.foldexpr       = "nvim_treesitter#foldexpr()"
 opt.foldlevel = 99 -- was 1
 opt.foldlevelstart = 99
--- opt.foldmethod     = "expr"
-opt.foldmethod = "indent"
+opt.foldmethod     = "expr"
+-- opt.foldmethod = "indent"
 opt.foldnestmax = 10
 opt.foldtext = ""
 
--- opt.concealcursor = "nc"
--- opt.conceallevel = 2 -- Hide * markup for bold and italic
 opt.cmdheight = 1
 opt.completeopt = "menu,menuone,noselect"
 opt.cursorline = true -- Enable highlighting of the current line
@@ -61,13 +59,30 @@ opt.shellcmdflag = "-ic"
 -- vim.g.indentline_char = '│'
 -- vim.o.list = true -- Show some invisible characters (tabs...
 vim.opt.listchars = {
---   -- trail = '·',
---   eol = "↲",
+  --   -- trail = '·',
+  --   eol = "↲",
   extends = "",
---   precedes = "",
---   tab = "┆·",
---   -- leadmultispace = '│ ',
+  --   precedes = "",
+  --   tab = "┆·",
+  --   -- leadmultispace = '│ ',
 }
+
+vim.diagnostic.config({
+  signs = {
+    text = {
+      [vim.diagnostic.severity.ERROR] = "",
+      [vim.diagnostic.severity.WARN] = "",
+      [vim.diagnostic.severity.INFO] = "",
+      [vim.diagnostic.severity.HINT] = "",
+    },
+    numhl = {
+      [vim.diagnostic.severity.WARN] = "WarningMsg",
+      [vim.diagnostic.severity.ERROR] = "ErrorMsg",
+      [vim.diagnostic.severity.INFO] = "DiagnosticInfo",
+      [vim.diagnostic.severity.HINT] = "DiagnosticHint",
+    },
+  },
+})
 
 if vim.fn.has("win64") then
   opt.clipboard = "unnamedplus"

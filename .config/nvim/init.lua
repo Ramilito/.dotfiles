@@ -31,23 +31,23 @@ local otherPlugins = {
   require("user.plugins.nvim-bqf"),
   require("user.plugins.profile"),
   require("user.plugins.silicon"),
-	require("user.plugins.fzf-lua"),
+  require("user.plugins.fzf-lua"),
   require("user.plugins.theme"),
   require("user.plugins.treesitter"),
   require("user.plugins.trouble"),
-  require("user.plugins.which-key"),
-	-- require("user.plugins.roslyn"),
+  -- require("user.plugins.which-key"),
+  -- require("user.plugins.roslyn"),
   require("user.plugins.blink-cmp"),
   require("user.plugins.lsp"),
-  require("user.plugins.obsidian"),
+  -- require("user.plugins.obsidian"),
   require("user.plugins.snacks"),
   -- require("user.plugins.image"),
+	require("user.plugins.kubectl")
 }
 
 if vim.fn.has("win64") == 0 then
   vim.list_extend(otherPlugins, {
     require("user.plugins.winbar"),
-    require("user.plugins.kubectl"),
   })
 end
 
@@ -72,8 +72,6 @@ if vim.env.PROF then
     },
   })
 end
-
-
 
 -- local should_profile = os.getenv("NVIM_PROFILE")
 -- if should_profile then

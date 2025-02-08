@@ -28,8 +28,10 @@ return {
       local is_osx = vim.loop.os_uname().sysname == "Darwin"
       if is_osx then
         omnisharp_path = omnisharp_path .. "/omnisharp-osx"
-      else
+      elseif omnisharp_path then
         omnisharp_path = omnisharp_path .. "/omnisharp"
+			else
+				omnisharp_path = ""
       end
 
       lspconfig.omnisharp.setup({
