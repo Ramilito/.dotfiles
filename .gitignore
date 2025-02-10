@@ -16,6 +16,7 @@
 !/.config/whkdrc
 !/.config/sketchybar/
 !/.config/nvim/
+!/.config/nvim_lazy/
 !/.config/lvim/
 !/.config/kitty/
 !/.config/wezterm/
