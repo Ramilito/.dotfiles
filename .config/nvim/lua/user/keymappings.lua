@@ -100,5 +100,5 @@ Map("v", ">", ">gv", { desc = "Indent right" })
 -- Map("n", "?", "!", { desc = "Backward search" })
 Map("n", "?", "/", { desc = "Forward search", silent = false })
 
-Map("n", "<leader>k", '<cmd>lua require("kubectl").toggle()<cr>', { desc = "Toggle Kubectl" })
+Map("n", "<leader>k", '<cmd>lua require("kubectl").toggle({tab = true})<cr>', { desc = "Toggle Kubectl" })
 Map("n", "<leader>m", '<cmd> lua require("user.functions").move_messages_to_buffer()<CR>', { desc = "Move mess to buffer" })
