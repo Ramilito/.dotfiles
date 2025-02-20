@@ -19,26 +19,13 @@ return {
       signature = {
         enabled = true,
       },
-      sources = {
-        cmdline = function()
-          local type = vim.fn.getcmdtype()
-          -- Search forward and backward
-          if type == "/" or type == "?" then
-            return {}
-          end
-          -- Commands
-          if type == ":" then
-            return { "cmdline" }
-          end
-          return {}
-        end,
-      },
       completion = {
         accept = {
           auto_brackets = {
             enabled = true,
           },
         },
+
         menu = {
           draw = {
             columns = {
