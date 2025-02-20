@@ -1,11 +1,5 @@
 local M = {}
 
-local function close_terminal_on_zero_exit(terminal, _, exit_code)
-  if exit_code == 0 then
-    terminal:close()
-  end
-end
-
 M.smart_quit = function()
   local bufnr = vim.api.nvim_get_current_buf()
   local modified = vim.api.nvim_get_option_value("modified", { buf = bufnr })
@@ -14,11 +8,11 @@ M.smart_quit = function()
       prompt = "You have unsaved changes. Quit anyway? (y/n) ",
     }, function(input)
       if input == "y" then
-        vim.cmd("q!")
+        pcall(vim.cmd, "q!")
       end
     end)
   else
-    vim.cmd("q!")
+    pcall(vim.cmd, "q!")
   end
 end
 

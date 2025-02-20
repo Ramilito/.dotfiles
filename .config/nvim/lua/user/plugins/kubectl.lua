@@ -26,18 +26,16 @@ return {
           log_level = vim.log.levels.OFF,
         },
       })
-      local group = vim.api.nvim_create_augroup("Kubectl_custom_mappings", { clear = true })
+      local group = vim.api.nvim_create_augroup("kubectl_mappings", { clear = true })
       vim.api.nvim_create_autocmd("FileType", {
         group = group,
         pattern = "k8s_*",
         callback = function(ev)
+          local k = vim.keymap
           local opts = { buffer = ev.buf }
-
-          vim.defer_fn(function()
-            for i = 1, 6 do
-              pcall(vim.keymap.del, "n", tostring(i), opts)
-            end
-          end, 100)
+          for i = 1, 6 do
+            pcall(k.del,"n", tostring(i), opts)
+          end
         end,
       })
     end,
