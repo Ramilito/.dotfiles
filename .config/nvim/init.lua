@@ -15,7 +15,7 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("user.options")
-require("user.highlights")
+-- require("user.highlights")
 require("user.autocmd")
 local plugins = require("user.plugins")
 local otherPlugins = {

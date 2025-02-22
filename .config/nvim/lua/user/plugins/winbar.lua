@@ -12,7 +12,7 @@ return {
         buf_modified_symbol = "●",
         dim_inactive = {
           enabled = true,
-          highlight = "WinbarNC",
+          highlight = "WinBarNC",
           icons = true, -- whether to dim the icons
           name = true, -- whether to dim the name
         },
