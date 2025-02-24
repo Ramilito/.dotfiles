@@ -24,27 +24,6 @@ return {
         lspconfig[server].setup(config)
       end
 
-      local omnisharp_path = os.getenv("HOME")
-      local is_osx = vim.loop.os_uname().sysname == "Darwin"
-      if is_osx then
-        omnisharp_path = omnisharp_path .. "/omnisharp-osx"
-      elseif omnisharp_path then
-        omnisharp_path = omnisharp_path .. "/omnisharp"
-			else
-				omnisharp_path = ""
-      end
-
-      lspconfig.omnisharp.setup({
-        cmd = { "dotnet", omnisharp_path .. "/OmniSharp.dll" },
-        capabilities = capabilities,
-        enable_roslyn_analysers = true,
-        enable_import_completion = true,
-        organize_imports_on_format = true,
-        enable_decompilation_support = true,
-        enable_editorconfig_support = true,
-        filetypes = { "cs", "vb", "csproj", "sln", "slnx", "props", "csx", "targets" },
-      })
-
       lspconfig.ts_ls.setup({})
       lspconfig.rust_analyzer.setup({
         settings = {
