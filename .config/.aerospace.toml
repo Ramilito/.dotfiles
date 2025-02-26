@@ -135,7 +135,6 @@ alt-ctrl-tab = 'move-workspace-to-monitor --wrap-around next'
 alt-ctrl-semicolon = 'mode service'
 alt-ctrl-enter = 'mode apps'
 
-alt-a = 'exec-and-forget open -a /Applications/Arc.app'
 alt-o = 'exec-and-forget open -a /Applications/Obsidian.app'
 alt-g = 'exec-and-forget open -a /Applications/Ghostty.app'
 
