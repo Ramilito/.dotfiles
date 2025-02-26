@@ -21,10 +21,6 @@ export PATH="$PATH:$HOME/.dotnet/tools"
 export KUBECONFIG=$(for file in $(find ~/.kube -maxdepth 1 -type f); do echo -n ":$file"; done)
 export FUNCTIONS_CORE_TOOLS_TELEMETRY_OPTOUT=1
 
-export TMPDIR="/home/$USER/temp/"
-[ -d "$TMPDIR" ] || mkdir -p "$TMPDIR"
-
-
 if [[ "$OSTYPE" == "darwin"* ]]; then
     export PATH="$PATH:/Applications/Wezterm.app/Contents/MacOS"
 fi
