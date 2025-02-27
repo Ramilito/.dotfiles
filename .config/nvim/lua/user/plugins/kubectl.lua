@@ -15,9 +15,12 @@ return {
         lineage = {
           enabled = false,
         },
+        header = true,
         hints = true,
-        obj_fresh = 10,
         context = true,
+        heartbeat = true,
+
+        obj_fresh = 10,
         float_size = {
           width = 0.9,
           height = 0.8,
@@ -34,7 +37,7 @@ return {
           local k = vim.keymap
           local opts = { buffer = ev.buf }
           for i = 1, 6 do
-            pcall(k.del,"n", tostring(i), opts)
+            pcall(k.del, "n", tostring(i), opts)
           end
         end,
       })

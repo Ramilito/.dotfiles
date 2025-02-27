@@ -3,13 +3,30 @@ return {
     "folke/snacks.nvim",
     priority = 1000,
     lazy = false,
+    ---@type snacks.Config
+    opts = {
+      bigfile = { enabled = false },
+      dashboard = { enabled = false },
+      explorer = { enabled = false },
+      indent = { enabled = true },
+      input = { enabled = true },
+      picker = { enabled = false },
+      notifier = { enabled = true },
+      quickfile = { enabled = false },
+      scope = { enabled = false },
+      scroll = { enabled = true },
+      statuscolumn = { enabled = false },
+      words = { enabled = true },
+      zen = { enabled = true },
+      profiler = { enabled = true },
+    },
     keys = {
       {
-        "<leader>z",
+        "<leader>gt",
         function()
-          Snacks.zen()
+          Snacks.lazygit()
         end,
-        desc = "Toggle Zen Mode",
+        desc = "Lazygit",
       },
       {
         "<leader>n",
@@ -18,25 +35,13 @@ return {
         end,
         desc = "Notification History",
       },
-      -- { "<leader>gt", function() Snacks.lazygit() end, desc = "Lazygit" },
-    },
-    opts = {
-      lazygit = { enabled = true },
-      notifier = { enabled = true },
-      zen = {
-        enabled = true,
+      {
+        "<leader>z",
+        function()
+          Snacks.zen()
+        end,
+        desc = "Toggle Zen Mode",
       },
-    },
-  },
-  {
-    "folke/snacks.nvim",
-    opts = function()
-      -- Toggle the profiler
-      Snacks.toggle.profiler():map("<leader>pp")
-      -- Toggle the profiler highlights
-      Snacks.toggle.profiler_highlights():map("<leader>ph")
-    end,
-    keys = {
       {
         "<leader>ps",
         function()
