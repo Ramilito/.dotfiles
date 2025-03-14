@@ -8,17 +8,19 @@ return {
       bigfile = { enabled = false },
       dashboard = { enabled = false },
       explorer = { enabled = false },
-      indent = { enabled = true },
+      indent = { enabled = false },
       input = { enabled = true },
-      picker = { enabled = false },
       notifier = { enabled = true },
+      picker = { enabled = false },
+      profiler = { enabled = true },
       quickfile = { enabled = false },
       scope = { enabled = false },
-      scroll = { enabled = true },
+      scroll = { enabled = false },
       statuscolumn = { enabled = false },
+      win = { enabled = false },
       words = { enabled = true },
       zen = { enabled = true },
-      profiler = { enabled = true },
+      animate = { enabled = false },
     },
     keys = {
       {
@@ -50,5 +52,12 @@ return {
         desc = "Profiler Scratch Bufer",
       },
     },
+    config = function()
+      -- Snacks.profiler.pick({
+      --   filter = {
+      --     def_plugin = "snacks.nvim",
+      --   },
+      -- })
+    end,
   },
 }
