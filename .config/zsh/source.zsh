@@ -16,3 +16,4 @@ zsh-defer source $ZSH/plugins/terraform/terraform.plugin.zsh
 
 eval "$(zoxide init --cmd cd zsh)"
 eval "$(fnm env --use-on-cd --shell zsh)"
+eval "$(direnv hook zsh)"
