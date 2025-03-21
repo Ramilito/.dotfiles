@@ -42,6 +42,7 @@ local otherPlugins = {
   -- require("user.plugins.obsidian"),
   require("user.plugins.snacks"),
   -- require("user.plugins.image"),
+	require("user.plugins.blink-download"),
 	require("user.plugins.kubectl")
 }
 

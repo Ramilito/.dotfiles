@@ -1,7 +1,11 @@
 return {
   {
     "ramilito/kubectl.nvim",
+    -- tag = "v2.0.0-rc1",
+    -- branch = "feat/use_kube_rs",
     dir = "~/workspace/mine/kubectl.nvim/",
+    dependencies = "ramilito/blink.download",
+    -- build = "cargo build --release",
     config = function()
       require("kubectl").setup({
         namespace = "All",

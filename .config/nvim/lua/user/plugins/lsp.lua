@@ -44,6 +44,19 @@ return {
         },
       })
 
+      lspconfig.gopls.setup({})
+      lspconfig.gopls.setup({
+        settings = {
+          gopls = {
+            analyses = {
+              unusedparams = true,
+            },
+            staticcheck = true,
+            gofumpt = true,
+          },
+        },
+      })
+
       vim.api.nvim_create_autocmd("LspAttach", {
         group = vim.api.nvim_create_augroup("kickstart-lsp-attach", { clear = true }),
         callback = function(event)
@@ -52,10 +65,10 @@ return {
             vim.keymap.set(mode, keys, func, { buffer = event.buf, desc = "LSP: " .. desc })
           end
 
-          map("gd", "<cmd>FzfLua lsp_definitions     jump_to_single_result=true ignore_current_line=true<cr>", "[G]oto [D]efinition")
-          map("gr", "<cmd>FzfLua lsp_references      jump_to_single_result=true ignore_current_line=true<cr>", "[G]oto [R]eferences")
-          map("gI", "<cmd>FzfLua lsp_implementations jump_to_single_result=true ignore_current_line=true<cr>", "[G]oto [I]mplementations")
-          map("gy", "<cmd>FzfLua lsp_typedefs				 jump_to_single_result=true ignore_current_line=true<cr>", "[G]oto T[y]ype Definition")
+          map("gd", "<cmd>FzfLua lsp_definitions     jump1=true ignore_current_line=true<cr>", "[G]oto [D]efinition")
+          map("gr", "<cmd>FzfLua lsp_references      jump1=true ignore_current_line=true<cr>", "[G]oto [R]eferences")
+          map("gI", "<cmd>FzfLua lsp_implementations jump1=true ignore_current_line=true<cr>", "[G]oto [I]mplementations")
+          map("gy", "<cmd>FzfLua lsp_typedefs				 jump1=true ignore_current_line=true<cr>", "[G]oto T[y]ype Definition")
           map("gl", "<cmd>:lua vim.diagnostic.open_float()<cr>", "[S]how [D]iagnostics")
 
           -- Rename the variable under your cursor.
