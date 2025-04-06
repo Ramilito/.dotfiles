@@ -40,9 +40,12 @@ return {
         callback = function(ev)
           local k = vim.keymap
           local opts = { buffer = ev.buf }
-          for i = 1, 6 do
-            pcall(k.del, "n", tostring(i), opts)
-          end
+
+          pcall(k.del, "n", 1, opts)
+          pcall(k.del, "n", 2, opts)
+          pcall(k.del, "n", 3, opts)
+          pcall(k.del, "n", 5, opts)
+          pcall(k.del, "n", 6, opts)
         end,
       })
     end,

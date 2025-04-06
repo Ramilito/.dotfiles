@@ -27,7 +27,6 @@ local otherPlugins = {
   require("user.plugins.mini-surround"),
   require("user.plugins.smart-splits"),
   require("user.plugins.neogit"),
-  require("user.plugins.diffview"),
   require("user.plugins.nvim-bqf"),
   require("user.plugins.profile"),
   require("user.plugins.silicon"),
@@ -35,15 +34,13 @@ local otherPlugins = {
   require("user.plugins.theme"),
   require("user.plugins.treesitter"),
   require("user.plugins.trouble"),
-  -- require("user.plugins.which-key"),
-  -- require("user.plugins.roslyn"),
+  require("user.plugins.which-key"),
   require("user.plugins.blink-cmp"),
-  require("user.plugins.lsp"),
   -- require("user.plugins.obsidian"),
   require("user.plugins.snacks"),
   -- require("user.plugins.image"),
-	require("user.plugins.blink-download"),
-	require("user.plugins.kubectl")
+  require("user.plugins.blink-download"),
+  require("user.plugins.kubectl"),
 }
 
 if vim.fn.has("win64") == 0 then
@@ -57,8 +54,9 @@ for k in pairs(otherPlugins) do
 end
 
 require("lazy").setup(plugins)
-
 require("user.keymappings")
+require("user.plugins.lsp")
+
 
 if vim.env.PROF then
   -- example for lazy.nvim

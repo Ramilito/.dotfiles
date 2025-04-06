@@ -1,6 +1,16 @@
 local M = {
   { "jose-elias-alvarez/typescript.nvim", lazy = true },
   {
+    "folke/lazydev.nvim",
+    ft = "lua",
+    opts = {
+      library = {
+        { path = "luvit-meta/library", words = { "vim%.uv" } },
+      },
+    },
+  },
+  { "Bilal2453/luvit-meta", lazy = true },
+  {
     "seblyng/roslyn.nvim",
     ft = "cs",
     opts = {
@@ -8,6 +18,11 @@ local M = {
     },
   },
   { "mbbill/undotree", lazy = true, keys = { { "<leader>su", "<cmd>UndotreeToggle<cr>", desc = "Undotree" } } },
+  {
+    "mrcjkb/rustaceanvim",
+    version = "^6", -- Recommended
+    lazy = false, -- This plugin is already lazy
+  },
   {
     "nvim-treesitter/nvim-treesitter-context",
     event = "VeryLazy",

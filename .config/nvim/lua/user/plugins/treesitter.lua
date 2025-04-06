@@ -61,7 +61,7 @@ return {
           "markdown_inline",
           "nix",
           -- "norg",
-          "org",
+          -- "org",
           "python",
           "regex",
           "rust",
