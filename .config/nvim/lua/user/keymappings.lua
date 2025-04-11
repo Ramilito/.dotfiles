@@ -103,5 +103,10 @@ Map("n", "?", "/", { desc = "Forward search", silent = false })
 Map("n", "<leader>k", '<cmd>lua require("kubectl").toggle({tab = true})<cr>', { desc = "Toggle Kubectl" })
 Map("n", "<leader>m", '<cmd> lua require("user.functions").move_messages_to_buffer()<CR>', { desc = "Move mess to buffer" })
 
-Snacks.toggle.profiler():map("<leader>dpp")
-Snacks.toggle.profiler_highlights():map("<leader>dph")
+-- Snacks.toggle.profiler():map("<leader>dpp")
+-- Snacks.toggle.profiler_highlights():map("<leader>dph")
+
+Map("n", "gl", vim.diagnostic.open_float, { desc = "Open [d]iagnostics (float)" })
+Map("n", "gl", vim.diagnostic.open_float, { desc = "Open [d]iagnostics (float)" })
+Map("n", "gl", vim.diagnostic.open_float, { desc = "Open [d]iagnostics (float)" })
+Map("n", "gd", vim.lsp.buf.definition, { noremap = true, silent = true })
