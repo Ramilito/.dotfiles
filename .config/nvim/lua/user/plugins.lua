@@ -1,5 +1,6 @@
 local M = {
   { "jose-elias-alvarez/typescript.nvim", lazy = true },
+  { "neovim/nvim-lspconfig" },
   {
     "folke/lazydev.nvim",
     ft = "lua",

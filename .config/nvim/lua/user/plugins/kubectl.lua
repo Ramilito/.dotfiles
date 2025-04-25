@@ -8,7 +8,6 @@ return {
     dependencies = "saghen/blink.download",
     config = function()
       require("kubectl").setup({
-        namespace = "All",
         diff = {
           bin = "kubediff",
         },
@@ -17,20 +16,12 @@ return {
           interval = 200, -- milliseconds
         },
         lineage = {
-          enabled = false,
+          enabled = true,
         },
-        header = true,
-        hints = true,
-        context = true,
-        heartbeat = true,
-
         obj_fresh = 10,
         float_size = {
           width = 0.9,
           height = 0.8,
-        },
-        skew = {
-          log_level = vim.log.levels.OFF,
         },
       })
       local group = vim.api.nvim_create_augroup("kubectl_mappings", { clear = true })

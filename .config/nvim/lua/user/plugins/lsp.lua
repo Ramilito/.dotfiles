@@ -25,6 +25,11 @@ local on_attach = function(client, bufnr)
     end, { nargs = 0 })
   end
 
+  if client:supports_method("textDocument/foldingRange") then
+    local win = vim.api.nvim_get_current_win()
+    vim.wo[win][0].foldexpr = "v:lua.vim.lsp.foldexpr()"
+  end
+
   map("grr", "<cmd>FzfLua lsp_references      jump_to_single_result=true ignore_current_line=true<cr>", "[G]oto [R]eferences")
   map("gri", "<cmd>FzfLua lsp_implementations jump_to_single_result=true ignore_current_line=true<cr>", "[G]oto [I]mplementations")
   map("gy", "<cmd>FzfLua lsp_typedefs				 jump_to_single_result=true ignore_current_line=true<cr>", "[G]oto T[y]ype Definition")
