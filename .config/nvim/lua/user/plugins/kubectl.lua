@@ -15,9 +15,6 @@ return {
           enabled = true,
           interval = 200, -- milliseconds
         },
-        lineage = {
-          enabled = true,
-        },
         obj_fresh = 10,
         float_size = {
           width = 0.9,
