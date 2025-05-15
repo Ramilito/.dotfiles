@@ -5,7 +5,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
 
     local map = function(keys, func, desc, mode)
       mode = mode or "n"
-      vim.keymap.set(mode, keys, func, { buffer = bufnr, desc = "LSP: " .. desc })
+      vim.keymap.set(mode, keys, func, { buffer = ev.buf, desc = "LSP: " .. desc })
     end
     map("grr", "<cmd>FzfLua lsp_references      jump_to_single_result=true ignore_current_line=true<cr>", "[G]oto [R]eferences")
     map("gri", "<cmd>FzfLua lsp_implementations jump_to_single_result=true ignore_current_line=true<cr>", "[G]oto [I]mplementations")
