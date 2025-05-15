@@ -13,11 +13,11 @@ export AWS_PROFILE="ramilito"
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 export PATH="/opt/homebrew/opt/make/libexec/gnubin:$PATH"
 export PATH="$PATH:/home/$USER/.dotnet"
+export PATH="$PATH:$HOME/.dotnet/tools"
 export PATH="$PATH:/home/$USER/.cargo/bin"
 export USE_GKE_GCLOUD_AUTH_PLUGIN=True
 export NVM_DIR="$HOME/.nvm"
 export PATH="$PATH:$HOME/.kube/kubediff"
-export PATH="$PATH:$HOME/.dotnet/tools"
 export KUBECONFIG=$(for file in $(find ~/.kube -maxdepth 1 -type f); do echo -n ":$file"; done)
 export FUNCTIONS_CORE_TOOLS_TELEMETRY_OPTOUT=1
 
