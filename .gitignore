@@ -15,6 +15,7 @@
 !/.config/.aerospace.toml
 !/.config/whkdrc
 !/.config/sketchybar/
+!/.config/ghostty/
 !/.config/nvim/
 !/.config/nvim_lazy/
 !/.config/lvim/
