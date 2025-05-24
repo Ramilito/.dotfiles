@@ -1,0 +1,49 @@
+theme = catppuccin-mocha
+
+## quick terminal
+
+quick-terminal-position = top
+# quick-terminal-screen =  mouse
+# quick-terminal-autohide = false
+# quick-terminal-animation-duration = 0
+## tabs
+
+macos-titlebar-style = tabs
+
+## fullscreen
+
+macos-non-native-fullscreen = true
+
+#keybindings
+# keybind = clear
+
+keybind = alt+shift+right=new_split:right
+keybind = alt+shift+left=new_split:left
+keybind = alt+shift+up=new_split:up
+keybind = alt+shift+down=new_split:down
+keybind = alt+ctrl+up=previous_tab
+keybind = alt+ctrl+down=next_tab
+
+keybind = cmd+s>r=reload_config
+
+keybind = f11=toggle_quick_terminal
+
+
+
+# keybind = ctrl+h=goto_split:left
+# keybind = ctrl+j=goto_split:bottom
+# keybind = ctrl+k=goto_split:top
+# keybind = ctrl+l=goto_split:right
+# keybind = super+shift+t=new_tab
+# keybind = super+shift+h=previous_tab
+# keybind = super+shift+l=next_tab
+# keybind = super+shift+comma=move_tab:-1
+# keybind = super+shift+period=move_tab:1
+# keybind = super+shift+c=copy_to_clipboard
+# keybind = super+shift+v=paste_from_clipboard
+# keybind = super+shift+enter=new_split:auto
+# keybind = super+shift+i=inspector:toggle
+# keybind = super+shift+m=toggle_split_zoom
+# keybind = super+shift+r=reload_config
+# keybind = super+shift+s=write_screen_file:open
+# keybind = super+shift+w=close_surface
