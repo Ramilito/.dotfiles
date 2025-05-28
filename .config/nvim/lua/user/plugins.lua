@@ -18,7 +18,7 @@ local M = {
       config = {
         cmd = {
           "dotnet",
-          os.getenv("HOME") .. "/.roslyn-lsp/Microsoft.CodeAnalysis.LanguageServer.dll",
+          os.getenv("HOME") .. "/.roslyn-lsp/content/LanguageServer/osx-arm64/Microsoft.CodeAnalysis.LanguageServer.dll",
           "--logLevel=Information",
           "--extensionLogDirectory=" .. vim.fs.dirname(vim.lsp.get_log_path()),
           "--stdio",
