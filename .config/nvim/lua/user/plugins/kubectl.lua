@@ -1,7 +1,6 @@
 return {
   {
     "ramilito/kubectl.nvim",
-    -- branch ="feat/use_kube_rs",
     dir = "~/workspace/mine/kubectl.nvim/",
     dev = true,
     build = "cargo build --release",
@@ -10,15 +9,6 @@ return {
       require("kubectl").setup({
         diff = {
           bin = "kubediff",
-        },
-        auto_refresh = {
-          enabled = true,
-          interval = 200, -- milliseconds
-        },
-        obj_fresh = 10,
-        float_size = {
-          width = 0.9,
-          height = 0.8,
         },
       })
       local group = vim.api.nvim_create_augroup("kubectl_mappings", { clear = true })
