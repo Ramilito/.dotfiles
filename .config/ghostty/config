@@ -39,6 +39,9 @@ keybind = alt+up=goto_split:up
 keybind = alt+down=goto_split:down
 keybind = alt+left=goto_split:previous
 keybind = alt+right=goto_split:next
+
+keybind = ctrl+minus=decrease_font_size:1
+keybind = ctrl+shift+plus=increase_font_size:1
 # keybind = super+shift+comma=move_tab:-1
 # keybind = super+shift+period=move_tab:1
 # keybind = super+shift+c=copy_to_clipboard
