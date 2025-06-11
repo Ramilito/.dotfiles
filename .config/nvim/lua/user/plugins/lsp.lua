@@ -20,6 +20,28 @@ vim.lsp.enable("lua_ls")
 vim.lsp.enable("gopls")
 vim.lsp.enable("roslyn_ls")
 
+vim.lsp.config("roslyn_ls", {
+  cmd = {
+    "dotnet",
+    os.getenv("HOME") .. "/.roslyn-lsp/content/LanguageServer/osx-arm64/Microsoft.CodeAnalysis.LanguageServer.dll",
+    "--logLevel=Information",
+    "--extensionLogDirectory=" .. vim.fs.dirname(vim.lsp.get_log_path()),
+    "--stdio",
+  },
+  --     on_attach = function()
+  --         print("This will run when the server attaches!")
+  --     end,
+  --     settings = {
+  --         ["csharp|inlay_hints"] = {
+  --             csharp_enable_inlay_hints_for_implicit_object_creation = true,
+  --             csharp_enable_inlay_hints_for_implicit_variable_types = true,
+  --         },
+  --         ["csharp|code_lens"] = {
+  --             dotnet_enable_references_code_lens = true,
+  --         },
+  --     },
+})
+
 vim.diagnostic.config({
   underline = true,
   virtual_text = true,

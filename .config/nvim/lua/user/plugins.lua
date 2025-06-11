@@ -14,17 +14,17 @@ local M = {
   {
     "seblyng/roslyn.nvim",
     ft = "cs",
-    opts = {
-      config = {
-        cmd = {
-          "dotnet",
-          os.getenv("HOME") .. "/.roslyn-lsp/content/LanguageServer/osx-arm64/Microsoft.CodeAnalysis.LanguageServer.dll",
-          "--logLevel=Information",
-          "--extensionLogDirectory=" .. vim.fs.dirname(vim.lsp.get_log_path()),
-          "--stdio",
-        },
-      },
-    },
+    -- opts = {
+    --   config = {
+    --     cmd = {
+    --       "dotnet",
+    --       os.getenv("HOME") .. "/.roslyn-lsp/content/LanguageServer/osx-arm64/Microsoft.CodeAnalysis.LanguageServer.dll",
+    --       "--logLevel=Information",
+    --       "--extensionLogDirectory=" .. vim.fs.dirname(vim.lsp.get_log_path()),
+    --       "--stdio",
+    --     },
+    --   },
+    -- },
   },
   { "mbbill/undotree", lazy = true, keys = { { "<leader>su", "<cmd>UndotreeToggle<cr>", desc = "Undotree" } } },
   {
