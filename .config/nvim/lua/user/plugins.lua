@@ -38,7 +38,6 @@ local M = {
     enabled = not vim.g.neovide,
   },
   { "MunifTanjim/nui.nvim", event = "VeryLazy" },
-  { "famiu/bufdelete.nvim", cmd = "Bdelete" },
   { "norcalli/nvim-terminal.lua", ft = "terminal", config = true },
   { "dstein64/vim-startuptime", cmd = "StartupTime" },
   {
