@@ -38,6 +38,7 @@ local otherPlugins = {
   require("user.plugins.blink-cmp"),
   require("user.plugins.obsidian"),
   require("user.plugins.snacks"),
+  require("user.plugins.flash"),
   -- require("user.plugins.image"),
   require("user.plugins.blink-download"),
   require("user.plugins.kubectl"),

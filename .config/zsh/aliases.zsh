@@ -4,6 +4,7 @@ alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
 alias k="kubectl"
 alias k8s="nvim -c 'lua require(\"kubectl\").toggle({tab=true})'"
+alias k8s_moshe="NVIM_APPNAME=nvim_moshe nvim -c 'lua require(\"kubectl\").toggle({tab=true})'"
 alias kk="kubecolor"
 alias kdpt="kubectl get pods --all-namespaces -o wide | grep Terminated | awk '{print $1,$2}' | xargs -L1 kubectl delete pod -n"
 
