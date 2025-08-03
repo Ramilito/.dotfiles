@@ -24,7 +24,7 @@ local otherPlugins = {
   require("user.plugins.render-markdown"),
   require("user.plugins.mini-files"),
   require("user.plugins.mini-ai"),
-  require("user.plugins.mini-surround"),
+  -- require("user.plugins.mini-surround"),
   require("user.plugins.smart-splits"),
   require("user.plugins.neogit"),
   require("user.plugins.nvim-bqf"),

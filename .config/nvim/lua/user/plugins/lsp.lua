@@ -19,6 +19,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
 vim.lsp.enable("lua_ls")
 vim.lsp.enable("gopls")
 vim.lsp.enable("roslyn_ls")
+vim.lsp.enable("pyright")
 
 vim.lsp.config("roslyn_ls", {
   cmd = {
