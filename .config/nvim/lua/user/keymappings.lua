@@ -22,7 +22,6 @@ Map("n", "l", "<nop>")
 -- Map("n", "<leader>qq", "<cmd>qa<cr>", { desc = "Quit All" })
 -- Map("n", "<leader>q", '<cmd> lua require("user.functions").smart_quit()<CR>', { desc = "Quit" })
 Map("n", "<leader>qq", ":qall<cr>", { remap = false, silent = true, desc = "Quit all" })
-Map("n", "<leader>bc", ":close<cr>", { silent = true, desc = "Close this buffer" })
 
 -- Save buffer
 Map("n", "<C-s>", ":w<cr>", { desc = "Buffer save" })
