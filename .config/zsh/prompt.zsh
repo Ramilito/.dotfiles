@@ -1,28 +1,31 @@
-prompt_context() {
-    KUBE_CTX=$(kubesess -c context)
-    KUBE_NS=$(kubesess -c namespace)
+autoload -Uz colors vcs_info
+colors
 
-    if [[ $KUBE_CTX == *"dev"* || $KUBE_CTX == "delivery" || $KUBE_CTX == "aks-podme-test" ]]; then
-      echo "❗%{$fg[yellow]%}|$KUBE_CTX%{$reset_color%}:%F{6}$KUBE_NS%f"
-    elif [[ $KUBE_CTX == *"prod"* || $KUBE_CTX == "podme" ]]; then
-      echo "⛔%{$fg[red]%}|$KUBE_CTX%{$reset_color%}:%F{6}$KUBE_NS%f"
-    elif [[ $KUBE_CTX == *"staging"* ]]; then
-      echo "⛔%{$fg[red]%}|$KUBE_CTX%{$reset_color%}:%F{6}$KUBE_NS%f"
-    else
-      echo "✅️%{$fg[green]%}|$KUBE_CTX%{$reset_color%}:%F{6}$KUBE_NS%f"
-    fi
+function _update_kube_prompt() {
+  local kube_ctx kube_ns icon color
+
+  if (( $+commands[kubesess] )); then
+    kube_ctx=$(kubesess -c context 2>/dev/null)
+    kube_ns=$(kubesess -c namespace 2>/dev/null)
+  fi
+
+  case $kube_ctx in
+    (*dev*|delivery|aks-podme-test) icon='❗'; color=$fg[yellow] ;;
+    (*prod*|podme|*staging*)        icon='⛔'; color=$fg[red]    ;;
+    (*)                             icon='✅'; color=$fg[green]  ;;
+  esac
+
+  PROMPT_KUBE="%{$color%}${icon}|${kube_ctx}%{$reset_color%}:%F{6}${kube_ns}%f"
 }
 
-RPROMPT='$(prompt_context)'
+zstyle ':vcs_info:*' enable git
+zstyle ':vcs_info:*' formats        '%F{226}%b%f%u%c'
+zstyle ':vcs_info:*' unstagedstr    ' %F{yellow}✗%f'
 
-ZSH_THEME_GIT_PROMPT_PREFIX="%{$FG[226]%}"
-ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%} "
-ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[blue]%} %{$fg[yellow]%}✗"
-ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg[blue]%}"
+function _update_git_prompt() { vcs_info }
 
-# PROMPT="%(?:%{$fg_bold[green]%}➜ :%{$fg_bold[red]%}➜ )"
-PROMPT=""
-# PROMPT+=' %{$fg[magenta]%}%c%{$reset_color%} $(git_prompt_info)'
-#
-PROMPT+=' %{$fg[magenta]%}%c%{$reset_color%} '
+add-zsh-hook precmd _update_kube_prompt
+add-zsh-hook precmd _update_git_prompt
 
+PROMPT='%F{magenta}%~%f ${vcs_info_msg_0_} '
+RPROMPT='${PROMPT_KUBE}'
