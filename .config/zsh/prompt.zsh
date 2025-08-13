@@ -2,20 +2,32 @@ autoload -Uz colors vcs_info
 colors
 
 function _update_kube_prompt() {
-  local kube_ctx kube_ns icon color
+  local kube_ctx kube_ns icon color ec1 ec2 ctx_l ns_part
 
-  if (( $+commands[kubesess] )); then
-    kube_ctx=$(kubesess -c context 2>/dev/null)
-    kube_ns=$(kubesess -c namespace 2>/dev/null)
+  if ! (( $+commands[kubesess] )); then
+    PROMPT_KUBE='%F{red}⛔ kubesess not found%f'
+    return
   fi
 
-  case $kube_ctx in
+  kube_ctx=$(kubesess -c context 2>/dev/null); ec1=$?
+  kube_ns=$(kubesess -c namespace 2>/dev/null); ec2=$?
+
+  if (( ec1 || ec2 )); then
+    PROMPT_KUBE="%F{red}⚠ kubesess: error%f"
+    return
+  fi
+
+  ctx_l=${(L)kube_ctx}
+  case $ctx_l in
     (*dev*|delivery|aks-podme-test) icon='❗'; color=$fg[yellow] ;;
     (*prod*|podme|*staging*)        icon='⛔'; color=$fg[red]    ;;
     (*)                             icon='✅'; color=$fg[green]  ;;
   esac
 
-  PROMPT_KUBE="%{$color%}${icon}|${kube_ctx}%{$reset_color%}:%F{6}${kube_ns}%f"
+  ns_part=""
+  [[ -n $kube_ns ]] && ns_part=":%F{6}${kube_ns}%f"
+
+  PROMPT_KUBE="%{$color%}${icon}|${kube_ctx}%{$reset_color%}${ns_part}"
 }
 
 zstyle ':vcs_info:*' enable git
