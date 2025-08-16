@@ -4,11 +4,6 @@ colors
 function _update_kube_prompt() {
   local kube_ctx kube_ns icon color ec1 ec2 ctx_l ns_part
 
-  if ! (( $+commands[kubesess] )); then
-    PROMPT_KUBE='%F{red}⛔ kubesess not found%f'
-    return
-  fi
-
   kube_ctx=$(kubesess -c context 2>/dev/null); ec1=$?
   kube_ns=$(kubesess -c namespace 2>/dev/null); ec2=$?
 
