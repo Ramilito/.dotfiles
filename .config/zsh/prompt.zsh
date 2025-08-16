@@ -24,15 +24,16 @@ function _update_kube_prompt() {
 
   PROMPT_KUBE="%{$color%}${icon}|${kube_ctx}%{$reset_color%}${ns_part}"
 }
-
-zstyle ':vcs_info:*' enable git
-zstyle ':vcs_info:*' formats        '%F{226}%b%f%u%c'
-zstyle ':vcs_info:*' unstagedstr    ' %F{yellow}✗%f'
-
-function _update_git_prompt() { vcs_info }
-
-add-zsh-hook precmd _update_kube_prompt
-# add-zsh-hook precmd _update_git_prompt
-
-PROMPT='%F{magenta}%~%f ${vcs_info_msg_0_} '
 RPROMPT='${PROMPT_KUBE}'
+PROMPT='%F{magenta}%~%f '
+
+# zstyle ':vcs_info:*' enable git
+# zstyle ':vcs_info:*' formats        '%F{226}%b%f%u%c'
+# zstyle ':vcs_info:*' unstagedstr    ' %F{yellow}✗%f'
+#
+# function _update_git_prompt() { vcs_info }
+#
+# add-zsh-hook precmd _update_kube_prompt
+# add-zsh-hook precmd _update_git_prompt
+#
+# PROMPT='%F{magenta}%~%f ${vcs_info_msg_0_} '
