@@ -33,7 +33,7 @@ PROMPT='%F{magenta}%~%f '
 #
 # function _update_git_prompt() { vcs_info }
 #
-# add-zsh-hook precmd _update_kube_prompt
+add-zsh-hook precmd _update_kube_prompt
 # add-zsh-hook precmd _update_git_prompt
 #
 # PROMPT='%F{magenta}%~%f ${vcs_info_msg_0_} '
