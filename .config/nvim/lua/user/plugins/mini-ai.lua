@@ -1,7 +1,2 @@
-return {
-  "echasnovski/mini.ai",
-
-  config = function()
-    require("mini.ai").setup()
-  end,
-}
+vim.pack.add({ "https://github.com/echasnovski/mini.ai" })
+require("mini.ai").setup()

@@ -1,10 +1,13 @@
-return {
+vim.pack.add({ "https://github.com/ramilito/winbar.nvim" }, {
+  load = function() end,
+  confirm = true,
+})
+
+require("lz.n").load({
   {
-    "ramilito/winbar.nvim",
+    "winbar.nvim",
     event = "VimEnter",
-    dir = "~/workspace/mine/winbar.nvim",
-    dependencies = { "nvim-tree/nvim-web-devicons" },
-    config = function()
+    after = function()
       require("winbar").setup({
         icons = true,
         diagnostics = true,
@@ -19,4 +22,4 @@ return {
       })
     end,
   },
-}
+})

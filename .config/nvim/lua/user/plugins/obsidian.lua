@@ -1,20 +1,25 @@
-return {
-  "obsidian-nvim/obsidian.nvim",
-  version = "*",
-  lazy = true,
-  ft = "markdown",
-  ---@module 'obsidian'
-  ---@type obsidian.config
-  opts = {
-    workspaces = {
-      {
-        name = "personal",
-        path = "~/workspace/mine",
-      },
-      {
-        name = "podme",
-        path = "~/workspace/podme/notes",
-      },
-    },
+vim.pack.add({ "https://github.com/obsidian-nvim/obsidian.nvim" }, {
+  load = function() end,
+  confirm = true,
+})
+
+require("lz.n").load({
+  {
+    "obsidian.nvim",
+    ft = "markdown",
+    after = function()
+      require("obsidian").setup({
+        workspaces = {
+          {
+            name = "personal",
+            path = "~/workspace/mine",
+          },
+          {
+            name = "podme",
+            path = "~/workspace/podme/notes",
+          },
+        },
+      })
+    end,
   },
-}
+})

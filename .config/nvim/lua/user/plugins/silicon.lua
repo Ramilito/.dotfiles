@@ -1,11 +1,16 @@
-return {
-  "michaelrommel/nvim-silicon",
-  lazy = true,
-  cmd = "Silicon",
-  config = function()
-    require("nvim-silicon").setup({
-      -- Configuration here, or leave empty to use defaults
-      to_clipboard = true,
-    })
-  end,
-}
+vim.pack.add({ "https://github.com/michaelrommel/nvim-silicon" }, {
+  load = function() end,
+  confirm = true,
+})
+
+require("lz.n").load({
+  {
+    "nvim-silicon",
+    cmd = "Silicon",
+    after = function()
+      require("nvim-silicon").setup({
+        to_clipboard = true,
+      })
+    end,
+  },
+})

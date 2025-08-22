@@ -1,23 +1,17 @@
-return {
-  "NeogitOrg/neogit",
-  lazy = true,
-  -- event = "VeryLazy",
-  keys = {
-    {
-      "<leader>gg",
-      "<cmd>Neogit<cr>",
-      desc = "Open Neogit",
-    },
-  },
-  dependencies = {
-    "nvim-lua/plenary.nvim", -- required
-    -- "sindrets/diffview.nvim", -- optional - Diff integration
+vim.pack.add({ "https://github.com/nvim-lua/plenary.nvim" })
+vim.pack.add({ "https://github.com/NeogitOrg/neogit" }, {
+  load = function() end,
+  confirm = true,
+})
 
-    -- Only one of these is needed, not both.
-    "ibhagwan/fzf-lua",
-    -- "nvim-telescope/telescope.nvim", -- optional
+require("lz.n").load({
+  {
+    "neogit",
+    keys = {
+      { "<leader>gg", "<CMD>Neogit<CR>", desc = "Open Neogit" },
+    },
+    after = function()
+      require("neogit").setup({})
+    end,
   },
-  config = function()
-    require("neogit").setup({})
-  end,
-}
+})
