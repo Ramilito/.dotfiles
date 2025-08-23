@@ -89,7 +89,6 @@ Map("n", "<leader>ul", "<cmd>Lazy<cr>", { desc = "Lazy" })
 Map("v", "<leader>f", "<cmd>lua require('conform').format(opts) <cr>", { desc = "Format" })
 Map("n", "<leader>f", "<cmd>lua require('conform').format() <cr>", { desc = "Format" })
 
-Map("n", "<leader>su", '<cmd>lua require("telescope").extensions.undo.undo({ side_by_side = true }) <CR>', { desc = "Undo" })
 
 -- Git
 Map("n", "<leader>gt", '<cmd>lua require("user.functions").lazygit_toggle()<cr>', { desc = "Lazygit" })
@@ -109,3 +108,7 @@ Map("n", "gl", vim.diagnostic.open_float, { desc = "Open [d]iagnostics (float)" 
 Map("n", "gl", vim.diagnostic.open_float, { desc = "Open [d]iagnostics (float)" })
 Map("n", "gd", vim.lsp.buf.definition, { noremap = true, silent = true })
 Map("t", "<Esc>", [[<C-\><C-n>]], { remap = false, desc = "Exit terminal mode" })
+
+-- Mini
+Map("n", "<leader>e", '<cmd>lua require("mini.files").open(vim.api.nvim_buf_get_name(0), true)<cr>', { desc = "Open mini.files" })
+
