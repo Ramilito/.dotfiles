@@ -1,21 +1,5 @@
 local M = {}
 
-M.smart_quit = function()
-  local bufnr = vim.api.nvim_get_current_buf()
-  local modified = vim.api.nvim_get_option_value("modified", { buf = bufnr })
-  if modified then
-    vim.ui.input({
-      prompt = "You have unsaved changes. Quit anyway? (y/n) ",
-    }, function(input)
-      if input == "y" then
-        pcall(vim.cmd, "q!")
-      end
-    end)
-  else
-    pcall(vim.cmd, "q!")
-  end
-end
-
 M.close_all_but_current = function()
   local current = vim.fn.bufnr("%")
   local buffers = vim.fn.getbufinfo({ buflisted = 1 })
