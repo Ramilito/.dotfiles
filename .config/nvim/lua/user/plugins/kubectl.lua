@@ -1,5 +1,6 @@
 vim.pack.add({ "https://github.com/saghen/blink.download" })
 vim.pack.add({ "https://github.com/ramilito/kubectl.nvim" })
+vim.opt.runtimepath:prepend("~/workspace/mine/kubectl.nvim/")
 
 require("kubectl").setup({
   diff = {
