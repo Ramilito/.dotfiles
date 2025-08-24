@@ -39,16 +39,6 @@ Map("n", "<S-TAB>", ":bprevious<CR>", { desc = "Buffer prev" })
 -- Map("n", "<C-S-Up>", ":resize -2<CR>", { desc = "Resize up" })
 -- Map("n", "<C-S-Down>", ":resize +2<CR>", { desc = "Resize down" })
 
-vim.keymap.set("n", "<C-S-Left>", "<cmd>lua require('smart-splits').resize_left() <cr>", { desc = "Resize left" })
-vim.keymap.set("n", "<C-S-Down>", "<cmd>lua require('smart-splits').resize_down() <cr>", { desc = "Resize down" })
-vim.keymap.set("n", "<C-S-Up>", "<cmd>lua require('smart-splits').resize_up() <cr>", { desc = "Resize up" })
-vim.keymap.set("n", "<C-S-Right>", "<cmd>lua require('smart-splits').resize_right() <cr>", { desc = "Resize right" })
--- moving between splits
-vim.keymap.set("n", "<C-Left>", "<cmd>lua require('smart-splits').move_cursor_left() <cr>", { desc = "Window left" })
-vim.keymap.set("n", "<C-Down>", "<cmd>lua require('smart-splits').move_cursor_down() <cr>", { desc = "Window down" })
-vim.keymap.set("n", "<C-Up>", "<cmd>lua require('smart-splits').move_cursor_up() <cr>", { desc = "Window up" })
-vim.keymap.set("n", "<C-Right>", "<cmd>lua require('smart-splits').move_cursor_right() <cr>", { desc = "Window right" })
-
 -- Move text up and down
 Map("i", "<S-Down>", "<Esc>:m .+1<CR>==gi", { desc = "Move up" })
 Map("i", "<S-Up>", "<Esc>:m .-2<CR>==gi", { desc = "Move up" })
