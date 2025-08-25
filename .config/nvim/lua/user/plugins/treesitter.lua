@@ -2,8 +2,8 @@ vim.pack.add({
   { src = "https://github.com/nvim-treesitter/nvim-treesitter", version = "main" },
 })
 
-require("nvim-treesitter.install").compilers = { "gcc" }
-require("nvim-treesitter.configs").setup({
+-- require("nvim-treesitter.install").compilers = { "gcc" }
+require("nvim-treesitter").setup({
   ensure_installed = {
     "bash",
     "c",
@@ -70,4 +70,3 @@ require("nvim-treesitter.configs").setup({
     },
   },
 })
-
