@@ -1,4 +1,4 @@
-theme = catppuccin-mocha
+theme = catppuccin-mocha.conf
 font-family = "JetBrains Mono Light"
 
 ## quick terminal
