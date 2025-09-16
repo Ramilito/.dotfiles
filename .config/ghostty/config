@@ -10,6 +10,8 @@ quick-terminal-position = top
 ## tabs
 
 macos-titlebar-style = tabs
+window-decoration = false
+gtk-titlebar = false
 
 ## fullscreen
 macos-non-native-fullscreen = false

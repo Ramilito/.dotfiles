@@ -27,8 +27,7 @@ gui:
       - reverse
 os:
   edit: 'nvim'
-reporting: "off"  
-
+reporting: "off"
 keybinding:
   universal:
     quit-alt1: '<esc>' # alternative/alias of quit
@@ -37,25 +36,19 @@ customCommands:
     command: tig blame -- {{.SelectedFile.Name}}
     context: files
     description: blame file at tree
-    subprocess: yes
   - key: b
     command: tig blame {{.SelectedSubCommit.Sha}} -- {{.SelectedCommitFile.Name}}
     context: commitFiles
     description: blame file at revision
-    subprocess: yes
   - key: B
     command: tig blame -- {{.SelectedCommitFile.Name}}
     context: commitFiles
     description: blame file at tree
-    subprocess: yes
-
   - key: t
     command: tig {{.SelectedSubCommit.Sha}} -- {{.SelectedCommitFile.Name}}
     context: commitFiles
     description: tig file (history of commits affecting file)
-    subprocess: yes
   - key: t
     command: tig -- {{.SelectedFile.Name}}
     context: files
     description: tig file (history of commits affecting file)
-    subprocess: yes
