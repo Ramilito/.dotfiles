@@ -7,7 +7,7 @@ vim.pack.add({
 
 require("lz.n").load({
   {
-    "neogit",
+    "blink",
     event = "InsertEnter",
     after = function()
       require("blink.cmp").setup({
