@@ -22,10 +22,14 @@ vim.lsp.enable("ts_ls")
 vim.lsp.enable("roslyn_ls")
 vim.lsp.enable("pyright")
 
+local sys = vim.loop.os_uname().sysname
+local dll = (sys == "Darwin") and vim.fn.expand("~/.roslyn-lsp/content/LanguageServer/osx-arm64/Microsoft.CodeAnalysis.LanguageServer.dll")
+  or vim.fn.expand("~/.roslyn-lsp/Microsoft.CodeAnalysis.LanguageServer.dll") -- Linux/WSL
+
 vim.lsp.config("roslyn_ls", {
   cmd = {
     "dotnet",
-    os.getenv("HOME") .. "/.roslyn-lsp/content/LanguageServer/osx-arm64/Microsoft.CodeAnalysis.LanguageServer.dll",
+    dll,
     "--logLevel=Information",
     "--extensionLogDirectory=" .. vim.fs.dirname(vim.lsp.log.get_filename()),
     "--stdio",
@@ -35,24 +39,6 @@ vim.lsp.config("roslyn_ls", {
       dotnet_enable_file_based_programs = false,
     },
   },
-  handlers = {
-    ["workspace/roslyn_projectNeedsRestore"] = function(result, ctx)
-      return result
-    end,
-  },
-
-  --     on_attach = function()
-  --         print("This will run when the server attaches!")
-  --     end,
-  --     settings = {
-  --         ["csharp|inlay_hints"] = {
-  --             csharp_enable_inlay_hints_for_implicit_object_creation = true,
-  --             csharp_enable_inlay_hints_for_implicit_variable_types = true,
-  --         },
-  --         ["csharp|code_lens"] = {
-  --             dotnet_enable_references_code_lens = true,
-  --         },
-  --     },
 })
 
 vim.diagnostic.config({
