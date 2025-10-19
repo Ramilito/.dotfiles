@@ -30,6 +30,17 @@ vim.lsp.config("roslyn_ls", {
     "--extensionLogDirectory=" .. vim.fs.dirname(vim.lsp.log.get_filename()),
     "--stdio",
   },
+  settings = {
+    ["csharp|projects"] = {
+      dotnet_enable_file_based_programs = false,
+    },
+  },
+  handlers = {
+    ["workspace/roslyn_projectNeedsRestore"] = function(result, ctx)
+      return result
+    end,
+  },
+
   --     on_attach = function()
   --         print("This will run when the server attaches!")
   --     end,

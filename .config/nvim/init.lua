@@ -1,3 +1,4 @@
+local vim = vim
 require("user.autocmd")
 require("user.options")
 require("user.plugins")
@@ -18,12 +19,14 @@ require("user.plugins.trouble")
 require("user.plugins.smart-splits")
 -- require("user.plugins.which-key")
 -- require("user.plugins.flash")
-require("user.plugins.snacks")
+-- require("user.plugins.snacks")
 require("user.plugins.kubectl")
 
 if vim.fn.has("win64") == 0 then
   require("user.plugins.winbar")
 end
+
+vim.cmd("packadd nvim.difftool")
 
 require("user.keymappings")
 require("user.lsp")
