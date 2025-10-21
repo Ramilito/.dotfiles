@@ -69,7 +69,7 @@ Map("n", "<S-Del>", "<Del>", { desc = "Delete char" })
 Map("n", "<ESC>", ":let @/=''<CR>", { desc = "clear search" })
 
 -- close buffer
-Map("n", "<leader>c", "<cmd>close<CR>", { desc = "Close buffer" })
+Map("n", "<leader>c", "<cmd>bdelete<CR>", { desc = "Close buffer" })
 
 -- close all but current buffer
 Map("n", "<leader>C", '<cmd>lua require("user.functions").close_all_but_current()<CR>', { desc = "Close all but current" })
