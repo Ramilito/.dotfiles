@@ -1,19 +1,8 @@
-vim.pack.add({ "https://github.com/MeanderingProgrammer/render-markdown.nvim" }, {
-  load = function() end,
-  confirm = true,
-})
+vim.pack.add({ "https://github.com/MeanderingProgrammer/render-markdown.nvim" })
 
-require("lz.n").load({
+require("render-markdown").setup({
   {
-    "MeanderingProgrammer/render-markdown.nvim",
-    ft = "markdown",
-    after = function()
-      require("render-markdown").setup({
-        {
-          preset = "obsidian",
-          latex = { enabled = false },
-        },
-      })
-    end,
+    preset = "obsidian",
+    latex = { enabled = false },
   },
 })
