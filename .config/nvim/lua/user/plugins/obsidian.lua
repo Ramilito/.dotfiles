@@ -9,6 +9,7 @@ require("lz.n").load({
     ft = "markdown",
     after = function()
       require("obsidian").setup({
+        legacy_commands = false,
         workspaces = {
           {
             name = "personal",

@@ -20,3 +20,5 @@ eval "$(fnm env --use-on-cd --shell zsh)"
 eval "$(atuin init zsh --disable-up-arrow)"
 
 eval "$(direnv hook zsh)"
+
+eval ". <(flux completion zsh)"

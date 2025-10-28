@@ -1,125 +1,68 @@
 {
   "plugins": {
-    "LuaSnip": {
-      "rev": "f958d98",
-      "src": "https://github.com/L3MON4D3/LuaSnip"
-    },
+    "LuaSnip": [],
     "blink.cmp": {
-      "rev": "a4ab037",
-      "src": "https://github.com/saghen/blink.cmp",
       "version": "'main'"
     },
-    "conform.nvim": {
-      "rev": "fbcb4fa",
-      "src": "https://github.com/stevearc/conform.nvim"
-    },
+    "conform.nvim": [],
     "fidget.nvim": {
-      "rev": "3f54759",
-      "src": "https://github.com/j-hui/fidget.nvim"
+      "rev": "e32b672"
     },
     "fzf-lua": {
-      "rev": "d45ce94",
-      "src": "https://github.com/ibhagwan/fzf-lua"
+      "rev": "6bb2a26"
     },
-    "gitsigns.nvim": {
-      "rev": "1ee5c1f",
-      "src": "https://github.com/lewis6991/gitsigns.nvim"
-    },
-    "kubectl.nvim": {
-      "rev": "f1fa75d",
-      "src": "https://github.com/ramilito/kubectl.nvim"
+    "gitsigns.nvim": [],
+    "kubectl.nvim": [],
+    "lazydev.nvim": {
+      "rev": "01bc2aa",
+      "src": "https://github.com/folke/lazydev.nvim"
     },
     "lz.n": {
-      "rev": "01d9202",
-      "src": "https://github.com/nvim-neorocks/lz.n"
+      "rev": "fd9ff1c"
     },
-    "mini.ai": {
-      "rev": "11c5718",
-      "src": "https://github.com/echasnovski/mini.ai"
-    },
+    "mini.ai": [],
     "mini.files": {
-      "rev": "51db5de",
-      "src": "https://github.com/echasnovski/mini.files"
+      "rev": "d5c1337"
     },
     "neogit": {
-      "rev": "0f48491a",
-      "src": "https://github.com/NeogitOrg/neogit"
+      "rev": "c6d00913"
     },
-    "nvim-bqf": {
-      "rev": "a77b17e",
-      "src": "https://github.com/kevinhwang91/nvim-bqf"
-    },
+    "nvim-bqf": [],
     "nvim-lspconfig": {
-      "rev": "ac98db2",
-      "src": "https://github.com/neovim/nvim-lspconfig"
+      "rev": "a9b2fb5"
     },
-    "nvim-silicon": {
-      "rev": "7f66bda",
-      "src": "https://github.com/michaelrommel/nvim-silicon"
-    },
+    "nvim-silicon": [],
     "nvim-treesitter": {
-      "rev": "846d5113",
-      "src": "https://github.com/nvim-treesitter/nvim-treesitter",
+      "rev": "645f42e8",
       "version": "'main'"
     },
-    "nvim-treesitter-context": {
-      "rev": "41847d3",
-      "src": "https://github.com/nvim-treesitter/nvim-treesitter-context"
-    },
+    "nvim-treesitter-context": [],
     "nvim-web-devicons": {
-      "rev": "b8221e4",
-      "src": "https://github.com/nvim-tree/nvim-web-devicons"
+      "rev": "8dcb311"
     },
     "obsidian.nvim": {
-      "rev": "5c0082b",
-      "src": "https://github.com/obsidian-nvim/obsidian.nvim"
+      "rev": "1a1a475"
     },
-    "plenary.nvim": {
-      "rev": "b9fd522",
-      "src": "https://github.com/nvim-lua/plenary.nvim"
-    },
-    "profile.nvim": {
-      "rev": "30433d7",
-      "src": "https://github.com/stevearc/profile.nvim"
-    },
+    "plenary.nvim": [],
+    "profile.nvim": [],
     "render-markdown.nvim": {
-      "rev": "475d3ad",
-      "src": "https://github.com/MeanderingProgrammer/render-markdown.nvim"
+      "rev": "bfd67f1"
     },
     "roslyn.nvim": {
-      "rev": "7d88192",
-      "src": "https://github.com/seblyng/roslyn.nvim"
+      "rev": "7ba2dd0"
     },
     "rustaceanvim": {
-      "rev": "4c5fc77",
-      "src": "https://github.com/mrcjkb/rustaceanvim"
+      "rev": "ee99f79"
     },
     "smart-splits.nvim": {
-      "rev": "9a26145",
-      "src": "https://github.com/mrjones2014/smart-splits.nvim"
-    },
-    "snacks.nvim": {
-      "rev": "cd68f19"
+      "rev": "6c7c64b"
     },
     "trouble.nvim": {
-      "rev": "c098362",
-      "src": "https://github.com/folke/trouble.nvim"
+      "rev": "76030c5"
     },
-    "undotree": {
-      "rev": "0f1c981",
-      "src": "https://github.com/mbbill/undotree"
-    },
-    "vim-startuptime": {
-      "rev": "b6f0d93",
-      "src": "https://github.com/dstein64/vim-startuptime"
-    },
-    "vscode.nvim": {
-      "rev": "cb9df08",
-      "src": "https://github.com/Mofiqul/vscode.nvim"
-    },
-    "winbar.nvim": {
-      "rev": "0b26050",
-      "src": "https://github.com/ramilito/winbar.nvim"
-    }
+    "undotree": [],
+    "vim-startuptime": [],
+    "vscode.nvim": [],
+    "winbar.nvim": []
   }
 }

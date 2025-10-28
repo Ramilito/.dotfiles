@@ -20,6 +20,7 @@ require("user.plugins.smart-splits")
 -- require("user.plugins.which-key")
 -- require("user.plugins.flash")
 -- require("user.plugins.snacks")
+require("user.plugins.lazydev")
 require("user.plugins.kubectl")
 
 if vim.fn.has("win64") == 0 then
