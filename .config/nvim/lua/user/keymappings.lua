@@ -51,6 +51,8 @@ Map("v", "<S-Down>", ":m '>+1<CR>gv=gv", { desc = "Move down" })
 
 -- Don't overrite yanked text
 Map("v", "<leader>p", '"_dp', { desc = "Paste" })
+Map("v", "p", '"_dP', { desc = "Paste" })
+Map("n", "d", '"_d', { desc = "Delete" })
 Map("n", "<leader>y", '"+y', { desc = "Yank" })
 Map("v", "<leader>y", '"+y', { desc = "Yank" })
 Map("v", "<leader>d", '"_d', { desc = "Delete" })
@@ -78,7 +80,6 @@ Map("n", "<leader>ul", "<cmd>Lazy<cr>", { desc = "Lazy" })
 Map("v", "<leader>f", "<cmd>lua require('conform').format(opts) <cr>", { desc = "Format" })
 Map("n", "<leader>f", "<cmd>lua require('conform').format() <cr>", { desc = "Format" })
 
-
 -- Git
 Map("n", "<leader>gt", '<cmd>lua require("user.functions").lazygit_toggle()<cr>', { desc = "Lazygit" })
 
@@ -100,4 +101,3 @@ Map("t", "<Esc>", [[<C-\><C-n>]], { remap = false, desc = "Exit terminal mode" }
 
 -- Mini
 Map("n", "<leader>e", '<cmd>lua require("mini.files").open(vim.api.nvim_buf_get_name(0), true)<cr>', { desc = "Open mini.files" })
-

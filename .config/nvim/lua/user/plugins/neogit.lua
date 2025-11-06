@@ -11,7 +11,10 @@ require("lz.n").load({
       { "<leader>gg", "<CMD>Neogit<CR>", desc = "Open Neogit" },
     },
     after = function()
-      require("neogit").setup({})
+      require("neogit").setup({
+
+        graph_style = "unicode",
+      })
     end,
   },
 })
