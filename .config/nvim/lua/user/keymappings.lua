@@ -52,7 +52,6 @@ Map("v", "<S-Down>", ":m '>+1<CR>gv=gv", { desc = "Move down" })
 -- Don't overrite yanked text
 Map("v", "<leader>p", '"_dp', { desc = "Paste" })
 Map("v", "p", '"_dP', { desc = "Paste" })
-Map("n", "d", '"_d', { desc = "Delete" })
 Map("n", "<leader>y", '"+y', { desc = "Yank" })
 Map("v", "<leader>y", '"+y', { desc = "Yank" })
 Map("v", "<leader>d", '"_d', { desc = "Delete" })
