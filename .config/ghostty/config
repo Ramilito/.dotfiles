@@ -10,7 +10,7 @@ quick-terminal-position = top
 ## tabs
 
 macos-titlebar-style = tabs
-window-decoration = false
+window-decoration = true
 gtk-titlebar = false
 
 ## fullscreen
