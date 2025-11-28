@@ -1,64 +1,79 @@
 {
   "plugins": {
-    "LuaSnip": [],
+    "LuaSnip": {
+      "rev": "3732756"
+    },
     "blink.cmp": {
+      "rev": "f132267",
       "version": "'main'"
     },
-    "conform.nvim": [],
+    "conform.nvim": {
+      "rev": "4993e07"
+    },
     "fidget.nvim": {
       "rev": "e32b672"
     },
     "fzf-lua": {
-      "rev": "6bb2a26"
+      "rev": "9a0704e"
     },
-    "gitsigns.nvim": [],
-    "kubectl.nvim": [],
+    "gitsigns.nvim": {
+      "rev": "684270f"
+    },
+    "kubectl.nvim": {
+      "rev": "bd6bdec"
+    },
     "lazydev.nvim": {
-      "rev": "01bc2aa",
+      "rev": "5231c62",
       "src": "https://github.com/folke/lazydev.nvim"
     },
     "lz.n": {
-      "rev": "fd9ff1c"
+      "rev": "195e4a6"
     },
-    "mini.ai": [],
+    "mini.ai": {
+      "rev": "bfb26d9"
+    },
     "mini.files": {
-      "rev": "d5c1337"
+      "rev": "26baa62"
     },
     "neogit": {
-      "rev": "c6d00913"
+      "rev": "411d6152"
     },
-    "nvim-bqf": [],
+    "nvim-bqf": {
+      "rev": "ba2b365"
+    },
     "nvim-lspconfig": {
-      "rev": "a9b2fb5"
+      "rev": "07f4e93"
     },
     "nvim-silicon": [],
     "nvim-treesitter": {
-      "rev": "645f42e8",
+      "rev": "17885756",
       "version": "'main'"
     },
-    "nvim-treesitter-context": [],
+    "nvim-treesitter-context": {
+      "rev": "660861b"
+    },
     "nvim-web-devicons": {
       "rev": "8dcb311"
     },
     "obsidian.nvim": {
-      "rev": "1a1a475"
+      "rev": "609aa89"
     },
     "plenary.nvim": [],
     "profile.nvim": [],
     "render-markdown.nvim": {
-      "rev": "bfd67f1"
+      "rev": "6e0e890"
     },
     "roslyn.nvim": {
-      "rev": "7ba2dd0"
+      "rev": "88f837a"
     },
     "rustaceanvim": {
-      "rev": "ee99f79"
+      "rev": "37f362b"
     },
     "smart-splits.nvim": {
-      "rev": "6c7c64b"
+      "rev": "ca996f2"
     },
     "trouble.nvim": {
-      "rev": "76030c5"
+      "rev": "bd67efe"
     },
     "undotree": [],
     "vim-startuptime": [],

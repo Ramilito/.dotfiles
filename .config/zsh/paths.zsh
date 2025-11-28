@@ -20,6 +20,7 @@ export NVM_DIR="$HOME/.nvm"
 export PATH="$PATH:$HOME/.kube/kubediff"
 export KUBECONFIG=$(for file in $(find ~/.kube -maxdepth 1 -type f); do echo -n ":$file"; done)
 export FUNCTIONS_CORE_TOOLS_TELEMETRY_OPTOUT=1
+export PATH="/home/linuxbrew/.linuxbrew/opt/helm@3/bin:$PATH"
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
     export PATH="$PATH:/Applications/Wezterm.app/Contents/MacOS"
