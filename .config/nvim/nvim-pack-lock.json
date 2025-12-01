@@ -14,10 +14,10 @@
       "rev": "e32b672"
     },
     "fzf-lua": {
-      "rev": "9a0704e"
+      "rev": "ed140c9"
     },
     "gitsigns.nvim": {
-      "rev": "684270f"
+      "rev": "5813e48"
     },
     "kubectl.nvim": {
       "rev": "bd6bdec"
@@ -27,7 +27,7 @@
       "src": "https://github.com/folke/lazydev.nvim"
     },
     "lz.n": {
-      "rev": "195e4a6"
+      "rev": "b36c73e"
     },
     "mini.ai": {
       "rev": "bfb26d9"
@@ -36,13 +36,13 @@
       "rev": "26baa62"
     },
     "neogit": {
-      "rev": "411d6152"
+      "rev": "40347fbc"
     },
     "nvim-bqf": {
       "rev": "ba2b365"
     },
     "nvim-lspconfig": {
-      "rev": "07f4e93"
+      "rev": "effe4bf"
     },
     "nvim-silicon": [],
     "nvim-treesitter": {
@@ -56,7 +56,7 @@
       "rev": "8dcb311"
     },
     "obsidian.nvim": {
-      "rev": "609aa89"
+      "rev": "1a1bf29"
     },
     "plenary.nvim": [],
     "profile.nvim": [],
@@ -67,10 +67,10 @@
       "rev": "88f837a"
     },
     "rustaceanvim": {
-      "rev": "37f362b"
+      "rev": "6c3785d"
     },
     "smart-splits.nvim": {
-      "rev": "ca996f2"
+      "rev": "e892a5d"
     },
     "trouble.nvim": {
       "rev": "bd67efe"
