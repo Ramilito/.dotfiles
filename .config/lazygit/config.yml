@@ -2,9 +2,9 @@ git:
   pull:
     mode: rebase
   notARepository: 'skip'
-  paging:
-    colorArg: always
-    # pager: delta --dark --paging=never
+  pagers:
+    - colorArg: always
+      # pager: delta --dark --paging=never
 gui:
   sidePanelWidth: 0.2
   showFileTree: true # for rendering changes files in a tree format
