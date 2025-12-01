@@ -14,7 +14,7 @@
       "rev": "e32b672"
     },
     "fzf-lua": {
-      "rev": "ed140c9"
+      "rev": "cae96b0"
     },
     "gitsigns.nvim": {
       "rev": "5813e48"
@@ -46,7 +46,7 @@
     },
     "nvim-silicon": [],
     "nvim-treesitter": {
-      "rev": "17885756",
+      "rev": "00c906ab",
       "version": "'main'"
     },
     "nvim-treesitter-context": {
@@ -75,7 +75,9 @@
     "trouble.nvim": {
       "rev": "bd67efe"
     },
-    "undotree": [],
+    "undotree": {
+      "rev": "0f1c981"
+    },
     "vim-startuptime": [],
     "vscode.nvim": [],
     "winbar.nvim": []
