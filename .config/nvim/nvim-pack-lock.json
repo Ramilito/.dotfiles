@@ -4,17 +4,21 @@
       "rev": "3732756"
     },
     "blink.cmp": {
-      "rev": "f132267",
+      "rev": "d4ba3e7",
       "version": "'main'"
     },
     "conform.nvim": {
-      "rev": "4993e07"
+      "rev": "9b8fa5e"
     },
     "fidget.nvim": {
       "rev": "e32b672"
     },
+    "firenvim": {
+      "rev": "a18ef90",
+      "src": "https://github.com/glacambre/firenvim"
+    },
     "fzf-lua": {
-      "rev": "cae96b0"
+      "rev": "e9c8828"
     },
     "gitsigns.nvim": {
       "rev": "5813e48"
@@ -33,44 +37,44 @@
       "rev": "bfb26d9"
     },
     "mini.files": {
-      "rev": "26baa62"
+      "rev": "22c64f0"
     },
     "neogit": {
-      "rev": "40347fbc"
+      "rev": "d8bf9102"
     },
     "nvim-bqf": {
       "rev": "ba2b365"
     },
     "nvim-lspconfig": {
-      "rev": "effe4bf"
+      "rev": "f397966"
     },
     "nvim-silicon": [],
     "nvim-treesitter": {
-      "rev": "00c906ab",
+      "rev": "d3218d98",
       "version": "'main'"
     },
     "nvim-treesitter-context": {
-      "rev": "660861b"
+      "rev": "64dd4cf"
     },
     "nvim-web-devicons": {
       "rev": "8dcb311"
     },
     "obsidian.nvim": {
-      "rev": "1a1bf29"
+      "rev": "414490f"
     },
     "plenary.nvim": [],
     "profile.nvim": [],
     "render-markdown.nvim": {
-      "rev": "6e0e890"
+      "rev": "7a43c8b"
     },
     "roslyn.nvim": {
-      "rev": "88f837a"
+      "rev": "548d980"
     },
     "rustaceanvim": {
-      "rev": "6c3785d"
+      "rev": "823d2ad"
     },
     "smart-splits.nvim": {
-      "rev": "e892a5d"
+      "rev": "3ee3d37"
     },
     "trouble.nvim": {
       "rev": "bd67efe"
@@ -79,7 +83,11 @@
       "rev": "0f1c981"
     },
     "vim-startuptime": [],
-    "vscode.nvim": [],
-    "winbar.nvim": []
+    "vscode.nvim": {
+      "rev": "aa1102a"
+    },
+    "winbar.nvim": {
+      "rev": "8c115b1"
+    }
   }
 }

@@ -44,6 +44,10 @@ vim.api.nvim_create_autocmd({ "BufEnter", "VimEnter" }, {
       return
     end
 
+    if vim.g.started_by_firenvim then
+			return
+    end
+
     local win_number = vim.api.nvim_get_current_win()
     local config = vim.api.nvim_win_get_config(win_number)
 
