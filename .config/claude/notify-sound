@@ -1,0 +1,8 @@
+#!/bin/bash
+if command -v afplay &>/dev/null; then
+    afplay /System/Library/Sounds/Glass.aiff
+elif command -v powershell.exe &>/dev/null; then
+    powershell.exe -c "[console]::beep(800,200)"
+elif command -v paplay &>/dev/null; then
+    paplay /usr/share/sounds/freedesktop/stereo/complete.oga
+fi
