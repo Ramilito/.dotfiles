@@ -6,6 +6,9 @@ require("kubectl").setup({
   diff = {
     bin = "kubediff",
   },
+  lsp = {
+    enabled = true,
+  },
   statusline = {
     enabled = true,
   },

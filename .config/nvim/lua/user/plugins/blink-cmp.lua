@@ -1,8 +1,12 @@
 vim.pack.add({
-  { src = "https://github.com/saghen/blink.cmp", version = "main", {
-    load = function() end,
-    confirm = true,
-  } },
+  {
+    src = "https://github.com/saghen/blink.cmp",
+    version = "main",
+    {
+       load = function() end,
+       confirm = true,
+     }
+  },
 })
 
 require("lz.n").load({
@@ -11,8 +15,14 @@ require("lz.n").load({
     event = "InsertEnter",
     after = function()
       require("blink.cmp").setup({
+        cmdline = {
+          enabled = true, -- default
+          completion = {
+            menu = { auto_show = true }, -- optional: show menu automatically
+          },
+        },
         fuzzy = { prebuilt_binaries = {
-          force_version = "v1.6.0",
+          force_version = "v1.8.0",
         } },
         keymap = {
           preset = "default",

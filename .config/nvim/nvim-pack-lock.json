@@ -7,6 +7,18 @@
       "rev": "d4ba3e7",
       "version": "'main'"
     },
+    "cmp-buffer": {
+      "rev": "b74fab3",
+      "src": "https://github.com/hrsh7th/cmp-buffer"
+    },
+    "cmp-nvim-lsp": {
+      "rev": "cbc7b02",
+      "src": "https://github.com/hrsh7th/cmp-nvim-lsp"
+    },
+    "cmp-path": {
+      "rev": "c642487",
+      "src": "https://github.com/hrsh7th/cmp-path"
+    },
     "conform.nvim": {
       "rev": "9b8fa5e"
     },
@@ -44,6 +56,10 @@
     },
     "nvim-bqf": {
       "rev": "ba2b365"
+    },
+    "nvim-cmp": {
+      "rev": "85bbfad",
+      "src": "https://github.com/hrsh7th/nvim-cmp"
     },
     "nvim-lspconfig": {
       "rev": "f397966"
