@@ -4,6 +4,7 @@ vim.pack.add({ "https://github.com/ibhagwan/fzf-lua" })
 require("lz.n").load({
   {
     "fzf-lua",
+    lazy = false,
     keys = {
       -- search
       { "<leader>sk", "<cmd> FzfLua keymaps <CR>", desc = "Show Keys" },
