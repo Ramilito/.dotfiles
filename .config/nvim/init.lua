@@ -24,6 +24,7 @@ require("user.plugins.smart-splits")
 require("user.plugins.lazydev")
 require("user.plugins.kubectl")
 require("user.plugins.firenvim")
+require("user.plugins.yaml-companion")
 
 if vim.fn.has("win64") == 0 then
   require("user.plugins.winbar")

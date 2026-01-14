@@ -104,6 +104,10 @@
     },
     "winbar.nvim": {
       "rev": "8c115b1"
+    },
+    "yaml-companion.nvim": {
+      "rev": "0e840f3",
+      "src": "https://github.com/mosheavni/yaml-companion.nvim"
     }
   }
 }
