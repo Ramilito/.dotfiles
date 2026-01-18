@@ -4,8 +4,8 @@ colors
 function _update_kube_prompt() {
   local kube_ctx kube_ns icon color ec1 ec2 ctx_l ns_part
 
-  kube_ctx=$(kubesess -c context 2>/dev/null); ec1=$?
-  kube_ns=$(kubesess -c namespace 2>/dev/null); ec2=$?
+  kube_ctx=$(kubesess context -c 2>/dev/null); ec1=$?
+  kube_ns=$(kubesess namespace -c 2>/dev/null); ec2=$?
 
   if (( ec1 || ec2 )); then
     PROMPT_KUBE="%F{red}⚠ kubesess: error%f"
