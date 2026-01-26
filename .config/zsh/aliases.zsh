@@ -9,3 +9,5 @@ alias kk="kubecolor"
 alias kdpt="kubectl get pods --all-namespaces -o wide | grep Terminated | awk '{print $1,$2}' | xargs -L1 kubectl delete pod -n"
 
 alias cat=bat
+
+alias claude-litellm='/Users/ramidaghlawi/workspace/podme/litellm/claude-code.sh'
