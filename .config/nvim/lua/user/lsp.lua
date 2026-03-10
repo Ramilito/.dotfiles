@@ -21,6 +21,7 @@ vim.lsp.enable("gopls")
 vim.lsp.enable("ts_ls")
 vim.lsp.enable("roslyn_ls")
 vim.lsp.enable("pyright")
+vim.lsp.enable("tilt_ls")
 
 local sys = vim.loop.os_uname().sysname
 local dll = (sys == "Darwin") and vim.fn.expand("~/.roslyn-lsp/content/LanguageServer/osx-arm64/Microsoft.CodeAnalysis.LanguageServer.dll")

@@ -42,6 +42,7 @@ require("nvim-treesitter").setup({
     "vimdoc",
     "yaml",
     "query",
+    "starlark",
     -- "comment", -- comments are slowing down TS bigtime, so disable for now
     -- "wgsl",
   },
@@ -56,6 +57,7 @@ require("nvim-treesitter").setup({
   -- Ensure that Tree-sitter is enabled for the custom filetype
   filetype = {
     k8s_pods = "json",
+    tiltfile = "starlark",
   },
   indent = {
     enable = false,

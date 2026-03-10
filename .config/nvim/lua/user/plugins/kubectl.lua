@@ -10,7 +10,7 @@ require("kubectl").setup({
     enabled = true,
   },
   statusline = {
-    enabled = true,
+    enabled = false,
   },
 })
 local group = vim.api.nvim_create_augroup("kubectl_mappings", { clear = true })
