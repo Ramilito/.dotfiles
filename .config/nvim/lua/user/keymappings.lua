@@ -98,5 +98,8 @@ Map("n", "gl", vim.diagnostic.open_float, { desc = "Open [d]iagnostics (float)" 
 Map("n", "gd", vim.lsp.buf.definition, { noremap = true, silent = true })
 Map("t", "<Esc>", [[<C-\><C-n>]], { remap = false, desc = "Exit terminal mode" })
 
+Map("n", "<leader>ka", "<cmd>Kubectl view alias<cr>", { desc = "Kubectl alias" })
+
+
 -- Mini
 Map("n", "<leader>e", '<cmd>lua require("mini.files").open(vim.api.nvim_buf_get_name(0), true)<cr>', { desc = "Open mini.files" })
