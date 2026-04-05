@@ -7,7 +7,7 @@ require("user.plugins.treesitter")
 require("user.plugins.conform")
 require("user.plugins.gitsigns")
 require("user.plugins.mini-files")
-require("user.plugins.mini-ai")
+-- require("user.plugins.mini-ai")
 -- require("user.plugins.mini-surround")
 require("user.plugins.fzf-lua")
 require("user.plugins.neogit")
@@ -31,6 +31,7 @@ if vim.fn.has("win64") == 0 then
 end
 
 vim.cmd("packadd nvim.difftool")
+vim.cmd("packadd nvim.undotree")
 
 require("user.keymappings")
 require("user.lsp")
