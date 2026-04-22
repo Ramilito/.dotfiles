@@ -13,11 +13,11 @@ end
 -- unMaps
 -- Map("n", "q", "<nop>")
 Map("n", "Q", "<nop>")
-Map("n", "h", "<nop>")
-Map("n", "j", "<nop>")
-Map("n", "k", "<nop>")
-Map("n", "l", "<nop>")
-
+-- Map("n", "h", "<nop>")
+-- Map("n", "j", "<nop>")
+-- Map("n", "k", "<nop>")
+-- Map("n", "l", "<nop>")
+--
 -- Quit
 -- Map("n", "<leader>qq", "<cmd>qa<cr>", { desc = "Quit All" })
 Map("n", "<leader>qq", ":qall<cr>", { remap = false, silent = true, desc = "Quit all" })
